@@ -1,0 +1,29 @@
+/* Общий стиль для иконок в боковом меню */
+.sidebar-item::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Назначаем конкретные иконки для каждой ссылки по ее адресу (href) */
+.sidebar-item[href*="/general.html"]::before {
+  content: "\f085"; /* Код иконки шестеренки (fa-gears) */
+  color: #3eaf7c;
+}
+
+.sidebar-item[href*="/events.html"]::before {
+  content: "\f0f3"; /* Код иконки колокольчика (fa-bell) */
+}
+
+.sidebar-item[href*="/datatypes/Box.html"]::before {
+  content: "\f49e"; /* Код иконки коробки (fa-box) */
+}
+
+.sidebar-item[href*="/datatypes/item.html"]::before {
+  content: "\f717"; /* Код иконки меча (fa-sword) */
+}
+
+.sidebar-item[href*="/datatypes/entity.html"]::before {
+  content: "\f3fb"; /* Код иконки пришельца (fa-alien) */
+}
