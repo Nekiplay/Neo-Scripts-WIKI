@@ -22,7 +22,7 @@ Add message to chat.
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -30,7 +30,7 @@ Add message to chat.
 -- Example code showing how to use the function
 local player = require("player")
 player.addMessage("Hypixel Cry - Only me see this")
-local ComponentBuilder = require("text-builder")
+local ComponentBuilder = require("textbuilder")
 local message = ComponentBuilder.new("Hello! ")
     :color("white")
     :append(
@@ -66,7 +66,7 @@ Send message to server.
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -82,7 +82,7 @@ Send command to server.
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -191,7 +191,7 @@ local player = require("player")
 player.setRotation(90, 90)
 ```
 
-### `getPos()`
+### `getPosition()`
 
 Returns the player vector3.
 
@@ -204,7 +204,7 @@ Returns the player vector3.
 ```lua
 -- Example code showing how to use the function
 local player = require("player")
-local pos = player.getPos()
+local pos = player.getPosition()
 local x = pos.x -- Number
 local y = pos.y -- Number
 local z = pos.z -- Number
@@ -384,6 +384,54 @@ Returns the player speed.
 -- Example code showing how to use the function
 local player = require("player")
 local speed = player.getSpeed()
+```
+
+### `getTitle()`
+
+Returns the current title text shown on screen.
+
+**Returns:**
+
+* (string) Title text.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local title = player.getTitle()
+print("Current title:", title)
+```
+
+### `getSubTitle()`
+
+Returns the current subtitle text shown on screen.
+
+**Returns:**
+
+* (string) Subtitle text.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local subtitle = player.getSubTitle()
+print("Current subtitle:", subtitle)
+```
+
+### `getActionBar()`
+
+Returns the current action bar text.
+
+**Returns:**
+
+* (string) Action bar text.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local actionBar = player.getActionBar()
+print("Action bar:", actionBar)
 ```
 
 ### `getAir()`
@@ -694,11 +742,11 @@ end
 
 ### `swingHand(offHand)`
 
-Returns raycast result from eye.
+Swing player hand.
 
 **Parameters:**
 
-* `boolean` - Use off hand.
+* `boolean` - Use off hand (optional, default false).
 
 **Example Usage:**
 
@@ -706,6 +754,186 @@ Returns raycast result from eye.
 -- Example code showing how to use the function
 local player = require("player")
 registerClientTick(function()
-    player.swingHand()
+    player.swingHand() -- swing main hand
+    player.swingHand(true) -- swing off hand
 end)
+```
+
+### `isHasLineOfSight(entity)`
+
+Check if player has line of sight to an entity.
+
+**Parameters:**
+
+* `entity` ([Entity](../../datatypes/entity.md)).
+
+**Returns:**
+
+* (boolean)
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local entities = require("world").getEntities()
+for _, entity in ipairs(entities) do
+    if player.isHasLineOfSight(entity) then
+        print("Can see:", entity.name)
+    else
+        print("Cannot see:", entity.name)
+    end
+end
+```
+
+### `raycastToBlocksFromId(distance, blocks)`
+
+Raycast targeting specific block IDs (useful for block scanning).
+
+**Parameters:**
+
+* `distance` (number) - max distance.
+* `blocks` (table) - list of block IDs to target.
+
+**Returns:**
+
+* ([Raycast](../../datatypes/raycast.md) or nil).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local result = player.raycastToBlocksFromId(4.5, {1, 56}) 
+if result and result.type == "block" then
+    print("Found block at", result.blockPos.x, result.blockPos.y, result.blockPos.z)
+end
+```
+
+### `raycastToBlocksFromId(distance, blockIds)`
+
+Raycast targeting specific blocks by numeric ID.
+
+**Parameters:**
+
+* `distance` (number) - max distance.
+* `blockIds` (table) - list of block numeric IDs.
+
+**Returns:**
+
+* ([Raycast](../../datatypes/raycast.md) or nil).
+
+### `raycastToBlocksFromIdentifier(distance, identifiers)`
+
+Raycast targeting specific blocks by identifier strings.
+
+**Parameters:**
+
+* `distance` (number) - max distance.
+* `identifiers` (table) - list of block identifier strings (e.g. "minecraft:stone").
+
+**Returns:**
+
+* ([Raycast](../../datatypes/raycast.md) or nil).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local result = player.raycastToBlocksFromIdentifier(4.5, {"minecraft:stone", "minecraft:diamond_ore"})
+if result and result.type == "block" then
+    print("Found block at", result.blockPos.x, result.blockPos.y, result.blockPos.z)
+end
+```
+
+### `raycastToEntity(distance)`
+
+Raycast targeting only entities (ignores blocks).
+
+**Parameters:**
+
+* `distance` (number) - max distance.
+
+**Returns:**
+
+* ([Raycast](../../datatypes/raycast.md) or nil).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local hit = player.raycastToEntity(4.5)
+if hit and hit.type == "entity" then
+    print("Looking at entity:", hit.data.name)
+end
+```
+
+### `getBossBar()`
+
+Returns boss bar information.
+
+**Returns:**
+
+* (table) List of boss bars with fields: uuid, name, percent, color, overlay, shouldCreateFog, shouldDarkenScreen, shouldPlayBossMusic.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local bars = player.getBossBar()
+for _, bar in ipairs(bars) do
+    print(bar.name, bar.percent)
+end
+```
+
+### `getDirectionFromYawPitch(yaw, pitch)`
+
+Calculate direction vector from yaw/pitch angles.
+
+**Parameters:**
+
+* `yaw` (number).
+* `pitch` (number).
+
+**Returns:**
+
+* (table) with `direction` ([Vector3](../../datatypes/vector3.md)).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local dir = player.getDirectionFromYawPitch(45, 30)
+print(dir.direction.x, dir.direction.y, dir.direction.z)
+```
+
+### `setServerRotation(yaw, pitch, movementCorrection, silentMovementCorrection)`
+
+Set rotation server-side only (silent/ghost rotation).
+
+**Parameters:**
+
+* `yaw` (number).
+* `pitch` (number).
+* `movementCorrection` (boolean, optional) - default true.
+* `silentMovementCorrection` (boolean, optional) - default false.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+player.setServerRotation(0, 90) -- look straight down server-side
+```
+
+### `getServerRotation()`
+
+Get the current silent/server rotation.
+
+**Returns:**
+
+* (table) { yaw, pitch }.
+
+**Example Usage:**
+
+```lua
+local rot = player.getServerRotation()
+print("Server yaw:", rot.yaw, "pitch:", rot.pitch)
 ```

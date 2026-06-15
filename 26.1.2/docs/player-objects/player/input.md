@@ -8,7 +8,7 @@ icon: keyboard
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -21,7 +21,7 @@ player.input.attackEntity()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -35,7 +35,7 @@ player.input.attackBlock()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -52,7 +52,7 @@ player.input.mineBlock()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -80,7 +80,7 @@ local slot = player.input.getSelectedSlot()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -94,7 +94,7 @@ local status = player.input.silentUse(0)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -108,7 +108,7 @@ local status = player.input.leftClick()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -126,7 +126,7 @@ local status = player.input.rightClick()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -144,7 +144,7 @@ player.input.setPressedSprinting(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -162,7 +162,7 @@ player.input.setPressedJump(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -180,7 +180,7 @@ player.input.setPressedSneak(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -198,7 +198,7 @@ player.input.setPressedForward(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -216,7 +216,7 @@ player.input.setPressedBack(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -234,7 +234,7 @@ player.input.setPressedLeft(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -252,7 +252,7 @@ player.input.setPressedRight(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -270,7 +270,7 @@ player.input.setPressedAttack(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
@@ -284,7 +284,7 @@ player.input.setPressedUse(true)
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -298,7 +298,7 @@ local pressed = player.input.isPressedSprinting()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -312,7 +312,7 @@ local pressed = player.input.isPressedJump()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -326,7 +326,7 @@ local pressed = player.input.isPressedSneak()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -340,7 +340,7 @@ local pressed = player.input.isPressedForward()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -354,7 +354,7 @@ local pressed = player.input.isPressedBack()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -368,7 +368,7 @@ local pressed = player.input.isPressedLeft()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -382,7 +382,7 @@ local pressed = player.input.isPressedRight()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 
@@ -396,7 +396,7 @@ local pressed = player.input.isPressedAttack()
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if pressed.
+* (boolean) Return `true` if pressed.
 
 **Example Usage:**
 

@@ -18,8 +18,10 @@ Get result
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local model = catboost.loadModel("model.cbm")
 local predictions = model.predict({0.1, 0.3, 0.2}, {"foo", "bar", "baz"})
-<strong>local result = predictions.get(0, 0)
-</strong></code></pre>
+local result = predictions.get(0, 0)
+```
+

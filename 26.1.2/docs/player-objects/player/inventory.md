@@ -61,7 +61,7 @@ Returns true if success.
 
 **Returns:**
 
-* (boolean) return <mark style="color:$success;">**true**</mark> is successfully.
+* (boolean) return `true` is successfully.
 
 ```lua
 -- Example code showing how to use the function
@@ -77,7 +77,7 @@ Returns true if success.
 
 **Returns:**
 
-* (boolean) return <mark style="color:$success;">**true**</mark> is successfully.
+* (boolean) return `true` is successfully.
 
 ```lua
 -- Example code showing how to use the function
@@ -119,7 +119,7 @@ Returns the item in the slot.
 ```lua
 -- Example code showing how to use the function
 local player = require("player")
-local item = player.inventory.getStack(36)
+local item = player.inventory.getItemStack(36)
 ```
 
 ## `getStackFromContainer(slot)`
@@ -139,7 +139,7 @@ Returns the item in the slot.
 ```lua
 -- Example code showing how to use the function
 local player = require("player")
-local item = player.inventory.getStackFromContainer(36)
+local item = player.inventory.getItemStackFromContainer(36)
 ```
 
 ## `getContainerSlots()`
@@ -156,6 +156,66 @@ Returns the number of slots in an open container.
 -- Example code showing how to use the function
 local player = require("player")
 local slots = player.inventory.getContainerSlots()
+```
+
+## `getContainerTitle()`
+
+Returns the title of the open container (alias for getChestTitle).
+
+**Returns:**
+
+* (string).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local title = player.inventory.getContainerTitle()
+player.addMessage(title)
+```
+
+## `setStack(slot, item)`
+
+Sets an item in the player's inventory slot.
+
+**Parameters:**
+
+* `slot` (number) - Slot id.
+* `item` ([item data](../../datatypes/item.md)) - Item to set.
+
+**Returns:**
+
+* (boolean).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local creator = require("creator")
+local stone = creator.createItemStackFromIdentifier("minecraft:stone")
+player.inventory.setStack(0, stone)
+```
+
+## `setItemInContainer(slot, item)`
+
+Sets an item in a container slot (chest, etc.).
+
+**Parameters:**
+
+* `slot` (number) - Slot id.
+* `item` ([item data](../../datatypes/item.md)) - Item to set.
+
+**Returns:**
+
+* (boolean).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local creator = require("creator")
+local stone = creator.createItemStackFromIdentifier("minecraft:stone")
+player.inventory.setItemInContainer(0, stone)
 ```
 
 ## `leftClick(slot)`
@@ -198,9 +258,45 @@ local player = require("player")
 player.inventory.middleClick(0)
 ```
 
-## `rightClick(slot)`
+## `shiftLeftClick(slot)`
 
-##
+Shift-left click on a slot. Moves items between container and player inventory.
+
+**Parameters:**
+
+* `slot` (number) - Slot id.
+
+**Returns:**
+
+* (boolean).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+player.inventory.shiftLeftClick(0) -- must have inventory open to grab the item
+```
+
+## `shiftRightClick(slot)`
+
+Shift-right click on a slot.
+
+**Parameters:**
+
+* `slot` (number) - Slot id.
+
+**Returns:**
+
+* (boolean).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+player.inventory.shiftRightClick(0)
+```
+
+## `rightClick(slot)`
 
 Returns true if successfully.
 
@@ -218,6 +314,25 @@ Returns true if successfully.
 -- Example code showing how to use the function
 local player = require("player")
 player.inventory.rightClick(0)
+```
+
+## `drop(slot)`
+
+Drops a single item from the specified slot.
+
+**Parameters:**
+
+* `slot` (number) - Slot id.
+
+**Returns:**
+
+* (boolean).
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+player.inventory.drop(0)
 ```
 
 ## `dropAll(slot)`

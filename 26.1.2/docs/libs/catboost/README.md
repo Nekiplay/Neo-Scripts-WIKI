@@ -19,7 +19,9 @@ Load model from path
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local catboost = require("catboost")
-<strong>local model = catboost.loadModel("model.cbm")
-</strong></code></pre>
+local model = catboost.loadModel("model.cbm")
+```
+

@@ -18,15 +18,17 @@ icon: brain-circuit
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
+```lua
+local djl = require("djl")
 local model_config = {
 		input_size = 4,
 		output_size = 2,
 		layers = {16, 8},
 		mode = "classification" -- or regression
 }
-<strong>local model_info = djl.create_model("custom_net1", model_config)
-</strong></code></pre>
+local model_info = djl.create_model("custom_net1", model_config)
+```
+
 
 ## `train(id, train_config, train_data, test_data)`
 
@@ -43,7 +45,8 @@ local model_config = {
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
+```lua
+local djl = require("djl")
 local train_data = {
 		inputs = {
 			{0, 0, 0, 0},
@@ -66,8 +69,9 @@ local train_config = {
 local function onEpoch(epoch)
 		print("Epoch: " .. epoch)
 end
-<strong>local success = djl.train("custom_net1", train_config, train_data, onEpoch)
-</strong></code></pre>
+local success = djl.train("custom_net1", train_config, train_data, onEpoch)
+```
+
 
 ## `save_model(id, path)`
 
@@ -82,9 +86,11 @@ end
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
-<strong>djl.save_model("custom_net1", "models/custom_net")
-</strong></code></pre>
+```lua
+local djl = require("djl")
+djl.save_model("custom_net1", "models/custom_net")
+```
+
 
 ## `load_model(id, path, model_config)`
 
@@ -100,15 +106,17 @@ end
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
+```lua
+local djl = require("djl")
 local model_config = {
 		input_size = 4,
 		output_size = 2,
 		layers = {16, 8},
 		mode = "classification" -- or regression
 }
-<strong>local success = djl.load_model("custom_net1", "models/custom_net", model_config)
-</strong></code></pre>
+local success = djl.load_model("custom_net1", "models/custom_net", model_config)
+```
+
 
 ## `predict(id, data)`
 
@@ -123,10 +131,12 @@ local model_config = {
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
+```lua
+local djl = require("djl")
 local test = {1,0,0,0}
-<strong>local pred = djl.predict("custom_net1", test)
-</strong></code></pre>
+local pred = djl.predict("custom_net1", test)
+```
+
 
 ## `close(id)`
 
@@ -140,6 +150,8 @@ local test = {1,0,0,0}
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">local djl = require("djl")
-<strong>djl.close("custom_net1")
-</strong></code></pre>
+```lua
+local djl = require("djl")
+djl.close("custom_net1")
+```
+
