@@ -1,5 +1,25 @@
-/node_modules
-/node_modules
-/node_modules
-/node_modules
-/node_modules
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+C:/xampp/
+dist/
+build/
+
+# VuePress temp files
+*.vuepress/.temp/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Temp / generated
+*.log
+.tmp/
+temp/
