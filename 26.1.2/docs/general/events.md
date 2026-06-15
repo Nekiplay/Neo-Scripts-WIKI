@@ -22,7 +22,7 @@ end)
 
 ### `registerClientTick(function)`
 
-Registers a tick handler (runs after pre-tick).
+Registers a tick handler.
 
 **Parameters:**
 * `function` (function).
@@ -37,7 +37,7 @@ end)
 
 ### `registerClientTickPre(function)`
 
-Registers a pre-tick handler (runs before main tick).
+Registers a pre-tick handler.
 
 **Parameters:**
 * `function` (function).
@@ -51,7 +51,7 @@ end)
 
 ### `registerClientTickPost(function)`
 
-Registers a post-tick handler (runs after main tick).
+Registers a post-tick handler.
 
 **Parameters:**
 * `function` (function).
