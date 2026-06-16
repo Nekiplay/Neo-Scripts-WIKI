@@ -4,7 +4,7 @@ icon: earth-africa
 
 # World
 
-## `getBlock(x, y, z)`
+## `getBlock(x, y, z)` / `getBlockState(x, y, z)`
 
 Gets information about a block by coordinates.
 
@@ -25,6 +25,8 @@ Gets information about a block by coordinates.
 -- Example code showing how to use the function
 local world = require("world")
 local blockInfo = world.getBlock(1, 1, 1)
+-- getBlockState is an alias for getBlock
+local blockInfo2 = world.getBlockState(1, 1, 1)
 ```
 
 ## `setBlock(x, y, z, id)`
@@ -257,6 +259,94 @@ if entity then
 end
 ```
 
+## `getLight(x, y, z)` / `getBrightness(x, y, z)`
+
+Gets the block light level at the specified coordinates.
+
+**Parameters:**
+
+* `x` (number) - X coordinate.
+* `y` (number) - Y coordinate.
+* `z` (number) - Z coordinate.
+
+**Returns:**
+
+* (number) Light level (0-15).
+
+**Example Usage:**
+
+```lua
+local world = require("world")
+local light = world.getLight(0, 64, 0)
+print("Block light: " .. light)
+```
+
+## `getLightSky(x, y, z)` / `getBrightnessSky(x, y, z)`
+
+Gets the sky light level at the specified coordinates.
+
+**Parameters:**
+
+* `x` (number) - X coordinate.
+* `y` (number) - Y coordinate.
+* `z` (number) - Z coordinate.
+
+**Returns:**
+
+* (number) Sky light level (0-15).
+
+**Example Usage:**
+
+```lua
+local world = require("world")
+local light = world.getLightSky(0, 64, 0)
+print("Sky light: " .. light)
+```
+
+## `getArmorStandEntities()`
+
+Returns a list of all armor stand entities.
+
+**Returns:**
+
+* (table) List of armor stand [entities](../datatypes/entity.md).
+
+**Example Usage:**
+
+```lua
+local world = require("world")
+local armorStands = world.getArmorStandEntities()
+for _, stand in ipairs(armorStands) do
+    print(stand.name)
+end
+```
+
+## `getArmorStandEntitiesInBox(box)`
+
+Returns a list of armor stand entities within the specified box.
+
+**Parameters:**
+
+* `box` ([Box](../datatypes/box.md)) - The search box.
+
+**Returns:**
+
+* (table) List of armor stand [entities](../datatypes/entity.md).
+
+**Example Usage:**
+
+```lua
+local world = require("world")
+local player = require("player")
+
+-- Find armor stands near the player
+local searchBox = player.entity.box.expand(5, 5, 5)
+local armorStands = world.getArmorStandEntitiesInBox(searchBox)
+for _, stand in ipairs(armorStands) do
+    print("Found armor stand: " .. stand.name)
+end
+```
+
 ## `getRotation(x, y, z)`
 
 Get yaw and pitch for 3d cordinates.
@@ -324,9 +414,11 @@ Return raycast result.
 ```lua
 -- Example code showing how to use the function
 local world = require("world")
+local player = require("player")
+
 local eyePos = player.getEyePosition()
 local targetX, targetY, targetZ = 0, 0, 0
-<strong>local raycastResult = world.raycast({
+local raycastResult = world.raycast({
     startX = eyePos.x,
     startY = eyePos.y, 
     startZ = eyePos.z,
@@ -344,4 +436,25 @@ if raycastResult ~= nil then
         player.addMessage("Miss")
     end
 end
+```
+
+## `getBreakingBlocksInfo()`
+
+Returns information about currently breaking blocks.
+
+**Returns:**
+
+* (table) List of breaking block info with `progress` 0->10, `blockpos` ([BlockPos](../datatypes/blockPos.md)), `id`, and `updatedRenderTick`.
+
+**Example Usage:**
+
+```lua
+local world = require("world")
+local brokeInfo
+registerClientTick(function ()
+    brokeInfo = world.getBreakingBlocksInfo()
+    for _, info in ipairs(brokeInfo) do
+        print("Block breaking: " .. info.progress .. " at " .. info.blockpos.x .. ", " .. info.blockpos.y .. ", " .. info.blockpos.z)
+    end
+end)
 ```

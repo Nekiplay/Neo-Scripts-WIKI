@@ -53,3 +53,80 @@ registerCommand("config",
     end
 )
 ```
+
+### `unregisterCommand(commandName)`
+
+Unregister a previously registered command.
+
+**Parameters:**
+
+* `commandName` (string).
+
+**Example Usage:**
+
+```lua
+unregisterCommand("config")
+```
+
+## Modules API
+
+### `modules.getLoadedScripts()`
+
+Returns a list of loaded script names.
+
+**Returns:**
+
+* (table) List of script names.
+
+**Example Usage:**
+
+```lua
+local modules = require("modules")
+local scripts = modules.getLoadedScripts()
+for _, name in ipairs(scripts) do
+    print("Loaded script:", name)
+end
+```
+
+### `modules.getScriptRequirements(scriptName)`
+
+Returns the dependency tree for a script.
+
+**Parameters:**
+
+* `scriptName` (string).
+
+**Returns:**
+
+* (table) Dependency tree with name, dependencies, circular flags.
+
+### `modules.loadScript(path)`
+
+Load a script from file path.
+
+**Parameters:**
+
+* `path` (string) - file path to script.
+
+**Returns:**
+
+* (boolean)
+
+**Example Usage:**
+
+```lua
+local modules = require("modules")
+modules.loadScript("config/neoscripts/scripts/my_script.lua")
+```
+
+### `modules.unloadScript(name)`
+
+Unload a script by name.
+
+**Parameters:**
+
+* `name` (string).
+
+**Returns:**
+
+* (boolean)

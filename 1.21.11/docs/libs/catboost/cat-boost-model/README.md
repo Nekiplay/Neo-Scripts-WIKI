@@ -19,7 +19,9 @@ Predict
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local model = catboost.loadModel("model.cbm")
-<strong>local predictions = model.predict({0, 1}, {"Apple", "Banana"})
-</strong></code></pre>
+local predictions = model.predict({0, 1}, {"Apple", "Banana"})
+```
+

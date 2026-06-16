@@ -10,7 +10,7 @@ icon: map-location
 
 ### **locked** (_boolean_)
 
-### **tracking\_position (**_boolean_**)**
+### **tracking\_position** (_boolean_)
 
 ### **unlimited\_tracking** (_boolean_)
 
@@ -30,7 +30,9 @@ icon: map-location
 
 ### **frame\_markers** (_list_) { id, entity\_id, x, y, z, rotation }
 
-### **color\_data** (_list_)
+### **color\_data** (_list_) - 2D table of color values (128x128)
+
+### **colors** (_list_) - raw flat array of color values (16384 entries)
 
 ## Functions
 
@@ -39,13 +41,10 @@ icon: map-location
 Get color from map.
 
 **Returns:**
-
 * (number) Return color.
 
 **Example Usage:**
-
 ```lua
--- Example code showing how to use the function
 local map_item = player.inventory.getStack(8)
 local map_data = map_item.map
 if map_data then
@@ -58,16 +57,13 @@ end
 Update color in map.
 
 **Returns:**
-
 * (number) New color.
 
 **Example Usage:**
-
 ```lua
--- Example code showing how to use the function
 local map_item = player.inventory.getStack(8)
 local map_data = map_item.map
 if map_data then
-    map_data.updateColor(0, 0, 0) -- 0 color its transparent
+    map_data.updateColor(0, 0, 0) -- 0 color is transparent
 end
 ```

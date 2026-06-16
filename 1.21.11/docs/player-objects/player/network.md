@@ -15,10 +15,11 @@ Get players list.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>local list = player.network.getPlayersList()
-</strong>for index, pl in pairs(list) do
+local list = player.network.getPlayersList()
+for index, pl in pairs(list) do
     if pl.name then
         player.addMessage(pl.name)
     end
@@ -36,7 +37,7 @@ local player = require("player")
         player.addMessage(pl.skin_texture)
     end
 end
-</code></pre>
+```
 
 ### `connectToServer(host, port)`
 
@@ -49,14 +50,16 @@ Connect to server.
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>player.network.connectToServer("mc.hypixel.net", 25565)
-</strong></code></pre>
+player.network.connectToServer("mc.hypixel.net", 25565)
+```
+
 
 ### `disconnectFromServer(reason)`
 
@@ -68,14 +71,16 @@ Disconnect from server.
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>player.network.disconnectFromServer("Macros shedule")
-</strong></code></pre>
+player.network.disconnectFromServer("Macros shedule")
+```
+
 
 ### `sendStartDestroyBlockPacket(x, y, z, direction)`
 
@@ -86,18 +91,20 @@ Send block breaking packet.
 * `x` (number).
 * `y` (number).
 * `z` (number).
-* `direction` (string) <mark style="color:orange;">UP</mark>, <mark style="color:orange;">DOWN</mark>, <mark style="color:orange;">NORTH</mark>, <mark style="color:orange;">SOUTH</mark>, <mark style="color:orange;">WEST</mark>, <mark style="color:orange;">EAST</mark>
+* `direction` (string) `UP`, `DOWN`, `NORTH`, `SOUTH`, `WEST`, `EAST`
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>player.network.sendStartDestroyBlockPacket(0, 0, 0, "DOWN")
-</strong></code></pre>
+player.network.sendStartDestroyBlockPacket(0, 0, 0, "DOWN")
+```
+
 
 ### `sendStopDestroyBlockPacket(x, y, z, direction)`
 
@@ -108,38 +115,66 @@ Send block stop breaking packet.
 * `x` (number).
 * `y` (number).
 * `z` (number).
-* `direction` (string) <mark style="color:orange;">UP</mark>, <mark style="color:orange;">DOWN</mark>, <mark style="color:orange;">NORTH</mark>, <mark style="color:orange;">SOUTH</mark>, <mark style="color:orange;">WEST</mark>, <mark style="color:orange;">EAST</mark>
+* `direction` (string) `UP`, `DOWN`, `NORTH`, `SOUTH`, `WEST`, `EAST`
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>player.network.sendStopDestroyBlockPacket(0, 0, 0, "DOWN")
-</strong></code></pre>
+player.network.sendStopDestroyBlockPacket(0, 0, 0, "DOWN")
+```
+
 
 ### `sendStopAbortBlockPacket(x, y, z, direction)`
 
-Send cancel block breaking bpacket.
+Send cancel block breaking packet.
 
 **Parameters:**
 
 * `x` (number).
 * `y` (number).
 * `z` (number).
-* `direction` (string) <mark style="color:orange;">UP</mark>, <mark style="color:orange;">DOWN</mark>, <mark style="color:orange;">NORTH</mark>, <mark style="color:orange;">SOUTH</mark>, <mark style="color:orange;">WEST</mark>, <mark style="color:orange;">EAST</mark>
+* `direction` (string) `UP`, `DOWN`, `NORTH`, `SOUTH`, `WEST`, `EAST`
 
 **Returns:**
 
-* (boolean) Return <mark style="color:$success;">**true**</mark> if successfully.
+* (boolean) Return `true` if successfully.
 
 **Example Usage:**
 
-<pre class="language-lua"><code class="lang-lua">-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 local player = require("player")
-<strong>player.network.sendAbortBlockPacket(0, 0, 0, "DOWN")
-</strong></code></pre>
+player.network.sendAbortBlockPacket(0, 0, 0, "DOWN")
+```
+
+
+### `sendAbortDestroyBlockPacket(x, y, z, direction)`
+
+Send block abort breaking packet. Aborts the current block breaking action.
+
+**Parameters:**
+
+* `x` (number).
+* `y` (number).
+* `z` (number).
+* `direction` (string) `UP`, `DOWN`, `NORTH`, `SOUTH`, `WEST`, `EAST`
+
+**Returns:**
+
+* (boolean) Return `true` if successfully.
+
+**Example Usage:**
+
+```lua
+-- Example code showing how to use the function
+local player = require("player")
+player.network.sendAbortDestroyBlockPacket(0, 0, 0, "DOWN")
+```
+
 

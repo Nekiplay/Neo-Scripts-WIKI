@@ -30,13 +30,10 @@ icon: square-full
 Return box size.
 
 **Returns:**
-
 * (number) Box size.
 
 **Example Usage:**
-
 ```lua
---- Example code showing how to use the function
 local box = player.entity.box
 local size = box.getSize()
 ```
@@ -46,257 +43,136 @@ local size = box.getSize()
 Return box x size.
 
 **Returns:**
-
-* (number) Box x size.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local size = box.getXSize()
-```
+* (number)
 
 ### `getZSize()`
 
 Return box z size.
 
 **Returns:**
-
-* (number) Box z size.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local size = box.getZSize()
-```
+* (number)
 
 ### `getYSize()`
 
 Return box y size.
 
 **Returns:**
-
-* (number) Box y size.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local size = box.getYSize()
-```
+* (number)
 
 ### `getCenter()`
 
 Return box center.
 
 **Returns:**
-
 * (table) { x, y, z }.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local center = box.getCenter()
-local x = center.x
-local y = center.y
-local z = center.z
-```
 
 ### `setMinX(number)`
 
-Change box mix x size.
+Change box min x size.
 
 **Returns:**
-
 * ([Box](box.md)) Return new box.
 
-**Example Usage:**
+### `setMinY(number)`, `setMinZ(number)`, `setMaxX(number)`, `setMaxY(number)`, `setMaxZ(number)`
 
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMinX(1)
-```
-
-### `setMinY(number)`
-
-Change box mix y size.
+Change box bounds.
 
 **Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMinY(1)
-```
-
-### `setMinZ(number)`
-
-Change box mix z size.
-
-**Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMinZ(1)
-```
-
-### `setMaxX(number)`
-
-Change box max x size.
-
-**Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMaxX(1)
-```
-
-### `setMaxY(number)`
-
-Change box max y size.
-
-**Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMaxY(1)
-```
-
-### `setMaxZ(number)`
-
-Change box max z size.
-
-**Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.setMaxZ(1)
-```
+* ([Box](box.md))
 
 ### `expand(x, y, z)`
 
-Expand box.
+Expand box by given amounts.
 
 **Returns:**
+* ([Box](box.md))
 
-* ([Box](box.md)) Return new box.
+### `contract(x, y, z)`
 
-**Example Usage:**
+Contract box by given amounts.
 
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.expand(0.0, 2.0, 0.0)
-```
+**Returns:**
+* ([Box](box.md))
 
 ### `inflate(x, y, z)`
 
-Inflate box.
+Inflate box (expand in all directions).
 
 **Returns:**
-
-* ([Box](box.md)) Return new box.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.inflate(0.0, 2.0, 0.0)
-```
+* ([Box](box.md))
 
 ### `deflate(x, y, z)`
 
-Deflate box.
+Deflate box (shrink in all directions).
 
 **Returns:**
+* ([Box](box.md))
 
-* ([Box](box.md)) Return new box.
+### `intersect(box)`
 
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.deflate(1.0, 1.0, 1.0)
-```
-
-### `intersect(x, y, z)`
-
-Intersect box.
+Intersect with another box.
 
 **Returns:**
+* ([Box](box.md))
 
-* ([Box](box.md)) Return new box.
+### `union(box)`
 
-**Example Usage:**
+Union with another box (minmax of both).
 
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.intersect(1.0, 1.0, 1.0)
-```
+**Returns:**
+* ([Box](box.md))
 
 ### `move(x, y, z)`
 
-Move box.
+Move box by offset.
 
 **Returns:**
+* ([Box](box.md))
 
-* ([Box](box.md)) Return new box.
+### `offset(x, y, z)`
 
-**Example Usage:**
+Alias for move.
 
-```lua
--- Example code showing how to use the function
-local box = player.entity.box
-local newBox = box.move(0.0, 2.0, 0.0)
-```
+### `intersects(box)`
+
+Check if boxes intersect.
+
+**Parameters:**
+* `box` ([Box](box.md)) or (x1, y1, z1, x2, y2, z2).
+
+**Returns:**
+* (boolean)
+
+### `contains(x, y, z)`
+
+Check if point is inside box.
+
+**Parameters:**
+* `x` (number), `y` (number), `z` (number)
+
+**Returns:**
+* (boolean)
+
+### `clip(start, end)`
+
+Clip a ray against the box.
+
+**Parameters:**
+* `start` (table) - { x, y, z }
+* `end` (table) - { x, y, z }
+
+**Returns:**
+* (table) - { x, y, z } or nil if no intersection
 
 ### `distanceToSqr(x, y, z)`
 
 Get squared distance to position.
 
 **Returns:**
-
-* (number) - Distance
+* (number)
 
 **Example Usage:**
-
 ```lua
--- Example code showing how to use the function
 local box = player.entity.box
 local distance = box.distanceToSqr(0.0, 0.0, 0.0)
 ```
-

@@ -87,3 +87,57 @@ local world = require("world")
 local blockState = creator.createBlockState(1)
 world.setBlock(0, 64, 0, blockState)
 ```
+
+## `createDirection(name)`
+
+Create a [Direction](../datatypes/direction.md).
+
+**Parameters:**
+
+* `name` (string) - one of: "down", "up", "north", "south", "west", "east".
+
+**Example Usage:**
+
+```Lua
+local creator = require("creator")
+local dir = creator.createDirection("north")
+print(dir.opposite.name) -- "south"
+```
+
+## `createItemStackFromIdentifier(identifier)`
+
+Create an item from identifier string.
+
+**Parameters:**
+
+* `identifier` (string) - e.g. "minecraft:stone".
+
+**Example Usage:**
+
+```Lua
+local creator = require("creator")
+local item = creator.createItemStackFromIdentifier("minecraft:diamond_sword")
+```
+
+## `createItemStackFromId(id)`
+
+Create an item from numeric item ID.
+
+**Parameters:**
+
+* `id` (number) - numeric item ID.
+
+## `createItemStackFromHypixelSkyblockId(neu_id)`
+
+Create an item from Hypixel Skyblock NEU ID.
+
+**Parameters:**
+
+* `neu_id` (string) - e.g. "HYPERION".
+
+**Example Usage:**
+
+```Lua
+local creator = require("creator")
+local item = creator.createItemStackFromHypixelSkyblockId("HYPERION")
+```
