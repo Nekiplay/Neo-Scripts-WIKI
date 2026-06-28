@@ -7,16 +7,18 @@ icon: grid-2-plus
 
 The `block_iterator` module provides an efficient way to scan blocks in a cubic area without causing lag. It processes blocks in batches.
 
-## `new_iterator(x, y, z, radius)`
+## `new_iterator(x, y, z, horizontalRadius, downRadius, upRadius)`
 
 Creates a new block iterator centered at the given coordinates with the specified radius.
 
 **Parameters:**
 
-* `x` (number) - Center X coordinate.
-* `y` (number) - Center Y coordinate.
-* `z` (number) - Center Z coordinate.
-* `radius` (number) - Scan radius from center.
+* `x` (integer) - Center X coordinate.
+* `y` (integer) - Center Y coordinate.
+* `z` (integer) - Center Z coordinate.
+* `horizontalRadius` (integer) - Scan horizontal radius from center.
+* `downRadius` (integer) - Scan down radius from center.
+* `upRadius` (integer) - Scan up radius from center.
 
 **Returns:**
 
@@ -29,7 +31,7 @@ Creates a new block iterator centered at the given coordinates with the specifie
 local scanner = require("block_iterator")
 local player = require("player")
 local pos = player.getPos()
-local iterator = scanner.new_iterator(math.floor(pos.x), math.floor(pos.y), math.floor(pos.z), 16)
+local iterator = scanner.new_iterator(math.floor(pos.x), math.floor(pos.y), math.floor(pos.z), 16, 16, 16)
 ```
 
 ## Block Iterator Methods
