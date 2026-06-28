@@ -3,7 +3,7 @@ Welcome to the **Neo Scripts** LuaAPI wiki!
 
 Lua version: 5.3
 
-Currently wiki only for default branch
+Currently wiki only for latest mod version for `Minecraft 1.21.11`
 
 Directory for scripts `config\neoscripts\scripts\`
 
