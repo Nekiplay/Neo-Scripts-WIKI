@@ -86,31 +86,6 @@ Mul cordinates to vector.
 -- Example code showing how to use the function
 local creator = require("creator")
 local vector3 = creator.createVector3(1, 1, 1)
-local halfDownVector = vector3.mul(0, 0.5, 0)
-```
-
-### `mul(x, y, z)`
-
-Mul cordinates to vector.
-
-**Parameters:**
-
-* `x` (number).
-
-* `y` (number).
-
-* `z` (number).
-
-**Returns:**
-
-* [vector3](../datatypes/vector3.md). New vector.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local creator = require("creator")
-local vector3 = creator.createVector3(1, 1, 1)
 local halfUpperVector = vector3.mul(0, 0.5, 0)
 ```
 
@@ -238,7 +213,7 @@ local vector3 = creator.createVector3(1, 1, 1)
 local dot = vector3.dot(2, 2, 2)
 ```
 
-### `dot(x, y, z)`
+### `cross(x, y, z)`
 
 **Parameters:**
 

@@ -29,6 +29,52 @@ local blockInfo = world.getBlock(1, 1, 1)
 local blockInfo2 = world.getBlockState(1, 1, 1)
 ```
 
+## `getBlocksInBox(box)` / `getBlocksInBox(pos1, pos2)`
+
+Gets information about a blocks by box or two positions.
+
+**Parameters:**
+
+* `box` ([box](../datatypes/box.md)).
+* `pos1` ([blockpos](../datatypes/blockpos.md)).
+* `pos2` ([blockpos](../datatypes/blockpos.md)).
+
+**Returns:**
+
+* table
+
+**Example Usage:**
+
+
+```lua
+-- Example code showing how to use the function
+local creator = require("creator")
+local player = require("player")
+local world = require("world")
+
+local pos = player.getPos()
+local x = math.floor(pos.x)
+local y = math.floor(pos.y)
+local z = math.floor(pos.z)
+local radius = 164
+
+local box = creator.createBox(x - radius, y - radius, z - radius, x + radius, y + radius, z + radius)
+local blocks = world.getBlocksIsBox(box)
+for index, value in ipairs(blocks) do
+    local pos = value.pos
+    local block = value.state
+end
+
+
+local min = creator.createBlockPos(x - radius, y - radius, z - radius)
+local max = creator.createBlockPos(x + radius, y + radius, z + radius)
+local blocks = world.getBlocksIsBox(min, max)
+for index, value in ipairs(blocks) do
+    local pos = value.pos
+    local block = value.state
+end
+```
+
 ## `setBlock(x, y, z, id)`
 
 Sets the block to the desired coordinates.

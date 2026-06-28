@@ -23,7 +23,7 @@ local server = http.create_server(host, port, function(req)
         return {
             status = 200,
             headers = { ["Content-Type"] = "text/html; charset=utf-8" },
-            body = "<h1>Hello from Lua!</h1>"
+            body = encoding.stringToBytes("<h1>Hello from Lua!</h1>", "UTF-8")
         }
     end
 end)
