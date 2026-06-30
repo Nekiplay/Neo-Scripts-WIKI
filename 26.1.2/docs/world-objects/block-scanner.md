@@ -61,7 +61,9 @@ local iterator = scanner.new_iterator(
     math.floor(pos.x),
     math.floor(pos.y),
     math.floor(pos.z),
-    16
+    16,
+	16,
+	16
 )
 
 local more = true
@@ -102,7 +104,9 @@ local iterator = scanner.new_iterator(
     math.floor(pos.x),
     math.floor(pos.y),
     math.floor(pos.z),
-    16
+    16,
+	16,
+	16
 )
 
 -- Check progress
