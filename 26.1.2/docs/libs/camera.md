@@ -10,7 +10,7 @@ The `camera` global provides access to the current frame's view and projection m
 ## Usage
 
 ```lua
--- camera is a global, no require needed
+local camera = require("camera")
 local view = camera.getViewMatrix()
 ```
 
