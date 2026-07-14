@@ -19,6 +19,7 @@ export const routes = Object.fromEntries([
   ["/general/window.html", { loader: () => import(/* webpackChunkName: "general_window.html" */"C:/wiki/26.1.2/docs/general/window.md"), meta: {"title":"Window"} }],
   ["/libs/archive.html", { loader: () => import(/* webpackChunkName: "libs_archive.html" */"C:/wiki/26.1.2/docs/libs/archive.md"), meta: {"title":"Archive"} }],
   ["/libs/blocks.html", { loader: () => import(/* webpackChunkName: "libs_blocks.html" */"C:/wiki/26.1.2/docs/libs/blocks.md"), meta: {"title":"Blocks"} }],
+  ["/libs/camera.html", { loader: () => import(/* webpackChunkName: "libs_camera.html" */"C:/wiki/26.1.2/docs/libs/camera.md"), meta: {"title":"Camera"} }],
   ["/libs/creator.html", { loader: () => import(/* webpackChunkName: "libs_creator.html" */"C:/wiki/26.1.2/docs/libs/creator.md"), meta: {"title":"Creator"} }],
   ["/libs/deep-java-learining-djl4.html", { loader: () => import(/* webpackChunkName: "libs_deep-java-learining-djl4.html" */"C:/wiki/26.1.2/docs/libs/deep-java-learining-djl4.md"), meta: {"title":"Deep Java Learining (djl)"} }],
   ["/libs/encoding.html", { loader: () => import(/* webpackChunkName: "libs_encoding.html" */"C:/wiki/26.1.2/docs/libs/encoding.md"), meta: {"title":"Encoding"} }],
