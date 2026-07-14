@@ -5,7 +5,7 @@ description: A library for building rich text components with click/hover events
 
 # Text Builder
 
-**Module names:** `textbuilder`, `text_builder`, `component_builder`, `componentbuilder`
+**Module names:** `textbuilder`, `text-builder`, `component-builder`, `componentbuilder`
 
 ## `new(text)`
 
@@ -19,7 +19,7 @@ Create a new text component builder.
 
 **Example Usage:**
 ```lua
-local ComponentBuilder = require("text_builder")
+local ComponentBuilder = require("text-builder")
 local builder = ComponentBuilder.new("Hello!")
 ```
 
@@ -32,7 +32,7 @@ Create an empty text component builder.
 
 **Example Usage:**
 ```lua
-local ComponentBuilder = require("text_builder")
+local ComponentBuilder = require("text-builder")
 local builder = ComponentBuilder.empty()
 ```
 
@@ -138,7 +138,7 @@ Builds the component.
 
 ```lua
 local player = require("player")
-local ComponentBuilder = require("text_builder")
+local ComponentBuilder = require("text-builder")
 
 local message = ComponentBuilder.new("Hello! ")
     :color("white")
