@@ -49,6 +49,7 @@ export default defineUserConfig({
           { text: "📄 Encoding", link: "/libs/encoding.html" },
           { text: "✏️ Text Builder", link: "/libs/text-builder.html" },
           { text: "➕ Creator", link: "/libs/creator.html" },
+          { text: "🎥 Camera", link: "/libs/camera.html" },
           { text: "🌐 Http", link: "/libs/http.html" },
           { text: "🌐 TCP", link: "/libs/tcp.html" },
           { text: "📄 Json", link: "/libs/json.html" },
