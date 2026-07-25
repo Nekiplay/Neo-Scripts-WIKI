@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:build": "vuepress build 1.21.11/docs && node copy-1.21.11.mjs && vuepress build 26.1.2/docs && node copy-26.1.2.mjs"
+    "docs:build": "vuepress build 1.21.11/docs && node copy-1.21.11.mjs && vuepress build 26.1.2/docs && node copy-26.1.2.mjs && vuepress build 26.2/docs && node copy-26.2.mjs"
   },
   "keywords": [],
   "author": "",
