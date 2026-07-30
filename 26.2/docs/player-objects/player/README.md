@@ -92,38 +92,6 @@ local player = require("player")
 player.sendCommand("/warp hub")
 ```
 
-### `getProfile()`
-
-Returns the player profile.
-
-**Returns:**
-
-* (string) Profile name.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local player = require("player")
-local name = player.getProfile()
-```
-
-### `getProfileId()`
-
-Returns the player profile id.
-
-**Returns:**
-
-* (string) Profile id.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local player = require("player")
-local id = player.getProfileId()
-```
-
 ### `getName()`
 
 Returns the player name.
@@ -138,22 +106,6 @@ Returns the player name.
 -- Example code showing how to use the function
 local player = require("player")
 local name = player.getName()
-```
-
-### `getRank()`
-
-Returns the player rank.
-
-**Returns:**
-
-* (string) Player rank.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local player = require("player")
-local rank = player.getRank()
 ```
 
 ### `getRotation()`
@@ -303,22 +255,6 @@ Returns the player is on ground.
 -- Example code showing how to use the function
 local player = require("player")
 local isOnGround = player.isOnGround()
-```
-
-### `isOnSkyBlock()`
-
-Returns the player is on skyblock.
-
-**Returns:**
-
-* (boolean) is player on skyblock.
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-local player = require("player")
-local isOnSkyBlock = player.isOnSkyBlock()
 ```
 
 Returns scoreboard lines.
