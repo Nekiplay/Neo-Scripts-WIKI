@@ -2650,21 +2650,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Regression (Math prediction)",
-        "slug": "regression-math-prediction",
-        "link": "#regression-math-prediction",
-        "children": []
-      }
-    ],
-    "path": "/libs/deep-java-learining-djl4/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "Catboost",
     "headers": [
       {
@@ -2676,6 +2661,21 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/libs/catboost/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Regression (Math prediction)",
+        "slug": "regression-math-prediction",
+        "link": "#regression-math-prediction",
+        "children": []
+      }
+    ],
+    "path": "/libs/deep-java-learining-djl4/examples.html",
     "pathLocale": "/",
     "extraFields": []
   },
