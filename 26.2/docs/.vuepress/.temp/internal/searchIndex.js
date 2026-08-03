@@ -2461,9 +2461,9 @@ export const SEARCH_INDEX = [
       },
       {
         "level": 2,
-        "title": "renderHologramBlock(x, y, z, id)",
-        "slug": "renderhologramblock-x-y-z-id",
-        "link": "#renderhologramblock-x-y-z-id",
+        "title": "renderHologramBlock(x, y, z, id, alpha)",
+        "slug": "renderhologramblock-x-y-z-id-alpha",
+        "link": "#renderhologramblock-x-y-z-id-alpha",
         "children": []
       },
       {

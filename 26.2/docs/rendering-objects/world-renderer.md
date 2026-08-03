@@ -251,9 +251,9 @@ end)
 
 <figure><img src="../.gitbook/assets/изображение.png" alt=""><figcaption></figcaption></figure>
 
-## `renderHologramBlock(x, y, z, id)`
+## `renderHologramBlock(x, y, z, id, alpha)`
 
-Draws a 3D opacity block.
+Draws a 3D block.
 
 **Returns:**
 
@@ -264,7 +264,7 @@ Draws a 3D opacity block.
 ```lua
 -- Example code showing how to use the function
 registerWorldRenderer(function(context)
-    context.renderHologramBlock(0, 160, 0, 1)
+    context.renderHologramBlock(0, 160, 0, 1, 50)
 end)
 ```
 

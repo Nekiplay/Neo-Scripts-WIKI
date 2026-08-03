@@ -3,6 +3,8 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
+import { markdownStylizePlugin } from '@vuepress/plugin-markdown-stylize'
+import { iconifyPlugin } from 'vuepress-plugin-iconify'
 
 export default defineUserConfig({
   lang: 'ru-RU',
@@ -30,6 +32,10 @@ export default defineUserConfig({
 	  theme: 'github-dark',
       langs: ['ts', 'json', 'vue', 'md', 'bash', 'diff', 'lua'],
     }),
+	markdownStylizePlugin({
+      // options
+    }),
+	iconifyPlugin(),
   ],
 
   // Добавляем подключение Font Awesome в тег <head>

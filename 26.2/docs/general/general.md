@@ -35,17 +35,12 @@ registerCommand("config",
         for word in info.fullInput:gmatch("%S+") do
             table.insert(parts, word)
         end
-        
-        if #parts <= 2 then
+        if #parts < 2 then
             return {"render", "gameplay", "chat", "debug"}
-        elseif #parts == 3 then
+        elseif #parts == 2 then
             local category = parts[2]
             if category == "render" then
                 return {"fps", "distance", "shadows", "particles"}
-            elseif category == "gameplay" then
-                return {"difficulty", "autosave", "hints"}
-            elseif category == "chat" then
-                return {"filter", "timestamp", "colors"}
             end
         end
         

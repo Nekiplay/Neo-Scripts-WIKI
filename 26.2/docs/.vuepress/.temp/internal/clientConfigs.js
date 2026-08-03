@@ -10,6 +10,8 @@ import * as clientConfig8 from 'C:/wiki/node_modules/@vuepress/plugin-theme-data
 import * as clientConfig9 from 'C:/wiki/node_modules/@vuepress/theme-default/dist/client/config.js'
 import * as clientConfig10 from 'C:/wiki/node_modules/@vuepress/plugin-search/dist/client/config.js'
 import * as clientConfig11 from 'C:/wiki/26.2/docs/.vuepress/.temp/shiki/config.js'
+import * as clientConfig12 from 'C:/wiki/26.2/docs/.vuepress/.temp/markdown-stylize/config.js'
+import * as clientConfig13 from 'C:/wiki/node_modules/vuepress-plugin-iconify/dist/client/config.mjs'
 
 export const clientConfigs = [
   clientConfig0,
@@ -24,4 +26,6 @@ export const clientConfigs = [
   clientConfig9,
   clientConfig10,
   clientConfig11,
+  clientConfig12,
+  clientConfig13,
 ].map((m) => m.default).filter(Boolean)
