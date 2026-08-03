@@ -269,26 +269,3 @@ end)
 ```
 
 <figure><img src="../.gitbook/assets/изображение (11).png" alt=""><figcaption></figcaption></figure>
-
-## `renderBlock(x, y, z, id)`
-
-Draws a 3D opacity block.
-
-**Parameters:**
-
-* `object` (table (x, y, z, id))
-
-**Returns:**
-
-* (boolean) Return true if successfully
-
-**Example Usage:**
-
-```lua
--- Example code showing how to use the function
-registerWorldRenderer(function(context)
-    context.renderBlock(0, 160, 0, 1)
-end)
-```
-
-<figure><img src="../.gitbook/assets/изображение (12).png" alt=""><figcaption></figcaption></figure>
