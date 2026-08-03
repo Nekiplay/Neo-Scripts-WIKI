@@ -1,6 +1,8 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 
 export default defineUserConfig({
   lang: 'ru-RU',
@@ -10,6 +12,25 @@ export default defineUserConfig({
   // 1. Важно: базовый URL-путь. Должен совпадать с названием папки в htdocs.
   // Обязательно должен начинаться и заканчиваться косой чертой (/).
   base: '/wiki/26.1.2/',
+
+  plugins: [
+    searchPlugin({
+	  locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/ru/': {
+          placeholder: 'Поиск',
+        },
+      },
+      isSearchable: (page) => page.path !== '/',
+    }),
+	shikiPlugin({
+      // options
+	  theme: 'github-dark',
+      langs: ['ts', 'json', 'vue', 'md', 'bash', 'diff', 'lua'],
+    }),
+  ],
 
   // Добавляем подключение Font Awesome в тег <head>
   head: [
@@ -23,6 +44,9 @@ export default defineUserConfig({
   ],
   
   theme: defaultTheme({
+	themePlugins: {
+      prismjs: false,
+    },
     // Ручная настройка структуры бокового меню
     sidebar: [
       {

@@ -261,7 +261,8 @@ Draws a 3D opacity block.
 
 **Example Usage:**
 
-```lua-- Example code showing how to use the function
+```lua
+-- Example code showing how to use the function
 registerWorldRenderer(function(context)
     context.renderHologramBlock(0, 160, 0, 1)
 end)
