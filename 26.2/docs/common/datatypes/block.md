@@ -49,6 +49,8 @@ icon: cube
 
 **power** (_number_) (only for redstone wire)
 
+**properties** ([Block Properties](block_properties.md))
+
 ## Settable Properties
 
 Some block state properties can be modified for fake blocks:

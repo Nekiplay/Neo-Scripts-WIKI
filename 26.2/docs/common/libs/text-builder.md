@@ -116,7 +116,7 @@ Changes book page when clicked.
 Shows text when hovered.
 
 **Parameters:**
-* `text` (string) or ([ComponentBuilder](text-builder.md)) or ([Component](component.md))
+* `text` (string) or ([ComponentBuilder](text-builder.md)) or ([Component](../datatypes/component.md))
 
 ## Structure
 
@@ -132,7 +132,7 @@ Appends another component builder or string.
 Builds the component.
 
 **Returns:**
-* ([Component](component.md))
+* ([Component](../datatypes/component.md))
 
 ## Complete Example
 

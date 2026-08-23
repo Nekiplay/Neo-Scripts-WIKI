@@ -7,7 +7,7 @@ icon: backpack
 
 ## Variables
 
-### [carriedItem](../../datatypes/item.md)
+### [carriedItem](/common/datatypes/item.md)
 
 ## Functions
 
@@ -112,7 +112,7 @@ Returns the item in the slot.
 
 **Returns:**
 
-* ([item data](../../datatypes/item.md)).
+* ([item data](/common/datatypes/item.md)).
 
 **Example Usage:**
 
@@ -132,7 +132,7 @@ Returns the item in the slot.
 
 **Returns:**
 
-* ([item data](../../datatypes/item.md)).
+* ([item data](/common/datatypes/item.md)).
 
 **Example Usage:**
 
@@ -181,7 +181,7 @@ Sets an item in the player's inventory slot.
 **Parameters:**
 
 * `slot` (number) - Slot id.
-* `item` ([item data](../../datatypes/item.md)) - Item to set.
+* `item` ([item data](/common/datatypes/item.md)) - Item to set.
 
 **Returns:**
 
@@ -203,7 +203,7 @@ Sets an item in a container slot (chest, etc.).
 **Parameters:**
 
 * `slot` (number) - Slot id.
-* `item` ([item data](../../datatypes/item.md)) - Item to set.
+* `item` ([item data](/common/datatypes/item.md)) - Item to set.
 
 **Returns:**
 

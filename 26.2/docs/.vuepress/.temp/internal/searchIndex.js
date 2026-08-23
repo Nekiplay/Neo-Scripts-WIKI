@@ -1,5 +1,1176 @@
 export const SEARCH_INDEX = [
   {
+    "title": "Events",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registration Functions",
+        "slug": "registration-functions",
+        "link": "#registration-functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerUnloadCallback(function)",
+            "slug": "registerunloadcallback-function",
+            "link": "#registerunloadcallback-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTick(function)",
+            "slug": "registerservertick-function",
+            "link": "#registerservertick-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTickPre(function)",
+            "slug": "registerservertickpre-function",
+            "link": "#registerservertickpre-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTickPost(function)",
+            "slug": "registerservertickpost-function",
+            "link": "#registerservertickpost-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerWorldTick(function(world))",
+            "slug": "registerserverworldtick-function-world",
+            "link": "#registerserverworldtick-function-world",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerWorldTickPre(function(world))",
+            "slug": "registerserverworldtickpre-function-world",
+            "link": "#registerserverworldtickpre-function-world",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerWorldTickPost(function(world))",
+            "slug": "registerserverworldtickpost-function-world",
+            "link": "#registerserverworldtickpost-function-world",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Interaction Callbacks",
+        "slug": "interaction-callbacks",
+        "link": "#interaction-callbacks",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerAttackBlockCallback(function(table))",
+            "slug": "registerattackblockcallback-function-table",
+            "link": "#registerattackblockcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseBlockCallback(function(table))",
+            "slug": "registeruseblockcallback-function-table",
+            "link": "#registeruseblockcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseItemOnBlockCallback(function(table))",
+            "slug": "registeruseitemonblockcallback-function-table",
+            "link": "#registeruseitemonblockcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseWithoutItemCallback(function(table))",
+            "slug": "registerusewithoutitemcallback-function-table",
+            "link": "#registerusewithoutitemcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBreakBlockBeforeCallback(function(table))",
+            "slug": "registerbreakblockbeforecallback-function-table",
+            "link": "#registerbreakblockbeforecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBreakBlockAfterCallback(function(table))",
+            "slug": "registerbreakblockaftercallback-function-table",
+            "link": "#registerbreakblockaftercallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBreakBlockCancelCallback(function(table))",
+            "slug": "registerbreakblockcancelcallback-function-table",
+            "link": "#registerbreakblockcancelcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAttackEntityCallback(function(table))",
+            "slug": "registerattackentitycallback-function-table",
+            "link": "#registerattackentitycallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseEntityCallback(function(table))",
+            "slug": "registeruseentitycallback-function-table",
+            "link": "#registeruseentitycallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseItemCallback(function(table))",
+            "slug": "registeruseitemcallback-function-table",
+            "link": "#registeruseitemcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseItemOnCallback(function(table))",
+            "slug": "registeruseitemoncallback-function-table",
+            "link": "#registeruseitemoncallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPickItemFromBlockCallback(function(table))",
+            "slug": "registerpickitemfromblockcallback-function-table",
+            "link": "#registerpickitemfromblockcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPickItemFromEntityCallback(function(table))",
+            "slug": "registerpickitemfromentitycallback-function-table",
+            "link": "#registerpickitemfromentitycallback-function-table",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Unregistration Functions",
+        "slug": "unregistration-functions",
+        "link": "#unregistration-functions",
+        "children": []
+      }
+    ],
+    "path": "/server/events.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "General",
+    "headers": [
+      {
+        "level": 2,
+        "title": "print(...)",
+        "slug": "print",
+        "link": "#print",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "currentScriptName",
+        "slug": "currentscriptname",
+        "link": "#currentscriptname",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "require(module)",
+        "slug": "require-module",
+        "link": "#require-module",
+        "children": []
+      }
+    ],
+    "path": "/server/general.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Server",
+    "headers": [],
+    "path": "/server/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Server",
+    "headers": [
+      {
+        "level": 2,
+        "title": "getLevel(identifier)",
+        "slug": "getlevel-identifier",
+        "link": "#getlevel-identifier",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getOnlinePlayers()",
+        "slug": "getonlineplayers",
+        "link": "#getonlineplayers",
+        "children": []
+      }
+    ],
+    "path": "/server/server.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "World",
+    "headers": [
+      {
+        "level": 2,
+        "title": "getBlock(x, y, z) / getBlockState(x, y, z)",
+        "slug": "getblock-x-y-z-getblockstate-x-y-z",
+        "link": "#getblock-x-y-z-getblockstate-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getBlockEntity(x, y, z)",
+        "slug": "getblockentity-x-y-z",
+        "link": "#getblockentity-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getDimension()",
+        "slug": "getdimension",
+        "link": "#getdimension",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setBlock(x, y, z, state)",
+        "slug": "setblock-x-y-z-state",
+        "link": "#setblock-x-y-z-state",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isBlockLoaded(x, y, z)",
+        "slug": "isblockloaded-x-y-z",
+        "link": "#isblockloaded-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLight(x, y, z) / getBrightness(x, y, z)",
+        "slug": "getlight-x-y-z-getbrightness-x-y-z",
+        "link": "#getlight-x-y-z-getbrightness-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLightSky(x, y, z) / getBrightnessSky(x, y, z)",
+        "slug": "getlightsky-x-y-z-getbrightnesssky-x-y-z",
+        "link": "#getlightsky-x-y-z-getbrightnesssky-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntities()",
+        "slug": "getentities",
+        "link": "#getentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLivingEntities()",
+        "slug": "getlivingentities",
+        "link": "#getlivingentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getArmorStandEntities()",
+        "slug": "getarmorstandentities",
+        "link": "#getarmorstandentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntitiesInBox(box)",
+        "slug": "getentitiesinbox-box",
+        "link": "#getentitiesinbox-box",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getArmorStandEntitiesInBox(box)",
+        "slug": "getarmorstandentitiesinbox-box",
+        "link": "#getarmorstandentitiesinbox-box",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntityById(id)",
+        "slug": "getentitybyid-id",
+        "link": "#getentitybyid-id",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "spawnEntity(type, x, y, z [, yaw, pitch]) / world.spawn(...)",
+        "slug": "spawnentity-type-x-y-z-yaw-pitch-world-spawn",
+        "link": "#spawnentity-type-x-y-z-yaw-pitch-world-spawn",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getOutlineBoxes(x, y, z, blockState)",
+        "slug": "getoutlineboxes-x-y-z-blockstate",
+        "link": "#getoutlineboxes-x-y-z-blockstate",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getCollisionBoxes(x, y, z, blockState)",
+        "slug": "getcollisionboxes-x-y-z-blockstate",
+        "link": "#getcollisionboxes-x-y-z-blockstate",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getBlocksInBox(box) / getBlocksInBox(pos1, pos2)",
+        "slug": "getblocksinbox-box-getblocksinbox-pos1-pos2",
+        "link": "#getblocksinbox-box-getblocksinbox-pos1-pos2",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getBlocksFromList(positions)",
+        "slug": "getblocksfromlist-positions",
+        "link": "#getblocksfromlist-positions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "playSound(x, y, z, soundIdentifier [, volume, pitch])",
+        "slug": "playsound-x-y-z-soundidentifier-volume-pitch",
+        "link": "#playsound-x-y-z-soundidentifier-volume-pitch",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "raycast(obj)",
+        "slug": "raycast-obj",
+        "link": "#raycast-obj",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "raycastFromRotation(obj)",
+        "slug": "raycastfromrotation-obj",
+        "link": "#raycastfromrotation-obj",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "raycastToBlocksFromId(obj)",
+        "slug": "raycasttoblocksfromid-obj",
+        "link": "#raycasttoblocksfromid-obj",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "raycastToBlocksFromIdentifier(obj)",
+        "slug": "raycasttoblocksfromidentifier-obj",
+        "link": "#raycasttoblocksfromidentifier-obj",
+        "children": []
+      }
+    ],
+    "path": "/server/world.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Events",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registration Functions",
+        "slug": "registration-functions",
+        "link": "#registration-functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerUnloadCallback(function)",
+            "slug": "registerunloadcallback-function",
+            "link": "#registerunloadcallback-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTick(function)",
+            "slug": "registerclienttick-function",
+            "link": "#registerclienttick-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPre(function)",
+            "slug": "registerclienttickpre-function",
+            "link": "#registerclienttickpre-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPost(function)",
+            "slug": "registerclienttickpost-function",
+            "link": "#registerclienttickpost-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerWorldRenderer(function(context))",
+            "slug": "registerworldrenderer-function-context",
+            "link": "#registerworldrenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "register2DRenderer(function(context))",
+            "slug": "register2drenderer-function-context",
+            "link": "#register2drenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiInitEvent(function)",
+            "slug": "registerimguiinitevent-function",
+            "link": "#registerimguiinitevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiRenderEvent(function)",
+            "slug": "registerimguirenderevent-function",
+            "link": "#registerimguirenderevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerLocationChangeEvent(function(location))",
+            "slug": "registerlocationchangeevent-function-location",
+            "link": "#registerlocationchangeevent-function-location",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerMessageEvent(function(text, overlay, json))",
+            "slug": "registermessageevent-function-text-overlay-json",
+            "link": "#registermessageevent-function-text-overlay-json",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendMessageEvent(function(text))",
+            "slug": "registersendmessageevent-function-text",
+            "link": "#registersendmessageevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendCommandEvent(function(text))",
+            "slug": "registersendcommandevent-function-text",
+            "link": "#registersendcommandevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerKeyEvent(function(key, action))",
+            "slug": "registerkeyevent-function-key-action",
+            "link": "#registerkeyevent-function-key-action",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBlockUpdate(function(update))",
+            "slug": "registerblockupdate-function-update",
+            "link": "#registerblockupdate-function-update",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseBlock(function(table))",
+            "slug": "registeruseblock-function-table",
+            "link": "#registeruseblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAttackBlock(function(table))",
+            "slug": "registerattackblock-function-table",
+            "link": "#registerattackblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSlotClick(function(table))",
+            "slug": "registerslotclick-function-table",
+            "link": "#registerslotclick-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerTitleEvent(function(text, isSubTitle))",
+            "slug": "registertitleevent-function-text-issubtitle",
+            "link": "#registertitleevent-function-text-issubtitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerActionBarEvent(function(text))",
+            "slug": "registeractionbarevent-function-text",
+            "link": "#registeractionbarevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
+            "slug": "registerserversiderotationevent-function-yaw-pitch",
+            "link": "#registerserversiderotationevent-function-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTeleportEvent(function(x, y, z))",
+            "slug": "registerserverteleportevent-function-x-y-z",
+            "link": "#registerserverteleportevent-function-x-y-z",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
+            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPlayerSendMovementEvent(function(table))",
+            "slug": "registerplayersendmovementevent-function-table",
+            "link": "#registerplayersendmovementevent-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerInventoryItemChange(function(slot, item))",
+            "slug": "registerinventoryitemchange-function-slot-item",
+            "link": "#registerinventoryitemchange-function-slot-item",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSpawnParticle(function(data))",
+            "slug": "registerspawnparticle-function-data",
+            "link": "#registerspawnparticle-function-data",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSoundPlay(function(data))",
+            "slug": "registersoundplay-function-data",
+            "link": "#registersoundplay-function-data",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Unregistration Functions",
+        "slug": "unregistration-functions",
+        "link": "#unregistration-functions",
+        "children": []
+      }
+    ],
+    "path": "/client/general/events.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "General",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "currentScriptName (string)",
+            "slug": "currentscriptname-string",
+            "link": "#currentscriptname-string",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
+            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
+            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "unregisterCommand(commandName)",
+            "slug": "unregistercommand-commandname",
+            "link": "#unregistercommand-commandname",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Modules API",
+        "slug": "modules-api",
+        "link": "#modules-api",
+        "children": [
+          {
+            "level": 3,
+            "title": "modules.getLoadedScripts()",
+            "slug": "modules-getloadedscripts",
+            "link": "#modules-getloadedscripts",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.getScriptRequirements(scriptName)",
+            "slug": "modules-getscriptrequirements-scriptname",
+            "link": "#modules-getscriptrequirements-scriptname",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.loadScript(path)",
+            "slug": "modules-loadscript-path",
+            "link": "#modules-loadscript-path",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.unloadScript(name)",
+            "slug": "modules-unloadscript-name",
+            "link": "#modules-unloadscript-name",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/general/general.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Window",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isMinimized (boolean)",
+            "slug": "isminimized-boolean",
+            "link": "#isminimized-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isFullscreen (boolean)",
+            "slug": "isfullscreen-boolean",
+            "link": "#isfullscreen-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "refreshRate (number)",
+            "slug": "refreshrate-number",
+            "link": "#refreshrate-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "x (number)",
+            "slug": "x-number",
+            "link": "#x-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "y (number)",
+            "slug": "y-number",
+            "link": "#y-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "width (number)",
+            "slug": "width-number",
+            "link": "#width-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "height (number)",
+            "slug": "height-number",
+            "link": "#height-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenWidth (number)",
+            "slug": "screenwidth-number",
+            "link": "#screenwidth-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenHeight (number)",
+            "slug": "screenheight-number",
+            "link": "#screenheight-number",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "setTitle(title)",
+            "slug": "settitle-title",
+            "link": "#settitle-title",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Example",
+        "slug": "complete-example",
+        "link": "#complete-example",
+        "children": []
+      }
+    ],
+    "path": "/client/general/window.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Camera",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Usage",
+        "slug": "usage",
+        "link": "#usage",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "getViewMatrix()",
+            "slug": "getviewmatrix",
+            "link": "#getviewmatrix",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getProjectionMatrix()",
+            "slug": "getprojectionmatrix",
+            "link": "#getprojectionmatrix",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "world2screen(x, y, z)",
+            "slug": "world2screen-x-y-z",
+            "link": "#world2screen-x-y-z",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/libs/camera.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Xaero Minimap",
+    "headers": [
+      {
+        "level": 2,
+        "title": "createWaypoint(world, x, y, z, text, initials, color)",
+        "slug": "createwaypoint-world-x-y-z-text-initials-color",
+        "link": "#createwaypoint-world-x-y-z-text-initials-color",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "removeWaypoint(world, index)",
+        "slug": "removewaypoint-world-index",
+        "link": "#removewaypoint-world-index",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getWaypoints(world)",
+        "slug": "getwaypoints-world",
+        "link": "#getwaypoints-world",
+        "children": []
+      }
+    ],
+    "path": "/client/libs/xaero-minimap.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "2D renderer",
+    "headers": [
+      {
+        "level": 2,
+        "title": "getWindowScale()",
+        "slug": "getwindowscale",
+        "link": "#getwindowscale",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getTextWidth(str)",
+        "slug": "gettextwidth-str",
+        "link": "#gettextwidth-str",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderText(object)",
+        "slug": "rendertext-object",
+        "link": "#rendertext-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderImage(object)",
+        "slug": "renderimage-object",
+        "link": "#renderimage-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderRect(object)",
+        "slug": "renderrect-object",
+        "link": "#renderrect-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderItemStack(object)",
+        "slug": "renderitemstack-object",
+        "link": "#renderitemstack-object",
+        "children": []
+      }
+    ],
+    "path": "/client/rendering-objects/2d-renderer.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "World renderer",
+    "headers": [
+      {
+        "level": 2,
+        "title": "renderFilled(box, red, green, blue, alpha, throughWalls)",
+        "slug": "renderfilled-box-red-green-blue-alpha-throughwalls",
+        "link": "#renderfilled-box-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderOutline(box, red, green, blue, alpha, lineWidth, throughWalls)",
+        "slug": "renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
+        "link": "#renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderText(x, y, z, text, scale, throughWalls, red, green, blue, qx, qy, qz, qw)",
+        "slug": "rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
+        "link": "#rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderLinesFromPoints(points, red, green, blue, alpha, lineWidth, throughWalls)",
+        "slug": "renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
+        "link": "#renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderLineFromCursor(x, y, z, red, green, blue, alpha, lineWidth)",
+        "slug": "renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
+        "link": "#renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderImage(path, x, y, z, width, height, regionWidth, regionHeight, offsetX, offsetY, offsetZ,red, green, blue, alpha, throughWalls)",
+        "slug": "renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
+        "link": "#renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderBeaconBeam(x, y, z, red, green, blue)",
+        "slug": "renderbeaconbeam-x-y-z-red-green-blue",
+        "link": "#renderbeaconbeam-x-y-z-red-green-blue",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderOutlineCircle(x, y, z, radius, segments, thickness, red, green, blue, alpha, throughWalls)",
+        "slug": "renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
+        "link": "#renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderFilledCircle(x, y, z, radius, segments, red, green, blue, alpha, throughWalls)",
+        "slug": "renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
+        "link": "#renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderCylinder(x, y, z, radius, height, segments, red, green, blue, alpha, throughWalls)",
+        "slug": "rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
+        "link": "#rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderSphere(x, y, z, radius, segments, rings, red, green, blue, alpha, throughWalls)",
+        "slug": "rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
+        "link": "#rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderHologramBlock(x, y, z, id, alpha)",
+        "slug": "renderhologramblock-x-y-z-id-alpha",
+        "link": "#renderhologramblock-x-y-z-id-alpha",
+        "children": []
+      }
+    ],
+    "path": "/client/rendering-objects/world-renderer.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Block Scanner",
+    "headers": [
+      {
+        "level": 2,
+        "title": "new_iterator(x, y, z, horizontalRadius, downRadius, upRadius)",
+        "slug": "new-iterator-x-y-z-horizontalradius-downradius-upradius",
+        "link": "#new-iterator-x-y-z-horizontalradius-downradius-upradius",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Block Iterator Methods",
+        "slug": "block-iterator-methods",
+        "link": "#block-iterator-methods",
+        "children": [
+          {
+            "level": 3,
+            "title": "iterator:next_batch(limit)",
+            "slug": "iterator-next-batch-limit",
+            "link": "#iterator-next-batch-limit",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "iterator.progress",
+            "slug": "iterator-progress",
+            "link": "#iterator-progress",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/world-objects/block-scanner.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "World",
+    "headers": [
+      {
+        "level": 2,
+        "title": "getBlock(x, y, z) / getBlockState(x, y, z)",
+        "slug": "getblock-x-y-z-getblockstate-x-y-z",
+        "link": "#getblock-x-y-z-getblockstate-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getBlocksInBox(box) / getBlocksInBox(pos1, pos2)",
+        "slug": "getblocksinbox-box-getblocksinbox-pos1-pos2",
+        "link": "#getblocksinbox-box-getblocksinbox-pos1-pos2",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setBlock(x, y, z, id)",
+        "slug": "setblock-x-y-z-id",
+        "link": "#setblock-x-y-z-id",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isBlockLoaded(x, y, z)",
+        "slug": "isblockloaded-x-y-z",
+        "link": "#isblockloaded-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getOutlineBoxes(x, y, z, blockState)",
+        "slug": "getoutlineboxes-x-y-z-blockstate",
+        "link": "#getoutlineboxes-x-y-z-blockstate",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getCollisionBoxes(x, y, z, blockState)",
+        "slug": "getcollisionboxes-x-y-z-blockstate",
+        "link": "#getcollisionboxes-x-y-z-blockstate",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntities()",
+        "slug": "getentities",
+        "link": "#getentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntitiesInBox(entity, box)",
+        "slug": "getentitiesinbox-entity-box",
+        "link": "#getentitiesinbox-entity-box",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLivingEntities()",
+        "slug": "getlivingentities",
+        "link": "#getlivingentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getEntityById(id)",
+        "slug": "getentitybyid-id",
+        "link": "#getentitybyid-id",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLight(x, y, z) / getBrightness(x, y, z)",
+        "slug": "getlight-x-y-z-getbrightness-x-y-z",
+        "link": "#getlight-x-y-z-getbrightness-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLightSky(x, y, z) / getBrightnessSky(x, y, z)",
+        "slug": "getlightsky-x-y-z-getbrightnesssky-x-y-z",
+        "link": "#getlightsky-x-y-z-getbrightnesssky-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getArmorStandEntities()",
+        "slug": "getarmorstandentities",
+        "link": "#getarmorstandentities",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getArmorStandEntitiesInBox(box)",
+        "slug": "getarmorstandentitiesinbox-box",
+        "link": "#getarmorstandentitiesinbox-box",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getRotation(x, y, z)",
+        "slug": "getrotation-x-y-z",
+        "link": "#getrotation-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "playSound(x, y, z, soundIdentifier, volume, pitch)",
+        "slug": "playsound-x-y-z-soundidentifier-volume-pitch",
+        "link": "#playsound-x-y-z-soundidentifier-volume-pitch",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "raycast(obj)",
+        "slug": "raycast-obj",
+        "link": "#raycast-obj",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getBreakingBlocksInfo()",
+        "slug": "getbreakingblocksinfo",
+        "link": "#getbreakingblocksinfo",
+        "children": []
+      }
+    ],
+    "path": "/client/world-objects/world.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "AxisDirection",
     "headers": [
       {
@@ -32,7 +1203,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/axis-direction.html",
+    "path": "/common/datatypes/axis-direction.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -83,7 +1254,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/axis.html",
+    "path": "/common/datatypes/axis.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -105,7 +1276,59 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/datatypes/block.html",
+    "path": "/common/datatypes/block.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Block Entity",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "Furnace properties",
+            "slug": "furnace-properties",
+            "link": "#furnace-properties",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Settable Properties",
+        "slug": "settable-properties",
+        "link": "#settable-properties",
+        "children": [
+          {
+            "level": 3,
+            "title": "Container slots",
+            "slug": "container-slots",
+            "link": "#container-slots",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory",
+            "slug": "inventory",
+            "link": "#inventory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Furnace properties",
+            "slug": "furnace-properties-1",
+            "link": "#furnace-properties-1",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/common/datatypes/blockEntity.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -220,7 +1443,37 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/blockPos.html",
+    "path": "/common/datatypes/blockPos.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Block Properties",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "getAll()",
+            "slug": "getall",
+            "link": "#getall",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/common/datatypes/block_properties.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -433,7 +1686,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/box.html",
+    "path": "/common/datatypes/box.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -470,7 +1723,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/component.html",
+    "path": "/common/datatypes/component.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -528,7 +1781,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/direction.html",
+    "path": "/common/datatypes/direction.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -562,10 +1815,46 @@ export const SEARCH_INDEX = [
         "title": "Settable Properties",
         "slug": "settable-properties",
         "link": "#settable-properties",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "Position and movement",
+            "slug": "position-and-movement",
+            "link": "#position-and-movement",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Rotation",
+            "slug": "rotation",
+            "link": "#rotation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Common properties (any entity)",
+            "slug": "common-properties-any-entity",
+            "link": "#common-properties-any-entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "LivingEntity only",
+            "slug": "livingentity-only",
+            "link": "#livingentity-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "AgeableMob only",
+            "slug": "ageablemob-only",
+            "link": "#ageablemob-only",
+            "children": []
+          }
+        ]
       }
     ],
-    "path": "/datatypes/entity.html",
+    "path": "/common/datatypes/entity.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -602,7 +1891,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/datatypes/item.html",
+    "path": "/common/datatypes/item.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -738,7 +2027,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/map.html",
+    "path": "/common/datatypes/map.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -796,7 +2085,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/raycast.html",
+    "path": "/common/datatypes/raycast.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -974,394 +2263,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/datatypes/vector3.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Events",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registration Functions",
-        "slug": "registration-functions",
-        "link": "#registration-functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerUnloadCallback(function)",
-            "slug": "registerunloadcallback-function",
-            "link": "#registerunloadcallback-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTick(function)",
-            "slug": "registerclienttick-function",
-            "link": "#registerclienttick-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPre(function)",
-            "slug": "registerclienttickpre-function",
-            "link": "#registerclienttickpre-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPost(function)",
-            "slug": "registerclienttickpost-function",
-            "link": "#registerclienttickpost-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerWorldRenderer(function(context))",
-            "slug": "registerworldrenderer-function-context",
-            "link": "#registerworldrenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "register2DRenderer(function(context))",
-            "slug": "register2drenderer-function-context",
-            "link": "#register2drenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiInitEvent(function)",
-            "slug": "registerimguiinitevent-function",
-            "link": "#registerimguiinitevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiRenderEvent(function)",
-            "slug": "registerimguirenderevent-function",
-            "link": "#registerimguirenderevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerLocationChangeEvent(function(location))",
-            "slug": "registerlocationchangeevent-function-location",
-            "link": "#registerlocationchangeevent-function-location",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerMessageEvent(function(text, overlay, json))",
-            "slug": "registermessageevent-function-text-overlay-json",
-            "link": "#registermessageevent-function-text-overlay-json",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendMessageEvent(function(text))",
-            "slug": "registersendmessageevent-function-text",
-            "link": "#registersendmessageevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendCommandEvent(function(text))",
-            "slug": "registersendcommandevent-function-text",
-            "link": "#registersendcommandevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerKeyEvent(function(key, action))",
-            "slug": "registerkeyevent-function-key-action",
-            "link": "#registerkeyevent-function-key-action",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerBlockUpdate(function(update))",
-            "slug": "registerblockupdate-function-update",
-            "link": "#registerblockupdate-function-update",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerUseBlock(function(table))",
-            "slug": "registeruseblock-function-table",
-            "link": "#registeruseblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerAttackBlock(function(table))",
-            "slug": "registerattackblock-function-table",
-            "link": "#registerattackblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSlotClick(function(table))",
-            "slug": "registerslotclick-function-table",
-            "link": "#registerslotclick-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerTitleEvent(function(text, isSubTitle))",
-            "slug": "registertitleevent-function-text-issubtitle",
-            "link": "#registertitleevent-function-text-issubtitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerActionBarEvent(function(text))",
-            "slug": "registeractionbarevent-function-text",
-            "link": "#registeractionbarevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
-            "slug": "registerserversiderotationevent-function-yaw-pitch",
-            "link": "#registerserversiderotationevent-function-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerTeleportEvent(function(x, y, z))",
-            "slug": "registerserverteleportevent-function-x-y-z",
-            "link": "#registerserverteleportevent-function-x-y-z",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
-            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerPlayerSendMovementEvent(function(table))",
-            "slug": "registerplayersendmovementevent-function-table",
-            "link": "#registerplayersendmovementevent-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerInventoryItemChange(function(slot, item))",
-            "slug": "registerinventoryitemchange-function-slot-item",
-            "link": "#registerinventoryitemchange-function-slot-item",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSpawnParticle(function(data))",
-            "slug": "registerspawnparticle-function-data",
-            "link": "#registerspawnparticle-function-data",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSoundPlay(function(data))",
-            "slug": "registersoundplay-function-data",
-            "link": "#registersoundplay-function-data",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Unregistration Functions",
-        "slug": "unregistration-functions",
-        "link": "#unregistration-functions",
-        "children": []
-      }
-    ],
-    "path": "/general/events.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "General",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "currentScriptName (string)",
-            "slug": "currentscriptname-string",
-            "link": "#currentscriptname-string",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
-            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
-            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "unregisterCommand(commandName)",
-            "slug": "unregistercommand-commandname",
-            "link": "#unregistercommand-commandname",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Modules API",
-        "slug": "modules-api",
-        "link": "#modules-api",
-        "children": [
-          {
-            "level": 3,
-            "title": "modules.getLoadedScripts()",
-            "slug": "modules-getloadedscripts",
-            "link": "#modules-getloadedscripts",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.getScriptRequirements(scriptName)",
-            "slug": "modules-getscriptrequirements-scriptname",
-            "link": "#modules-getscriptrequirements-scriptname",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.loadScript(path)",
-            "slug": "modules-loadscript-path",
-            "link": "#modules-loadscript-path",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.unloadScript(name)",
-            "slug": "modules-unloadscript-name",
-            "link": "#modules-unloadscript-name",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/general/general.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Window",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "isMinimized (boolean)",
-            "slug": "isminimized-boolean",
-            "link": "#isminimized-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isFullscreen (boolean)",
-            "slug": "isfullscreen-boolean",
-            "link": "#isfullscreen-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "refreshRate (number)",
-            "slug": "refreshrate-number",
-            "link": "#refreshrate-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "x (number)",
-            "slug": "x-number",
-            "link": "#x-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "y (number)",
-            "slug": "y-number",
-            "link": "#y-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "width (number)",
-            "slug": "width-number",
-            "link": "#width-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "height (number)",
-            "slug": "height-number",
-            "link": "#height-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenWidth (number)",
-            "slug": "screenwidth-number",
-            "link": "#screenwidth-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenHeight (number)",
-            "slug": "screenheight-number",
-            "link": "#screenheight-number",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "setTitle(title)",
-            "slug": "settitle-title",
-            "link": "#settitle-title",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Complete Example",
-        "slug": "complete-example",
-        "link": "#complete-example",
-        "children": []
-      }
-    ],
-    "path": "/general/window.html",
+    "path": "/common/datatypes/vector3.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1460,7 +2362,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/archive.html",
+    "path": "/common/libs/archive.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1489,51 +2391,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/blocks.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Camera",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Usage",
-        "slug": "usage",
-        "link": "#usage",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "getViewMatrix()",
-            "slug": "getviewmatrix",
-            "link": "#getviewmatrix",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getProjectionMatrix()",
-            "slug": "getprojectionmatrix",
-            "link": "#getprojectionmatrix",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "world2screen(x, y, z)",
-            "slug": "world2screen-x-y-z",
-            "link": "#world2screen-x-y-z",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/libs/camera.html",
+    "path": "/common/libs/blocks.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1563,41 +2421,13 @@ export const SEARCH_INDEX = [
       },
       {
         "level": 2,
-        "title": "createBlockState(id)",
-        "slug": "createblockstate-id",
-        "link": "#createblockstate-id",
-        "children": []
-      },
-      {
-        "level": 2,
         "title": "createDirection(name)",
         "slug": "createdirection-name",
         "link": "#createdirection-name",
         "children": []
-      },
-      {
-        "level": 2,
-        "title": "createItemStackFromIdentifier(identifier)",
-        "slug": "createitemstackfromidentifier-identifier",
-        "link": "#createitemstackfromidentifier-identifier",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "createItemStackFromId(id)",
-        "slug": "createitemstackfromid-id",
-        "link": "#createitemstackfromid-id",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "createItemStackFromHypixelSkyblockId(neu_id)",
-        "slug": "createitemstackfromhypixelskyblockid-neu-id",
-        "link": "#createitemstackfromhypixelskyblockid-neu-id",
-        "children": []
       }
     ],
-    "path": "/libs/creator.html",
+    "path": "/common/libs/creator.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1647,7 +2477,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/deep-java-learining-djl4.html",
+    "path": "/common/libs/deep-java-learining-djl4.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1725,7 +2555,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/encoding.html",
+    "path": "/common/libs/encoding.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1740,7 +2570,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/entities.html",
+    "path": "/common/libs/entities.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1847,7 +2677,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/http.html",
+    "path": "/common/libs/http.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1876,7 +2706,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/items.html",
+    "path": "/common/libs/items.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1898,7 +2728,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/json.html",
+    "path": "/common/libs/json.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2058,7 +2888,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/tcp.html",
+    "path": "/common/libs/tcp.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2239,7 +3069,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/text-builder.html",
+    "path": "/common/libs/text-builder.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2296,427 +3126,240 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/threads.html",
+    "path": "/common/libs/threads.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
-    "title": "Xaero Minimap",
+    "title": "UDP",
     "headers": [
       {
         "level": 2,
-        "title": "createWaypoint(world, x, y, z, text, initials, color)",
-        "slug": "createwaypoint-world-x-y-z-text-initials-color",
-        "link": "#createwaypoint-world-x-y-z-text-initials-color",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "removeWaypoint(world, index)",
-        "slug": "removewaypoint-world-index",
-        "link": "#removewaypoint-world-index",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getWaypoints(world)",
-        "slug": "getwaypoints-world",
-        "link": "#getwaypoints-world",
-        "children": []
-      }
-    ],
-    "path": "/libs/xaero-minimap.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "2D renderer",
-    "headers": [
-      {
-        "level": 2,
-        "title": "getWindowScale()",
-        "slug": "getwindowscale",
-        "link": "#getwindowscale",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getTextWidth(str)",
-        "slug": "gettextwidth-str",
-        "link": "#gettextwidth-str",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderText(object)",
-        "slug": "rendertext-object",
-        "link": "#rendertext-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderImage(object)",
-        "slug": "renderimage-object",
-        "link": "#renderimage-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderRect(object)",
-        "slug": "renderrect-object",
-        "link": "#renderrect-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderItemStack(object)",
-        "slug": "renderitemstack-object",
-        "link": "#renderitemstack-object",
-        "children": []
-      }
-    ],
-    "path": "/rendering-objects/2d-renderer.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "World renderer",
-    "headers": [
-      {
-        "level": 2,
-        "title": "renderFilled(box, red, green, blue, alpha, throughWalls)",
-        "slug": "renderfilled-box-red-green-blue-alpha-throughwalls",
-        "link": "#renderfilled-box-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderOutline(box, red, green, blue, alpha, lineWidth, throughWalls)",
-        "slug": "renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
-        "link": "#renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderText(x, y, z, text, scale, throughWalls, red, green, blue, qx, qy, qz, qw)",
-        "slug": "rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
-        "link": "#rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderLinesFromPoints(points, red, green, blue, alpha, lineWidth, throughWalls)",
-        "slug": "renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
-        "link": "#renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderLineFromCursor(x, y, z, red, green, blue, alpha, lineWidth)",
-        "slug": "renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
-        "link": "#renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderImage(path, x, y, z, width, height, regionWidth, regionHeight, offsetX, offsetY, offsetZ,red, green, blue, alpha, throughWalls)",
-        "slug": "renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
-        "link": "#renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderBeaconBeam(x, y, z, red, green, blue)",
-        "slug": "renderbeaconbeam-x-y-z-red-green-blue",
-        "link": "#renderbeaconbeam-x-y-z-red-green-blue",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderOutlineCircle(x, y, z, radius, segments, thickness, red, green, blue, alpha, throughWalls)",
-        "slug": "renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
-        "link": "#renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderFilledCircle(x, y, z, radius, segments, red, green, blue, alpha, throughWalls)",
-        "slug": "renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
-        "link": "#renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderCylinder(x, y, z, radius, height, segments, red, green, blue, alpha, throughWalls)",
-        "slug": "rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
-        "link": "#rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderSphere(x, y, z, radius, segments, rings, red, green, blue, alpha, throughWalls)",
-        "slug": "rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
-        "link": "#rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderHologramBlock(x, y, z, id, alpha)",
-        "slug": "renderhologramblock-x-y-z-id-alpha",
-        "link": "#renderhologramblock-x-y-z-id-alpha",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderBlock(x, y, z, id)",
-        "slug": "renderblock-x-y-z-id",
-        "link": "#renderblock-x-y-z-id",
-        "children": []
-      }
-    ],
-    "path": "/rendering-objects/world-renderer.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Block Scanner",
-    "headers": [
-      {
-        "level": 2,
-        "title": "new_iterator(x, y, z, horizontalRadius, downRadius, upRadius)",
-        "slug": "new-iterator-x-y-z-horizontalradius-downradius-upradius",
-        "link": "#new-iterator-x-y-z-horizontalradius-downradius-upradius",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Block Iterator Methods",
-        "slug": "block-iterator-methods",
-        "link": "#block-iterator-methods",
+        "title": "Connecting",
+        "slug": "connecting",
+        "link": "#connecting",
         "children": [
           {
             "level": 3,
-            "title": "iterator:next_batch(limit)",
-            "slug": "iterator-next-batch-limit",
-            "link": "#iterator-next-batch-limit",
+            "title": "connect(ip, port, timeout)",
+            "slug": "connect-ip-port-timeout",
+            "link": "#connect-ip-port-timeout",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Sending Data",
+        "slug": "sending-data",
+        "link": "#sending-data",
+        "children": [
+          {
+            "level": 3,
+            "title": "send(connectionId, message, newline)",
+            "slug": "send-connectionid-message-newline",
+            "link": "#send-connectionid-message-newline",
             "children": []
           },
           {
             "level": 3,
-            "title": "iterator.progress",
-            "slug": "iterator-progress",
-            "link": "#iterator-progress",
+            "title": "sendBytes(connectionId, bytesTable)",
+            "slug": "sendbytes-connectionid-bytestable",
+            "link": "#sendbytes-connectionid-bytestable",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Receiving Data",
+        "slug": "receiving-data",
+        "link": "#receiving-data",
+        "children": [
+          {
+            "level": 3,
+            "title": "receive(connectionId, timeout)",
+            "slug": "receive-connectionid-timeout",
+            "link": "#receive-connectionid-timeout",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "receiveBytes(connectionId, timeout, size)",
+            "slug": "receivebytes-connectionid-timeout-size",
+            "link": "#receivebytes-connectionid-timeout-size",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Connection Management",
+        "slug": "connection-management",
+        "link": "#connection-management",
+        "children": [
+          {
+            "level": 3,
+            "title": "disconnect(connectionId)",
+            "slug": "disconnect-connectionid",
+            "link": "#disconnect-connectionid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isConnected(connectionId)",
+            "slug": "isconnected-connectionid",
+            "link": "#isconnected-connectionid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "setTimeout(connectionId, timeout)",
+            "slug": "settimeout-connectionid-timeout",
+            "link": "#settimeout-connectionid-timeout",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLocalAddress(connectionId)",
+            "slug": "getlocaladdress-connectionid",
+            "link": "#getlocaladdress-connectionid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getSocketCount()",
+            "slug": "getsocketcount",
+            "link": "#getsocketcount",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Server Methods",
+        "slug": "server-methods",
+        "link": "#server-methods",
+        "children": [
+          {
+            "level": 3,
+            "title": "listen(port, host)",
+            "slug": "listen-port-host",
+            "link": "#listen-port-host",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "closeSocket(id)",
+            "slug": "closesocket-id",
+            "link": "#closesocket-id",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Example",
+        "slug": "complete-example",
+        "link": "#complete-example",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/udp.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone Minining Behavior",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isActive (boolean)",
+            "slug": "isactive-boolean",
+            "link": "#isactive-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isTemporary (boolean)",
+            "slug": "istemporary-boolean",
+            "link": "#istemporary-boolean",
             "children": []
           }
         ]
       }
     ],
-    "path": "/world-objects/block-scanner.html",
+    "path": "/client/libs/baritone/mining_behavior.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
-    "title": "World",
+    "title": "Baritone Pathing Behavior",
     "headers": [
       {
         "level": 2,
-        "title": "getBlock(x, y, z) / getBlockState(x, y, z)",
-        "slug": "getblock-x-y-z-getblockstate-x-y-z",
-        "link": "#getblock-x-y-z-getblockstate-x-y-z",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getBlocksInBox(box) / getBlocksInBox(pos1, pos2)",
-        "slug": "getblocksinbox-box-getblocksinbox-pos1-pos2",
-        "link": "#getblocksinbox-box-getblocksinbox-pos1-pos2",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setBlock(x, y, z, id)",
-        "slug": "setblock-x-y-z-id",
-        "link": "#setblock-x-y-z-id",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isBlockLoaded(x, y, z)",
-        "slug": "isblockloaded-x-y-z",
-        "link": "#isblockloaded-x-y-z",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getOutlineBoxes(x, y, z, blockState)",
-        "slug": "getoutlineboxes-x-y-z-blockstate",
-        "link": "#getoutlineboxes-x-y-z-blockstate",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getCollisionBoxes(x, y, z, blockState)",
-        "slug": "getcollisionboxes-x-y-z-blockstate",
-        "link": "#getcollisionboxes-x-y-z-blockstate",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getEntities()",
-        "slug": "getentities",
-        "link": "#getentities",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getEntitiesInBox(entity, box)",
-        "slug": "getentitiesinbox-entity-box",
-        "link": "#getentitiesinbox-entity-box",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getLivingEntities()",
-        "slug": "getlivingentities",
-        "link": "#getlivingentities",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getEntityById(id)",
-        "slug": "getentitybyid-id",
-        "link": "#getentitybyid-id",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getLight(x, y, z) / getBrightness(x, y, z)",
-        "slug": "getlight-x-y-z-getbrightness-x-y-z",
-        "link": "#getlight-x-y-z-getbrightness-x-y-z",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getLightSky(x, y, z) / getBrightnessSky(x, y, z)",
-        "slug": "getlightsky-x-y-z-getbrightnesssky-x-y-z",
-        "link": "#getlightsky-x-y-z-getbrightnesssky-x-y-z",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getArmorStandEntities()",
-        "slug": "getarmorstandentities",
-        "link": "#getarmorstandentities",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getArmorStandEntitiesInBox(box)",
-        "slug": "getarmorstandentitiesinbox-box",
-        "link": "#getarmorstandentitiesinbox-box",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getRotation(x, y, z)",
-        "slug": "getrotation-x-y-z",
-        "link": "#getrotation-x-y-z",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "playSound(x, y, z, soundIdentifier, volume, pitch)",
-        "slug": "playsound-x-y-z-soundidentifier-volume-pitch",
-        "link": "#playsound-x-y-z-soundidentifier-volume-pitch",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "raycast(obj)",
-        "slug": "raycast-obj",
-        "link": "#raycast-obj",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getBreakingBlocksInfo()",
-        "slug": "getbreakingblocksinfo",
-        "link": "#getbreakingblocksinfo",
-        "children": []
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isPathing (boolean)",
+            "slug": "ispathing-boolean",
+            "link": "#ispathing-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inProgress (boolean)",
+            "slug": "inprogress-boolean",
+            "link": "#inprogress-boolean",
+            "children": []
+          }
+        ]
       }
     ],
-    "path": "/world-objects/world.html",
+    "path": "/client/libs/baritone/pathing_behavior.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
-    "title": "Catboost",
+    "title": "Baritone API",
     "headers": [
       {
         "level": 2,
-        "title": "loadModel(path)",
-        "slug": "loadmodel-path",
-        "link": "#loadmodel-path",
-        "children": []
-      }
-    ],
-    "path": "/libs/catboost/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Regression (Math prediction)",
-        "slug": "regression-math-prediction",
-        "link": "#regression-math-prediction",
-        "children": []
-      }
-    ],
-    "path": "/libs/deep-java-learining-djl4/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Working with structures",
-        "slug": "working-with-structures",
-        "link": "#working-with-structures",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callbacks",
-        "slug": "callbacks",
-        "link": "#callbacks",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callback with structure",
-        "slug": "callback-with-structure",
-        "link": "#callback-with-structure",
-        "children": []
-      }
-    ],
-    "path": "/libs/ffi/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "FFI",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registered Types",
-        "slug": "registered-types",
-        "link": "#registered-types",
-        "children": []
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "settings (Baritone Settings)",
+            "slug": "settings-baritone-settings",
+            "link": "#settings-baritone-settings",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "pathing_behavior (Baritone Pathing Behavior)",
+            "slug": "pathing-behavior-baritone-pathing-behavior",
+            "link": "#pathing-behavior-baritone-pathing-behavior",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "mining_behavior (Baritone Mining Behavior)",
+            "slug": "mining-behavior-baritone-mining-behavior",
+            "link": "#mining-behavior-baritone-mining-behavior",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -2726,149 +3369,122 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
-            "title": "ffi.cdef(def)",
-            "slug": "ffi-cdef-def",
-            "link": "#ffi-cdef-def",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.load(name)",
-            "slug": "ffi-load-name",
-            "link": "#ffi-load-name",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.new(type, count)",
-            "slug": "ffi-new-type-count",
-            "link": "#ffi-new-type-count",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.cast(type, ptr)",
-            "slug": "ffi-cast-type-ptr",
-            "link": "#ffi-cast-type-ptr",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.sizeof(type)",
-            "slug": "ffi-sizeof-type",
-            "link": "#ffi-sizeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.string(ptr, len)",
-            "slug": "ffi-string-ptr-len",
-            "link": "#ffi-string-ptr-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.copy(dest, src, len)",
-            "slug": "ffi-copy-dest-src-len",
-            "link": "#ffi-copy-dest-src-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.fill(dest, len, value)",
-            "slug": "ffi-fill-dest-len-value",
-            "link": "#ffi-fill-dest-len-value",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.callback(prototype, function)",
-            "slug": "ffi-callback-prototype-function",
-            "link": "#ffi-callback-prototype-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.gc(cdata, finalizer)",
-            "slug": "ffi-gc-cdata-finalizer",
-            "link": "#ffi-gc-cdata-finalizer",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.typeof(type)",
-            "slug": "ffi-typeof-type",
-            "link": "#ffi-typeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.metatype(type, metatable)",
-            "slug": "ffi-metatype-type-metatable",
-            "link": "#ffi-metatype-type-metatable",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.os",
-            "slug": "ffi-os",
-            "link": "#ffi-os",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.C",
-            "slug": "ffi-c",
-            "link": "#ffi-c",
+            "title": "execute(command)",
+            "slug": "execute-command",
+            "link": "#execute-command",
             "children": []
           }
         ]
-      },
+      }
+    ],
+    "path": "/client/libs/baritone/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone Settings",
+    "headers": [
       {
         "level": 2,
-        "title": "Complete Examples",
-        "slug": "complete-examples",
-        "link": "#complete-examples",
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
         "children": [
           {
             "level": 3,
-            "title": "Working with Structures",
-            "slug": "working-with-structures",
-            "link": "#working-with-structures",
+            "title": "allowBreak (boolean)",
+            "slug": "allowbreak-boolean",
+            "link": "#allowbreak-boolean",
             "children": []
           },
           {
             "level": 3,
-            "title": "Working with Callbacks",
-            "slug": "working-with-callbacks",
-            "link": "#working-with-callbacks",
+            "title": "allowPlace (boolean)",
+            "slug": "allowplace-boolean",
+            "link": "#allowplace-boolean",
             "children": []
           },
           {
             "level": 3,
-            "title": "Working with Memory",
-            "slug": "working-with-memory",
-            "link": "#working-with-memory",
+            "title": "maxFallHeightNoWater (integer)",
+            "slug": "maxfallheightnowater-integer",
+            "link": "#maxfallheightnowater-integer",
             "children": []
           },
           {
             "level": 3,
-            "title": "Metatypes for Custom Behavior",
-            "slug": "metatypes-for-custom-behavior",
-            "link": "#metatypes-for-custom-behavior",
+            "title": "maxFallHeightBucket (integer)",
+            "slug": "maxfallheightbucket-integer",
+            "link": "#maxfallheightbucket-integer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowWaterBucketFall (boolean)",
+            "slug": "allowwaterbucketfall-boolean",
+            "link": "#allowwaterbucketfall-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "pauseMiningForFallingBlocks (boolean)",
+            "slug": "pauseminingforfallingblocks-boolean",
+            "link": "#pauseminingforfallingblocks-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "autoTool (boolean)",
+            "slug": "autotool-boolean",
+            "link": "#autotool-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "assumeExternalAutoTool (boolean)",
+            "slug": "assumeexternalautotool-boolean",
+            "link": "#assumeexternalautotool-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "freeLook (boolean)",
+            "slug": "freelook-boolean",
+            "link": "#freelook-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "blockFreeLook (boolean)",
+            "slug": "blockfreelook-boolean",
+            "link": "#blockfreelook-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowParkour (boolean)",
+            "slug": "allowparkour-boolean",
+            "link": "#allowparkour-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowParkourPlace (boolean)",
+            "slug": "allowparkourplace-boolean",
+            "link": "#allowparkourplace-boolean",
             "children": []
           }
         ]
       },
       {
         "level": 2,
-        "title": "Known Limitations",
-        "slug": "known-limitations",
-        "link": "#known-limitations",
+        "title": "Settable Properties",
+        "slug": "settable-properties",
+        "link": "#settable-properties",
         "children": []
       }
     ],
-    "path": "/libs/ffi/",
+    "path": "/client/libs/baritone/settings.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2905,14 +3521,14 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/components.html",
+    "path": "/client/libs/imgui/components.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "Constants",
     "headers": [],
-    "path": "/libs/imgui/constants.html",
+    "path": "/client/libs/imgui/constants.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -3213,7 +3829,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/draw-list.html",
+    "path": "/client/libs/imgui/draw-list.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -3386,7 +4002,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/layout.html",
+    "path": "/client/libs/imgui/layout.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -3609,7 +4225,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/menus.html",
+    "path": "/client/libs/imgui/menus.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -3653,7 +4269,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/",
+    "path": "/client/libs/imgui/",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -3952,7 +4568,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/state.html",
+    "path": "/client/libs/imgui/state.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -4062,7 +4678,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/styling.html",
+    "path": "/client/libs/imgui/styling.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -4119,7 +4735,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/imgui/tables.html",
+    "path": "/client/libs/imgui/tables.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -4559,7 +5175,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/widgets.html",
+    "path": "/client/libs/imgui/widgets.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -4697,7 +5313,7 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/libs/imgui/window.html",
+    "path": "/client/libs/imgui/window.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -4887,7 +5503,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/player-objects/player/input.html",
+    "path": "/client/player-objects/player/input.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5064,7 +5680,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/player-objects/player/inventory.html",
+    "path": "/client/player-objects/player/inventory.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5121,7 +5737,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/player-objects/player/network.html",
+    "path": "/client/player-objects/player/network.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5383,7 +5999,230 @@ export const SEARCH_INDEX = [
         ]
       }
     ],
-    "path": "/player-objects/player/",
+    "path": "/client/player-objects/player/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Catboost",
+    "headers": [
+      {
+        "level": 2,
+        "title": "loadModel(path)",
+        "slug": "loadmodel-path",
+        "link": "#loadmodel-path",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/catboost/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Regression (Math prediction)",
+        "slug": "regression-math-prediction",
+        "link": "#regression-math-prediction",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/deep-java-learining-djl4/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Working with structures",
+        "slug": "working-with-structures",
+        "link": "#working-with-structures",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callbacks",
+        "slug": "callbacks",
+        "link": "#callbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callback with structure",
+        "slug": "callback-with-structure",
+        "link": "#callback-with-structure",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/ffi/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "FFI",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registered Types",
+        "slug": "registered-types",
+        "link": "#registered-types",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "ffi.cdef(def)",
+            "slug": "ffi-cdef-def",
+            "link": "#ffi-cdef-def",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.load(name)",
+            "slug": "ffi-load-name",
+            "link": "#ffi-load-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.new(type, count)",
+            "slug": "ffi-new-type-count",
+            "link": "#ffi-new-type-count",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.cast(type, ptr)",
+            "slug": "ffi-cast-type-ptr",
+            "link": "#ffi-cast-type-ptr",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.sizeof(type)",
+            "slug": "ffi-sizeof-type",
+            "link": "#ffi-sizeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.string(ptr, len)",
+            "slug": "ffi-string-ptr-len",
+            "link": "#ffi-string-ptr-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.copy(dest, src, len)",
+            "slug": "ffi-copy-dest-src-len",
+            "link": "#ffi-copy-dest-src-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.fill(dest, len, value)",
+            "slug": "ffi-fill-dest-len-value",
+            "link": "#ffi-fill-dest-len-value",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.callback(prototype, function)",
+            "slug": "ffi-callback-prototype-function",
+            "link": "#ffi-callback-prototype-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.gc(cdata, finalizer)",
+            "slug": "ffi-gc-cdata-finalizer",
+            "link": "#ffi-gc-cdata-finalizer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.typeof(type)",
+            "slug": "ffi-typeof-type",
+            "link": "#ffi-typeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.metatype(type, metatable)",
+            "slug": "ffi-metatype-type-metatable",
+            "link": "#ffi-metatype-type-metatable",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.os",
+            "slug": "ffi-os",
+            "link": "#ffi-os",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.C",
+            "slug": "ffi-c",
+            "link": "#ffi-c",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Examples",
+        "slug": "complete-examples",
+        "link": "#complete-examples",
+        "children": [
+          {
+            "level": 3,
+            "title": "Working with Structures",
+            "slug": "working-with-structures",
+            "link": "#working-with-structures",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Callbacks",
+            "slug": "working-with-callbacks",
+            "link": "#working-with-callbacks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Memory",
+            "slug": "working-with-memory",
+            "link": "#working-with-memory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Metatypes for Custom Behavior",
+            "slug": "metatypes-for-custom-behavior",
+            "link": "#metatypes-for-custom-behavior",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Known Limitations",
+        "slug": "known-limitations",
+        "link": "#known-limitations",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/ffi/",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5398,7 +6237,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/catboost/cat-boost-model/cat-boost-predictions.html",
+    "path": "/common/libs/catboost/cat-boost-model/cat-boost-predictions.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5413,7 +6252,7 @@ export const SEARCH_INDEX = [
         "children": []
       }
     ],
-    "path": "/libs/catboost/cat-boost-model/",
+    "path": "/common/libs/catboost/cat-boost-model/",
     "pathLocale": "/",
     "extraFields": []
   },

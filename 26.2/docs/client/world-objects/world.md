@@ -16,7 +16,7 @@ Gets information about a block by coordinates.
 
 **Returns:**
 
-* ([Block data](../datatypes/block.md)) Return block information
+* ([Block data](/common/datatypes/block.md)) Return block information
 
 **Example Usage:**
 
@@ -35,9 +35,9 @@ Gets information about a blocks by box or two positions.
 
 **Parameters:**
 
-* `box` ([box](../datatypes/box.md)).
-* `pos1` ([blockpos](../datatypes/blockpos.md)).
-* `pos2` ([blockpos](../datatypes/blockpos.md)).
+* `box` ([box](/common/datatypes/box.md)).
+* `pos1` ([blockpos](/common/datatypes/blockPos.md)).
+* `pos2` ([blockpos](/common/datatypes/blockPos.md)).
 
 **Returns:**
 
@@ -129,7 +129,7 @@ Sets the block to the desired coordinates.
 
 **Returns:**
 
-* table ([boxes](../datatypes/box.md))
+* table ([boxes](/common/datatypes/box.md))
 
 **Example Usage:**
 
@@ -168,7 +168,7 @@ Sets the block to the desired coordinates.
 
 **Returns:**
 
-* table ([boxes](../datatypes/box.md))
+* table ([boxes](/common/datatypes/box.md))
 
 **Example Usage:**
 
@@ -200,7 +200,7 @@ Returns a list of entities.
 
 **Returns:**
 
-* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](../datatypes/entity.md "mention")) Return table (list) of entities
+* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](/common/datatypes/entity.md "mention")) Return table (list) of entities
 
 **Example Usage:**
 
@@ -225,12 +225,12 @@ Returns a list of entities.
 
 **Parameters:**
 
-* `entity` ([entity](../datatypes/entity.md)) - From entity.
-* `box` ([box](../datatypes/box.md)) - Search box.
+* `entity` ([entity](/common/datatypes/entity.md)) - From entity.
+* `box` ([box](/common/datatypes/box.md)) - Search box.
 
 **Returns:**
 
-* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](../datatypes/entity.md "mention")) Return table (list) of entities
+* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](/common/datatypes/entity.md "mention")) Return table (list) of entities
 
 **Example Usage:**
 
@@ -259,7 +259,7 @@ Returns a list of entities.
 
 **Returns:**
 
-* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](../datatypes/entity.md "mention")) Return table (list) of entities
+* ([List of entitites](https://skillshop.gitbook.io/hypixelcry/datatypes/entity-data)[entity.md](/common/datatypes/entity.md "mention")) Return table (list) of entities
 
 **Example Usage:**
 
@@ -288,7 +288,7 @@ Returns a list of entities.
 
 **Returns:**
 
-* ([Entity](../datatypes/entity.md)) Return entity
+* ([Entity](/common/datatypes/entity.md)) Return entity
 
 **Example Usage:**
 
@@ -355,7 +355,7 @@ Returns a list of all armor stand entities.
 
 **Returns:**
 
-* (table) List of armor stand [entities](../datatypes/entity.md).
+* (table) List of armor stand [entities](/common/datatypes/entity.md).
 
 **Example Usage:**
 
@@ -373,11 +373,11 @@ Returns a list of armor stand entities within the specified box.
 
 **Parameters:**
 
-* `box` ([Box](../datatypes/box.md)) - The search box.
+* `box` ([Box](/common/datatypes/box.md)) - The search box.
 
 **Returns:**
 
-* (table) List of armor stand [entities](../datatypes/entity.md).
+* (table) List of armor stand [entities](/common/datatypes/entity.md).
 
 **Example Usage:**
 
@@ -490,7 +490,7 @@ Returns information about currently breaking blocks.
 
 **Returns:**
 
-* (table) List of breaking block info with `progress` 0->10, `blockpos` ([BlockPos](../datatypes/blockPos.md)), `id`, and `updatedRenderTick`.
+* (table) List of breaking block info with `progress` 0->10, `blockpos` ([BlockPos](/common/datatypes/blockPos.md)), `id`, and `updatedRenderTick`.
 
 **Example Usage:**
 

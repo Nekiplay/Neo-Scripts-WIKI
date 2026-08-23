@@ -10,9 +10,9 @@ icon: user-alien
 
 ### [inventory](inventory.md)
 
-### [entity](../../datatypes/entity.md)
+### [entity](/common/datatypes/entity.md)
 
-### [fishHook](../../datatypes/entity.md)
+### [fishHook](/common/datatypes/entity.md)
 
 ## Functions
 
@@ -149,7 +149,7 @@ Returns the player vector3.
 
 **Returns:**
 
-* [vector3](../../datatypes/vector3.md).
+* [vector3](/common/datatypes/vector3.md).
 
 **Example Usage:**
 
@@ -412,7 +412,7 @@ Returns raycast result from eye.
 
 **If entity**
 
-* (table) (type, [entityData](../../datatypes/entity.md)) Result of raycast.
+* (table) (type, [entityData](/common/datatypes/entity.md)) Result of raycast.
 
 **Example Usage:**
 
@@ -459,7 +459,7 @@ Check if player has line of sight to an entity.
 
 **Parameters:**
 
-* `entity` ([Entity](../../datatypes/entity.md)).
+* `entity` ([Entity](/common/datatypes/entity.md)).
 
 **Returns:**
 
@@ -490,7 +490,7 @@ Raycast targeting specific block IDs (useful for block scanning).
 
 **Returns:**
 
-* ([Raycast](../../datatypes/raycast.md) or nil).
+* ([Raycast](/common/datatypes/raycast.md) or nil).
 
 **Example Usage:**
 
@@ -513,7 +513,7 @@ Raycast targeting specific blocks by numeric ID.
 
 **Returns:**
 
-* ([Raycast](../../datatypes/raycast.md) or nil).
+* ([Raycast](/common/datatypes/raycast.md) or nil).
 
 ### `raycastToBlocksFromIdentifier(distance, identifiers)`
 
@@ -526,7 +526,7 @@ Raycast targeting specific blocks by identifier strings.
 
 **Returns:**
 
-* ([Raycast](../../datatypes/raycast.md) or nil).
+* ([Raycast](/common/datatypes/raycast.md) or nil).
 
 **Example Usage:**
 
@@ -548,7 +548,7 @@ Raycast targeting only entities (ignores blocks).
 
 **Returns:**
 
-* ([Raycast](../../datatypes/raycast.md) or nil).
+* ([Raycast](/common/datatypes/raycast.md) or nil).
 
 **Example Usage:**
 
@@ -589,7 +589,7 @@ Calculate direction vector from yaw/pitch angles.
 
 **Returns:**
 
-* (table) with `direction` ([Vector3](../../datatypes/vector3.md)).
+* (table) with `direction` ([Vector3](/common/datatypes/vector3.md)).
 
 **Example Usage:**
 

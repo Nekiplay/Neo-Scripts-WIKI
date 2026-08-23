@@ -23,7 +23,7 @@ registerWorldRenderer(function(context)
 	context.renderFilled(box, 255, 0, 0, 0, 170, true)
 end)
 ```
-<figure><img src="../.gitbook/assets/изображение (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (3).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderOutline(box, red, green, blue, alpha, lineWidth, throughWalls)`
 
@@ -44,7 +44,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (4).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderText(x, y, z, text, scale, throughWalls, red, green, blue, qx, qy, qz, qw)`
 
@@ -67,7 +67,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (8).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderLinesFromPoints(points, red, green, blue, alpha, lineWidth, throughWalls)`
 
@@ -90,7 +90,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (6).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderLineFromCursor(x, y, z, red, green, blue, alpha, lineWidth)`
 
@@ -113,7 +113,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (7).png" alt=""><figcaption></figcaption></figure>
 
 `renderImage(path, x, y, z, width, height, regionWidth, regionHeight, offsetX, offsetY, offsetZ,`\
 `red, green, blue, alpha, throughWalls)`
@@ -138,7 +138,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## `renderBeaconBeam(x, y, z, red, green, blue)`
 
@@ -161,7 +161,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (10).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderOutlineCircle(x, y, z, radius, segments, thickness, red, green, blue, alpha, throughWalls)`
 
@@ -184,7 +184,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderFilledCircle(x, y, z, radius, segments, red, green, blue, alpha, throughWalls)`
 
@@ -207,7 +207,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderCylinder(x, y, z, radius, height, segments, red, green, blue, alpha, throughWalls)`
 
@@ -230,7 +230,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (1).png" alt=""><figcaption></figcaption></figure>
 
 ## `renderSphere(x, y, z, radius, segments, rings, red, green, blue, alpha, throughWalls)`
 
@@ -249,7 +249,7 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение.png" alt=""><figcaption></figcaption></figure>
 
 ## `renderHologramBlock(x, y, z, id, alpha)`
 
@@ -268,4 +268,4 @@ registerWorldRenderer(function(context)
 end)
 ```
 
-<figure><img src="../.gitbook/assets/изображение (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/изображение (11).png" alt=""><figcaption></figcaption></figure>
