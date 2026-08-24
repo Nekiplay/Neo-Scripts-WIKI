@@ -144,6 +144,28 @@ icon: user-alien
 
 **head\_pose**, **body\_pose**, **left\_arm\_pose**, **right\_arm\_pose**, **left\_leg\_pose**, **right\_leg\_pose** (_table_) - pose rotations as `{x = number, y = number, z = number}` in degrees
 
+### TextDisplay only
+
+**text** (_string_) - formatted display text
+
+**line\_width** (_number_) - maximum line width in pixels
+
+**text\_opacity** (_number_) - text opacity, `0`-`255`
+
+**background\_color** (_number_) - ARGB background color
+
+### ItemDisplay only
+
+**display\_item** / **displayed\_item** ([Item](item.md)) - displayed item stack or `nil`
+
+### Interaction only
+
+**interaction\_width** (_number_) - interaction hitbox width
+
+**interaction\_height** (_number_) - interaction hitbox height
+
+**response** (_boolean_) - whether the entity signals a successful interaction
+
 ## Functions
 
 ### `entity:add_effect(id[, duration][, amplifier])`
@@ -258,6 +280,23 @@ For the local player a movement packet is sent to the server, for other entities
 * **no\_base\_plate** / **no\_baseplate** (_boolean_)
 * **head\_pose**, **body\_pose**, **left\_arm\_pose**, **right\_arm\_pose**, **left\_leg\_pose**, **right\_leg\_pose** (_table_ or [vector3](../datatypes/vector3.md)) - pose rotations in degrees, e.g. `{x = 0, y = 45, z = 0}`
 
+### TextDisplay only
+
+* **text** (_string_ or [Component](../datatypes/component.md)) - display text
+* **line\_width** (_number_)
+* **text\_opacity** (_number_, `0`-`255`)
+* **background\_color** (_number_) - ARGB color
+
+### ItemDisplay only
+
+* **display\_item** / **displayed\_item** ([Item](item.md) or `nil`) - displayed item
+
+### Interaction only
+
+* **interaction\_width** (_number_, min `0`)
+* **interaction\_height** (_number_, min `0`)
+* **response** (_boolean_)
+
 **Example Usage:**
 
 ```lua
@@ -290,6 +329,34 @@ if #stands > 0 then
 
     -- Read current pose
     print(stand.right_arm_pose.x)
+end
+```
+
+```lua
+local world = require("world")
+
+for _, entity in ipairs(world.getEntities()) do
+    -- Text display: set text with color and semi-transparent background
+    if entity.identifier == "minecraft:text_display" then
+        entity.text = "§aHello §lWorld"
+        entity.line_width = 200
+        entity.text_opacity = 128
+        entity.background_color = 0x80000000
+        print(entity.text)
+
+    -- Item display: show a diamond
+    elseif entity.identifier == "minecraft:item_display" then
+        local items = require("items")
+        entity.display_item = items.getFromIdentifier("minecraft:diamond")
+        print(entity.display_item.display_name)
+
+    -- Interaction: configure hitbox and response
+    elseif entity.identifier == "minecraft:interaction" then
+        entity.interaction_width = 1.5
+        entity.interaction_height = 2.0
+        entity.response = true
+        print(entity.interaction_width, entity.interaction_height, entity.response)
+    end
 end
 ```
 
