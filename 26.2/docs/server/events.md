@@ -105,6 +105,26 @@ registerServerWorldTickPost(function(world)
 end)
 ```
 
+### `registerServerStoppingCallback(function(world))`
+
+Registers a callback that fires when the server (or world) is shutting down, **before** the worlds are unloaded - all levels are still loaded and accessible. Called once per loaded world.
+
+Also unregistered with `unregisterServerStoppingCallback`.
+
+**Parameters:**
+* `function` (function ([World](/server/world.md))).
+
+**Example Usage:**
+```lua
+registerServerStoppingCallback(function(world)
+    print("Shutting down " .. world.getDimension() .. ", saving state...")
+end)
+
+registerUnloadCallback(function()
+    print("Script unloaded")
+end)
+```
+
 ---
 
 ## Interaction Callbacks
