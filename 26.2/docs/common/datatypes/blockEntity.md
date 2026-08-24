@@ -62,7 +62,7 @@ local items = require("items")
 if blockEntity.inventory then
     local diamond = items.getFromIdentifier("minecraft:diamond")
     if diamond then
-        blockEntity.inventory:add_item(diamond, 64)
+        blockEntity.inventory.add_item(diamond, 64)
     end
 
     -- Direct slot access

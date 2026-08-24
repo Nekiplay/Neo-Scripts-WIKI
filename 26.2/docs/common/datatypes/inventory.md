@@ -35,7 +35,7 @@ inv[3] = nil            -- clear third slot
 
 ## Functions
 
-### `inventory:get_items()`
+### `inventory.get_items()`
 
 Returns a list of non-empty slots.
 
@@ -44,7 +44,7 @@ Returns a list of non-empty slots.
   * `slot` (_number_, 1-based)
   * `item` ([Item](item.md))
 
-### `inventory:give_item(item[, count])`
+### `inventory.give_item(item[, count])`
 
 Adds an item to the inventory: stacks are merged into existing matching stacks first, remaining items go into empty slots.
 
@@ -55,7 +55,7 @@ Adds an item to the inventory: stacks are merged into existing matching stacks f
 **Returns:**
 * (_number_) - the amount actually added
 
-### `inventory:take_item(slotOrItem[, count])`
+### `inventory.take_item(slotOrItem[, count])`
 
 Removes items from the inventory.
 
@@ -72,7 +72,7 @@ Aliases: `remove_item`
 
 Alias of `give_item`: `add_item`
 
-### `inventory:set_item(slot, item)`
+### `inventory.set_item(slot, item)`
 
 Sets an item into a specific slot. Passing `nil` clears the slot.
 
@@ -96,23 +96,23 @@ local inv = entity.inventory
 -- Give 64 diamonds
 local diamond = items.getFromIdentifier("minecraft:diamond")
 if diamond then
-    local added = inv:add_item(diamond, 64)
+    local added = inv.add_item(diamond, 64)
     print("Added " .. added .. " diamonds")
 end
 
 -- Count diamonds in inventory
-for _, entry in ipairs(inv:get_items()) do
+for _, entry in ipairs(inv.get_items()) do
     if entry.item.identifier == "minecraft:diamond" then
         print(entry.slot .. ": " .. entry.item.count)
     end
 end
 
 -- Remove all diamonds
-local removed = inv:take_item("minecraft:diamond", 64)
+local removed = inv.take_item("minecraft:diamond", 64)
 print("Removed " .. removed)
 
 -- Put an item into a specific slot
-inv:set_item(1, diamond)
+inv.set_item(1, diamond)
 
 -- Direct indexing
 local first = inv[1]

@@ -94,7 +94,7 @@ icon: user-alien
 
 **distance\_to\_player** (_number_)
 
-**passengers** (_table list of [Entities](entity.md)_)
+**passengers** (_table list of [Entities](entity.md)_) - riding entities (writable, see below)
 
 **skin** (_string_) - player skin texture (only for Player entities)
 
@@ -195,7 +195,7 @@ icon: user-alien
 
 ## Functions
 
-### `entity:add_effect(id[, duration][, amplifier])`
+### `entity.add_effect(id[, duration][, amplifier])`
 
 Adds a potion effect to the entity (LivingEntity only).
 
@@ -207,7 +207,7 @@ Adds a potion effect to the entity (LivingEntity only).
 **Returns:**
 * (_boolean_) - `true` if the effect was applied
 
-### `entity:remove_effect([id])`
+### `entity.remove_effect([id])`
 
 Removes potion effects from the entity (LivingEntity only).
 
@@ -217,7 +217,27 @@ Removes potion effects from the entity (LivingEntity only).
 **Returns:**
 * (_boolean_)
 
-### `entity:teleport(x, y, z, onGround)`
+### `entity.add_passenger(entity)`
+
+Makes the given entity ride on this entity. The passenger automatically dismounts from its current vehicle first.
+
+**Parameters:**
+* `entity` ([Entity](entity.md))
+
+**Returns:**
+* (_boolean_) - `true` if the passenger started riding
+
+### `entity.remove_passenger(entity)`
+
+Dismounts the given passenger from this entity.
+
+**Parameters:**
+* `entity` ([Entity](entity.md)) - must currently be a passenger of this entity
+
+**Returns:**
+* (_boolean_) - `false` if the entity is not a passenger
+
+### `entity.teleport(x, y, z, onGround)`
 
 Teleport the player entity. Only works on the local player.
 
@@ -233,7 +253,7 @@ Teleport the player entity. Only works on the local player.
 **Example Usage:**
 ```lua
 local player = require("player")
-player.entity:teleport(0, 100, 0, true)
+player.entity.teleport(0, 100, 0, true)
 ```
 
 **Effects Example Usage:**
@@ -241,21 +261,45 @@ player.entity:teleport(0, 100, 0, true)
 local player = require("player")
 
 -- Infinite Speed II
-player.entity:add_effect("minecraft:speed", -1, 1)
+player.entity.add_effect("minecraft:speed", -1, 1)
 
 -- Jump Boost for 30 seconds (600 ticks)
-player.entity:add_effect("jump_boost", 600)
+player.entity.add_effect("jump_boost", 600)
 
 -- Remove speed only
-player.entity:remove_effect("minecraft:speed")
+player.entity.remove_effect("minecraft:speed")
 
 -- Remove all effects
-player.entity:remove_effect()
+player.entity.remove_effect()
 
 -- Inventory access
 local inv = player.entity.inventory
 if inv then
-    inv:add_item(require("items").getFromIdentifier("minecraft:diamond"), 64)
+    inv.add_item(require("items").getFromIdentifier("minecraft:diamond"), 64)
+end
+```
+
+**Passengers Example Usage:**
+```lua
+local world = require("world")
+local creator = require("creator")
+
+local horse = world.getEntityById(123)
+local pig = creator.createEntity("minecraft:pig")
+local cow = creator.createEntity("minecraft:cow")
+local pigEntity = world.spawnEntity(pig, 100, 70, 100)
+local cowEntity = world.spawnEntity(cow, 101, 70, 100)
+
+if horse and pigEntity and cowEntity then
+    -- Add one by one
+    horse.add_passenger(pigEntity)
+
+    -- Or replace all passengers at once
+    horse.passengers = { cowEntity }
+
+    -- Dismount a single passenger
+    horse.remove_passenger(cowEntity)
+    print(#horse.passengers) -- remaining passenger count
 end
 ```
 
@@ -297,6 +341,10 @@ For the local player a movement packet is sent to the server, for other entities
 ### AgeableMob only
 
 * **is\_baby** / **is\_child** (_boolean_)
+
+### Passengers
+
+* **passengers** (_table list of [Entities](entity.md)_) - replaces all passengers: current ones are ejected, then each entity from the table starts riding in order
 
 ### ArmorStand only
 
