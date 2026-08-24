@@ -126,9 +126,47 @@ icon: user-alien
 
 **active\_effects** (_table list_) - active potion effects with fields: type, duration, amplifier
 
+**inventory** ([Inventory](inventory.md)) - player inventory (only for Player entities)
+
+**is\_invisible** / **invisible** (_boolean_) - whether the entity is invisible
+
 **nbt** (_string_) - entity NBT data
 
+### ArmorStand only
+
+**small** (_boolean_)
+
+**marker** (_boolean_) - marker armor stand (no hitbox, no interaction)
+
+**show\_arms** (_boolean_)
+
+**no\_base\_plate** / **no\_baseplate** (_boolean_)
+
+**head\_pose**, **body\_pose**, **left\_arm\_pose**, **right\_arm\_pose**, **left\_leg\_pose**, **right\_leg\_pose** (_table_) - pose rotations as `{x = number, y = number, z = number}` in degrees
+
 ## Functions
+
+### `entity:add_effect(id[, duration][, amplifier])`
+
+Adds a potion effect to the entity (LivingEntity only).
+
+**Parameters:**
+* `id` (_string_) - effect identifier (e.g. `"minecraft:speed"`, namespace can be omitted: `"speed"`)
+* `duration` (_number_, optional) - duration in ticks, `-1` for infinite (default `-1`)
+* `amplifier` (_number_, optional) - amplifier level (default `0`)
+
+**Returns:**
+* (_boolean_) - `true` if the effect was applied
+
+### `entity:remove_effect([id])`
+
+Removes potion effects from the entity (LivingEntity only).
+
+**Parameters:**
+* `id` (_string_, optional) - effect identifier to remove; if omitted, all effects are removed
+
+**Returns:**
+* (_boolean_)
 
 ### `entity:teleport(x, y, z, onGround)`
 
@@ -147,6 +185,29 @@ Teleport the player entity. Only works on the local player.
 ```lua
 local player = require("player")
 player.entity:teleport(0, 100, 0, true)
+```
+
+**Effects Example Usage:**
+```lua
+local player = require("player")
+
+-- Infinite Speed II
+player.entity:add_effect("minecraft:speed", -1, 1)
+
+-- Jump Boost for 30 seconds (600 ticks)
+player.entity:add_effect("jump_boost", 600)
+
+-- Remove speed only
+player.entity:remove_effect("minecraft:speed")
+
+-- Remove all effects
+player.entity:remove_effect()
+
+-- Inventory access
+local inv = player.entity.inventory
+if inv then
+    inv:add_item(require("items").getFromIdentifier("minecraft:diamond"), 64)
+end
 ```
 
 ## Settable Properties
@@ -187,6 +248,50 @@ For the local player a movement packet is sent to the server, for other entities
 ### AgeableMob only
 
 * **is\_baby** / **is\_child** (_boolean_)
+
+### ArmorStand only
+
+* **invisible** / **is\_invisible** (_boolean_) - makes the armor stand invisible
+* **small** (_boolean_) - small model
+* **marker** (_boolean_) - marker (no hitbox)
+* **show\_arms** (_boolean_)
+* **no\_base\_plate** / **no\_baseplate** (_boolean_)
+* **head\_pose**, **body\_pose**, **left\_arm\_pose**, **right\_arm\_pose**, **left\_leg\_pose**, **right\_leg\_pose** (_table_ or [vector3](../datatypes/vector3.md)) - pose rotations in degrees, e.g. `{x = 0, y = 45, z = 0}`
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local creator = require("creator")
+
+-- AgeableMob only
+entity.is_baby = true
+
+-- ArmorStand only
+local stands = {}
+for _, e in ipairs(world.getEntities()) do
+    if e.identifier == "minecraft:armor_stand" then
+        table.insert(stands, e)
+    end
+end
+
+if #stands > 0 then
+    local stand = stands[1]
+    stand.invisible = true
+    stand.small = true
+    stand.show_arms = true
+    stand.no_base_plate = true
+
+    -- Raise the right arm via table
+    stand.right_arm_pose = { x = -90, y = 0, z = 0 }
+
+    -- Or via vector3d
+    stand.head_pose = creator.createVector3(0, 25, 0)
+
+    -- Read current pose
+    print(stand.right_arm_pose.x)
+end
+```
 
 **Example Usage:**
 

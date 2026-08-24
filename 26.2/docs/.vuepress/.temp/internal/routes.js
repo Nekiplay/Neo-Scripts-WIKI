@@ -26,6 +26,7 @@ export const routes = Object.fromEntries([
   ["/common/datatypes/component.html", { loader: () => import(/* webpackChunkName: "common_datatypes_component.html" */"C:/wiki/26.2/docs/common/datatypes/component.md"), meta: {"title":"Component"} }],
   ["/common/datatypes/direction.html", { loader: () => import(/* webpackChunkName: "common_datatypes_direction.html" */"C:/wiki/26.2/docs/common/datatypes/direction.md"), meta: {"title":"Direction"} }],
   ["/common/datatypes/entity.html", { loader: () => import(/* webpackChunkName: "common_datatypes_entity.html" */"C:/wiki/26.2/docs/common/datatypes/entity.md"), meta: {"title":"Entity"} }],
+  ["/common/datatypes/inventory.html", { loader: () => import(/* webpackChunkName: "common_datatypes_inventory.html" */"C:/wiki/26.2/docs/common/datatypes/inventory.md"), meta: {"title":"Inventory"} }],
   ["/common/datatypes/item.html", { loader: () => import(/* webpackChunkName: "common_datatypes_item.html" */"C:/wiki/26.2/docs/common/datatypes/item.md"), meta: {"title":"Item"} }],
   ["/common/datatypes/map.html", { loader: () => import(/* webpackChunkName: "common_datatypes_map.html" */"C:/wiki/26.2/docs/common/datatypes/map.md"), meta: {"title":"Map"} }],
   ["/common/datatypes/raycast.html", { loader: () => import(/* webpackChunkName: "common_datatypes_raycast.html" */"C:/wiki/26.2/docs/common/datatypes/raycast.md"), meta: {"title":"Raycast"} }],

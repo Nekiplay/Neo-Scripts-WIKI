@@ -25,7 +25,7 @@ Returned by [world.getBlockEntity(...)](/server/world.md#getblockentityx-y-z).
 
 **size** (_number_) - inventory slot count (only for containers)
 
-**inventory** (_table list of [Items](item.md)_) - list of items in the container, empty slots are `nil` (only for containers)
+**inventory** ([Inventory](inventory.md)) - inventory object of the container (only for containers)
 
 ### Furnace properties
 
@@ -54,14 +54,19 @@ blockEntity[1] = nil    -- clear first slot
 
 ### `inventory`
 
-Sets the whole inventory from a table of [items](item.md). Slots beyond the table length are kept:
+The [Inventory](inventory.md) object supports slot indexing, `give_item`, `take_item`, `set_item` and `get_items`:
 
 ```lua
 local items = require("items")
 
-local diamond = items.getFromIdentifier("minecraft:diamond")
-if diamond then
-    blockEntity.inventory = { diamond }
+if blockEntity.inventory then
+    local diamond = items.getFromIdentifier("minecraft:diamond")
+    if diamond then
+        blockEntity.inventory:add_item(diamond, 64)
+    end
+
+    -- Direct slot access
+    local first = blockEntity.inventory[1]
 end
 ```
 

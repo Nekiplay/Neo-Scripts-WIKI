@@ -67,6 +67,7 @@ export default defineUserConfig({
               { text: "🗺️ Map", link: "/common/datatypes/map.html" },
               { text: "⚔️ Item", link: "/common/datatypes/item.html" },
               { text: "👽 Entity", link: "/common/datatypes/entity.html" },
+              { text: "📦 Inventory", link: "/common/datatypes/inventory.html" },
               {
                 text: "🧱 Block",
                 link: "/common/datatypes/block.html",

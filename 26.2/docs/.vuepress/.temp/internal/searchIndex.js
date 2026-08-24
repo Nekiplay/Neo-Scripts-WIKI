@@ -1803,6 +1803,20 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
+            "title": "entity:add_effect(id[, duration][, amplifier])",
+            "slug": "entity-add-effect-id-duration-amplifier",
+            "link": "#entity-add-effect-id-duration-amplifier",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "entity:remove_effect([id])",
+            "slug": "entity-remove-effect-id",
+            "link": "#entity-remove-effect-id",
+            "children": []
+          },
+          {
+            "level": 3,
             "title": "entity:teleport(x, y, z, onGround)",
             "slug": "entity-teleport-x-y-z-onground",
             "link": "#entity-teleport-x-y-z-onground",
@@ -1855,6 +1869,71 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/common/datatypes/entity.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Inventory",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Slot Indexing",
+        "slug": "slot-indexing",
+        "link": "#slot-indexing",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Indexing",
+        "slug": "indexing",
+        "link": "#indexing",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "inventory:get_items()",
+            "slug": "inventory-get-items",
+            "link": "#inventory-get-items",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory:give_item(item[, count])",
+            "slug": "inventory-give-item-item-count",
+            "link": "#inventory-give-item-item-count",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory:take_item(slotOrItem[, count])",
+            "slug": "inventory-take-item-slotoritem-count",
+            "link": "#inventory-take-item-slotoritem-count",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory:set_item(slot, item)",
+            "slug": "inventory-set-item-slot-item",
+            "link": "#inventory-set-item-slot-item",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/common/datatypes/inventory.html",
     "pathLocale": "/",
     "extraFields": []
   },

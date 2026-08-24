@@ -329,6 +329,35 @@ if sheep then
 end
 ```
 
+## `removeEntity(entity)` / `world.despawn(...)`
+
+Removes an entity from the world without drops or death animation.
+
+**Parameters:**
+
+* `entity` ([Entity](/common/datatypes/entity.md) or number) - Entity object, raw entity userdata or numeric entity ID.
+
+**Returns:**
+
+* (boolean) `true` if the entity was removed, `false` if not found or already dead.
+
+**Example Usage:**
+
+```lua
+local server = require("server")
+local world = server.getLevel()
+
+-- Remove by entity object
+for _, entity in ipairs(world.getEntities()) do
+    if entity.identifier == "minecraft:creeper" then
+        world.removeEntity(entity)
+    end
+end
+
+-- Remove by numeric ID
+world.removeEntity(123)
+```
+
 ## `getOutlineBoxes(x, y, z, blockState)`
 
 Gets outline shape boxes for a block state at the desired coordinates.
