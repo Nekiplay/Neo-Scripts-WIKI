@@ -30,6 +30,7 @@ export const routes = Object.fromEntries([
   ["/common/datatypes/item.html", { loader: () => import(/* webpackChunkName: "common_datatypes_item.html" */"C:/wiki/26.2/docs/common/datatypes/item.md"), meta: {"title":"Item"} }],
   ["/common/datatypes/map.html", { loader: () => import(/* webpackChunkName: "common_datatypes_map.html" */"C:/wiki/26.2/docs/common/datatypes/map.md"), meta: {"title":"Map"} }],
   ["/common/datatypes/raycast.html", { loader: () => import(/* webpackChunkName: "common_datatypes_raycast.html" */"C:/wiki/26.2/docs/common/datatypes/raycast.md"), meta: {"title":"Raycast"} }],
+  ["/common/datatypes/transform.html", { loader: () => import(/* webpackChunkName: "common_datatypes_transform.html" */"C:/wiki/26.2/docs/common/datatypes/transform.md"), meta: {"title":"Transform"} }],
   ["/common/datatypes/vector3.html", { loader: () => import(/* webpackChunkName: "common_datatypes_vector3.html" */"C:/wiki/26.2/docs/common/datatypes/vector3.md"), meta: {"title":"Vector3"} }],
   ["/common/libs/archive.html", { loader: () => import(/* webpackChunkName: "common_libs_archive.html" */"C:/wiki/26.2/docs/common/libs/archive.md"), meta: {"title":"Archive"} }],
   ["/common/libs/blocks.html", { loader: () => import(/* webpackChunkName: "common_libs_blocks.html" */"C:/wiki/26.2/docs/common/libs/blocks.md"), meta: {"title":"Blocks"} }],

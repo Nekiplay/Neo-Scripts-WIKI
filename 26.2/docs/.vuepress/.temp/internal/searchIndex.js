@@ -1831,9 +1831,23 @@ export const SEARCH_INDEX = [
           },
           {
             "level": 3,
+            "title": "BlockDisplay only",
+            "slug": "blockdisplay-only",
+            "link": "#blockdisplay-only",
+            "children": []
+          },
+          {
+            "level": 3,
             "title": "Interaction only",
             "slug": "interaction-only",
             "link": "#interaction-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Display only (text/item/block display)",
+            "slug": "display-only-text-item-block-display",
+            "link": "#display-only-text-item-block-display",
             "children": []
           }
         ]
@@ -1931,9 +1945,23 @@ export const SEARCH_INDEX = [
           },
           {
             "level": 3,
+            "title": "BlockDisplay only",
+            "slug": "blockdisplay-only-1",
+            "link": "#blockdisplay-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
             "title": "Interaction only",
             "slug": "interaction-only-1",
             "link": "#interaction-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Display only (text/item/block display)",
+            "slug": "display-only-text-item-block-display-1",
+            "link": "#display-only-text-item-block-display-1",
             "children": []
           }
         ]
@@ -2236,6 +2264,28 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/common/datatypes/raycast.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Transform",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Applying",
+        "slug": "applying",
+        "link": "#applying",
+        "children": []
+      }
+    ],
+    "path": "/common/datatypes/transform.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2560,6 +2610,13 @@ export const SEARCH_INDEX = [
         "title": "createVector3(x, y, z)",
         "slug": "createvector3-x-y-z",
         "link": "#createvector3-x-y-z",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "createTransform(tx, ty, tz, sx, sy, sz, rx, ry, rz)",
+        "slug": "createtransform-tx-ty-tz-sx-sy-sz-rx-ry-rz",
+        "link": "#createtransform-tx-ty-tz-sx-sy-sz-rx-ry-rz",
         "children": []
       },
       {

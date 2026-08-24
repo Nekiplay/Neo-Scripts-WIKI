@@ -154,6 +154,14 @@ icon: user-alien
 
 **background\_color** (_number_) - ARGB background color
 
+**text\_shadow** / **has\_text\_shadow** (_boolean_) - whether the text has a shadow
+
+**see\_through** (_boolean_) - whether the text is visible through blocks
+
+**use\_default\_background** / **default\_background** (_boolean_) - whether the default text background color is used instead of `background_color`
+
+**text\_align** / **text\_alignment** (_string_) - text alignment: `left`, `center` or `right`
+
 ### ItemDisplay only
 
 **display\_item** / **displayed\_item** ([Item](item.md)) - displayed item stack or `nil`
@@ -305,6 +313,10 @@ For the local player a movement packet is sent to the server, for other entities
 * **line\_width** (_number_)
 * **text\_opacity** (_number_, `0`-`255`)
 * **background\_color** (_number_) - ARGB color
+* **text\_shadow** / **has\_text\_shadow** (_boolean_) - text drop shadow
+* **see\_through** (_boolean_) - makes the text visible through blocks
+* **use\_default\_background** / **default\_background** (_boolean_)
+* **text\_align** / **text\_alignment** (_string_) - `left`, `center` or `right`
 
 ### ItemDisplay only
 
@@ -378,6 +390,9 @@ for _, entity in ipairs(world.getEntities()) do
         entity.line_width = 200
         entity.text_opacity = 128
         entity.background_color = 0x80000000
+        entity.see_through = true      -- visible through blocks
+        entity.text_shadow = true
+        entity.text_align = "center"
         print(entity.text)
 
     -- Item display: show a diamond
