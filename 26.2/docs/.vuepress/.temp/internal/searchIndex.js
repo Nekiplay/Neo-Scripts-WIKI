@@ -56,6 +56,13 @@ export const SEARCH_INDEX = [
             "slug": "registerserverworldtickpost-function-world",
             "link": "#registerserverworldtickpost-function-world",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerStoppingCallback(function(world))",
+            "slug": "registerserverstoppingcallback-function-world",
+            "link": "#registerserverstoppingcallback-function-world",
+            "children": []
           }
         ]
       },
@@ -327,6 +334,13 @@ export const SEARCH_INDEX = [
         "title": "spawnEntity(type, x, y, z [, yaw, pitch]) / world.spawn(...)",
         "slug": "spawnentity-type-x-y-z-yaw-pitch-world-spawn",
         "link": "#spawnentity-type-x-y-z-yaw-pitch-world-spawn",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "removeEntity(entity) / world.despawn(...)",
+        "slug": "removeentity-entity-world-despawn",
+        "link": "#removeentity-entity-world-despawn",
         "children": []
       },
       {
@@ -1793,7 +1807,36 @@ export const SEARCH_INDEX = [
         "title": "Variables",
         "slug": "variables",
         "link": "#variables",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "ArmorStand only",
+            "slug": "armorstand-only",
+            "link": "#armorstand-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "TextDisplay only",
+            "slug": "textdisplay-only",
+            "link": "#textdisplay-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ItemDisplay only",
+            "slug": "itemdisplay-only",
+            "link": "#itemdisplay-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Interaction only",
+            "slug": "interaction-only",
+            "link": "#interaction-only",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -1863,6 +1906,34 @@ export const SEARCH_INDEX = [
             "title": "AgeableMob only",
             "slug": "ageablemob-only",
             "link": "#ageablemob-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ArmorStand only",
+            "slug": "armorstand-only-1",
+            "link": "#armorstand-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "TextDisplay only",
+            "slug": "textdisplay-only-1",
+            "link": "#textdisplay-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ItemDisplay only",
+            "slug": "itemdisplay-only-1",
+            "link": "#itemdisplay-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Interaction only",
+            "slug": "interaction-only-1",
+            "link": "#interaction-only-1",
             "children": []
           }
         ]

@@ -52,6 +52,28 @@ local creator = require("creator")
 local vector = creator.createVector3(1, 1, 1)
 ```
 
+## `createTransform(tx, ty, tz, sx, sy, sz, rx, ry, rz)`
+
+Create [transform](../datatypes/transform.md) for display entities (`text_display`, `item_display`, `block_display`). All parameters are optional - without arguments an identity transform is created.
+
+**Parameters:**
+
+* `tx`, `ty`, `tz` (number, optional) - translation offset.
+* `sx`, `sy`, `sz` (number, optional) - scale.
+* `rx`, `ry`, `rz` (number, optional) - rotation in degrees.
+
+**Example Usage:**
+
+```Lua
+local creator = require("creator")
+
+-- Identity
+local t = creator.createTransform()
+
+-- Translation + rotation 45 degrees around Y
+local rotated = creator.createTransform(0, 0.5, 0, 1, 1, 1, 0, 45, 0)
+```
+
 ## `createBlockPos(x, y, z)`
 
 Create [blockPos](../datatypes/blockPos.md).

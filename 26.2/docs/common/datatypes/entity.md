@@ -158,6 +158,10 @@ icon: user-alien
 
 **display\_item** / **displayed\_item** ([Item](item.md)) - displayed item stack or `nil`
 
+### BlockDisplay only
+
+**display\_block** / **displayed\_block** ([Block](block.md)) - displayed block state
+
 ### Interaction only
 
 **interaction\_width** (_number_) - interaction hitbox width
@@ -165,6 +169,21 @@ icon: user-alien
 **interaction\_height** (_number_) - interaction hitbox height
 
 **response** (_boolean_) - whether the entity signals a successful interaction
+
+### Display only (text/item/block display)
+
+**billboard** / **billboard\_mode** (_string_) - billboard mode:
+
+* `fixed` - the model does not rotate, always oriented as placed (default)
+* `vertical` - rotates around the vertical axis to follow the player horizontally
+* `horizontal` - tilts up/down to follow the player vertically
+* `center` - fully follows the player's view both horizontally and vertically
+
+**view\_range** (_number_) - visibility distance multiplier
+
+**shadow\_radius** (_number_)
+
+**shadow\_strength** (_number_, `0`-`1`)
 
 ## Functions
 
@@ -291,11 +310,28 @@ For the local player a movement packet is sent to the server, for other entities
 
 * **display\_item** / **displayed\_item** ([Item](item.md) or `nil`) - displayed item
 
+### BlockDisplay only
+
+* **display\_block** / **displayed\_block** ([Block](block.md)) - displayed block state
+
 ### Interaction only
 
 * **interaction\_width** (_number_, min `0`)
 * **interaction\_height** (_number_, min `0`)
 * **response** (_boolean_)
+
+### Display only (text/item/block display)
+
+* **billboard** / **billboard\_mode** (_string_):
+    * `fixed` - no rotation, keeps its original orientation (default)
+    * `vertical` - turns left/right to face the player
+    * `horizontal` - tilts up/down to face the player
+    * `center` - always fully faces the player's view
+* **view\_range** (_number_, min `0`) - visibility distance multiplier
+* **shadow\_radius** (_number_, min `0`)
+* **shadow\_strength** (_number_, `0`-`1`)
+* **brightness\_override** (_number_) - packed light value, `-1` disables the override
+* **transformation** / **transform** ([Transform](../datatypes/transform.md)) - translation, scale and rotation of the displayed content
 
 **Example Usage:**
 
@@ -356,6 +392,23 @@ for _, entity in ipairs(world.getEntities()) do
         entity.interaction_height = 2.0
         entity.response = true
         print(entity.interaction_width, entity.interaction_height, entity.response)
+    end
+end
+```
+
+```lua
+local world = require("world")
+local creator = require("creator")
+
+for _, entity in ipairs(world.getEntities()) do
+    if entity.identifier == "minecraft:block_display" then
+        local blocks = require("blocks")
+        entity.display_block = blocks.getFromIdentifier("minecraft:gold_block")
+
+        -- Rotate the displayed block and make it always face the player's view
+        local transform = creator.createTransform(0, 0, 0, 1, 1, 1, 0, 45, 0)
+        entity.transformation = transform
+        entity.billboard = "center"
     end
 end
 ```

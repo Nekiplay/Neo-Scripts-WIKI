@@ -35,6 +35,7 @@ export const routes = Object.fromEntries([
   ["/world-objects/block-scanner.html", { loader: () => import(/* webpackChunkName: "world-objects_block-scanner.html" */"C:/wiki/1.21.11/docs/world-objects/block-scanner.md"), meta: {"title":"Block Scanner"} }],
   ["/world-objects/world.html", { loader: () => import(/* webpackChunkName: "world-objects_world.html" */"C:/wiki/1.21.11/docs/world-objects/world.md"), meta: {"title":"World"} }],
   ["/libs/catboost/", { loader: () => import(/* webpackChunkName: "libs_catboost_index.html" */"C:/wiki/1.21.11/docs/libs/catboost/README.md"), meta: {"title":"Catboost"} }],
+  ["/libs/deep-java-learining-djl4/examples.html", { loader: () => import(/* webpackChunkName: "libs_deep-java-learining-djl4_examples.html" */"C:/wiki/1.21.11/docs/libs/deep-java-learining-djl4/examples.md"), meta: {"title":"Examples"} }],
   ["/libs/ffi/examples.html", { loader: () => import(/* webpackChunkName: "libs_ffi_examples.html" */"C:/wiki/1.21.11/docs/libs/ffi/examples.md"), meta: {"title":"Examples"} }],
   ["/libs/ffi/", { loader: () => import(/* webpackChunkName: "libs_ffi_index.html" */"C:/wiki/1.21.11/docs/libs/ffi/README.md"), meta: {"title":"FFI"} }],
   ["/libs/imgui/components.html", { loader: () => import(/* webpackChunkName: "libs_imgui_components.html" */"C:/wiki/1.21.11/docs/libs/imgui/components.md"), meta: {"title":"Components"} }],
@@ -54,6 +55,5 @@ export const routes = Object.fromEntries([
   ["/player-objects/player/", { loader: () => import(/* webpackChunkName: "player-objects_player_index.html" */"C:/wiki/1.21.11/docs/player-objects/player/README.md"), meta: {"title":"Player"} }],
   ["/libs/catboost/cat-boost-model/cat-boost-predictions.html", { loader: () => import(/* webpackChunkName: "libs_catboost_cat-boost-model_cat-boost-predictions.html" */"C:/wiki/1.21.11/docs/libs/catboost/cat-boost-model/cat-boost-predictions.md"), meta: {"title":"Cat Boost Predictions"} }],
   ["/libs/catboost/cat-boost-model/", { loader: () => import(/* webpackChunkName: "libs_catboost_cat-boost-model_index.html" */"C:/wiki/1.21.11/docs/libs/catboost/cat-boost-model/README.md"), meta: {"title":"Cat Boost Model"} }],
-  ["/libs/deep-java-learining-djl4/examples.html", { loader: () => import(/* webpackChunkName: "libs_deep-java-learining-djl4_examples.html" */"C:/wiki/1.21.11/docs/libs/deep-java-learining-djl4/examples.md"), meta: {"title":"Examples"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"C:/wiki/1.21.11/docs/.vuepress/.temp/pages/404.html.vue"), meta: {"title":""} }],
 ]);
