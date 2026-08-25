@@ -8,7 +8,28 @@ icon: gears
 
 ### **currentScriptName** (_string_)
 
+### **modVersion** (_string_)
+
+Current version of the Neo Scripts mod, taken from the Fabric mod metadata.
+
 ## Functions
+
+### `require(module [, cache])`
+
+Loads a module by name. System modules (`modules`, `imgui`, `json`, `threads`, etc.) and local script modules from the scripts directory are supported.
+
+**Parameters:**
+
+* `module` (string) - Module name or path.
+* `cache` (boolean) - Optional. Cache the module return value so subsequent requires return it instantly (default `false`).
+
+**Example Usage:**
+
+```lua
+local modules = require("modules")
+
+local utils = require("mylibs/utils", true)
+```
 
 ### `registerCommand(command, function(commandName, args, player), function(autocomplete))`
 

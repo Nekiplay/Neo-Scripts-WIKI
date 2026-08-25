@@ -34,6 +34,20 @@ Name of the currently running script.
 print("My name is " .. currentScriptName)
 ```
 
+## `modVersion`
+
+Current version of the Neo Scripts mod, taken from the Fabric mod metadata.
+
+**Returns:**
+
+* (string) Mod version, for example `"1.2.2.0.4"`.
+
+**Example Usage:**
+
+```lua
+print("Neo Scripts " .. modVersion)
+```
+
 ## `require(module)`
 
 Loads a module by name. System modules (`server`, `json`, `threads`, etc.) and local script modules from the scripts directory are supported.
@@ -41,7 +55,7 @@ Loads a module by name. System modules (`server`, `json`, `threads`, etc.) and l
 **Parameters:**
 
 * `module` (string) - Module name or path.
-* `cache` (boolean) - Optional. Cache the result (default `false`).
+* `cache` (boolean) - Optional. Cache the module return value so subsequent requires return it instantly (default `false`).
 
 **Example Usage:**
 

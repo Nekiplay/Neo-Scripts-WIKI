@@ -27,27 +27,49 @@ icon: cube
 
 **is\_air** (_boolean_)
 
-**age** (_number_) (only for crops)
+### Crops only (wheat, carrots, ...)
 
-**delay** (_number_) (only for redstone repeater)
+**age** (_number_) - crop growth stage
 
-**locked** (_boolean_) (only for redstone repeater)
+### Repeater only
 
-**layers** (_number_) (only for snow layers)
+**delay** (_number_) - repeater delay (`1`-`4` ticks)
 
-**extended** (_boolean_) (only for piston)
+**locked** (_boolean_) - whether the repeater is locked
 
-**facing** ([Direction](direction.md)) (only for directional blocks)
+### Snow Layer only
 
-**face** (_string_) (only for attached blocks: "floor", "wall", "ceiling")
+**layers** (_number_) - number of snow layers
 
-**lit** (_boolean_) (only for redstone torch)
+### Piston only
 
-**mode** (_string_) (only for comparator: "compare" or "subtract")
+**extended** (_boolean_) - whether the piston is extended
 
-**is\_still** (_boolean_) (only for water or waterlogged blocks)
+### Directional blocks only (doors, pistons, ...)
 
-**power** (_number_) (only for redstone wire)
+**facing** ([Direction](direction.md)) - facing direction
+
+### Attached blocks only (levers, torches, ...)
+
+**face** (_string_) - attach face: `floor`, `wall` or `ceiling`
+
+### Redstone Torch only
+
+**lit** (_boolean_) - whether the torch is lit
+
+### Comparator only
+
+**mode** (_string_) - comparator mode: `compare` or `subtract`
+
+### Redstone Wire only
+
+**power** (_number_) - redstone power level (`0`-`15`)
+
+### Water and waterlogged blocks only
+
+**is\_still** (_boolean_) - whether the fluid state is a source (still) block
+
+### Any block
 
 **properties** ([Block Properties](block_properties.md))
 

@@ -519,6 +519,165 @@ local world = server.getLevel()
 world.playSound(0, 64, 0, "minecraft:block.anvil.place", 100, 1)
 ```
 
+## `executeCommand(command [, x, y, z])` / `world.runCommand(...)`
+
+Executes a server command as a virtual source with full operator permissions (`PermissionSet.ALL_PERMISSIONS`). Command output is suppressed. The leading `/` is optional.
+
+**Parameters:**
+
+* `command` (string) - Server command without the leading slash, example: `summon minecraft:pig 0 70 0`.
+* `x`, `y`, `z` (number) - Optional. Reference position for relative coordinates (`~`) in the command.
+
+**Returns:**
+
+* Multiple values:
+  * Result:
+    * ([Entity](/common/datatypes/entity.md)) - If the command spawned exactly one entity (for example `summon`).
+    * table ([List of entities](/common/datatypes/entity.md)) - If several entities were spawned.
+    * boolean `true` - If no new entities were detected.
+    * boolean `false` - If command execution failed.
+  * (number) - Numeric result of the command (brigadier result) or `nil`.
+  * (string) - Error message if execution failed, otherwise `nil`.
+
+**Example Usage:**
+
+```lua
+local server = require("server")
+local world = server.getLevel()
+
+-- Summon returns the spawned entity with all fields
+local pig = world.executeCommand("summon minecraft:pig ~ ~ ~")
+if pig then
+    print("Spawned: " .. pig.name)
+    pig.health = 10.0
+end
+
+-- Generic commands return true + numeric result
+local ok, result = world.executeCommand("time set day")
+if not ok then
+    print("Command failed")
+end
+```
+
+## `spawnEntityFor(player, type, x, y, z [, yaw, pitch])` / `world.spawnPrivateEntity(...)`
+
+Spawns an entity visible **only to the given player**. The entity is not added to the world: it does not tick and other players never see it. Use [updateEntityFor](#updateentityforplayer-entity) to sync changes and [removeEntityFor](#removeentityforplayer-entity--entityid) to hide it.
+
+**Parameters:**
+
+* `player` ([Entity](/common/datatypes/entity.md), number or string) - Target player (entity object, entity id or name/UUID).
+* `type` (string or EntityType) - Entity type identifier (`minecraft:sheep`).
+* `x`, `y`, `z` (number) - Coordinates. Also accepts a [vector3](/common/datatypes/vector3.md).
+* `yaw` (number) - Optional. Yaw rotation (default `0`).
+* `pitch` (number) - Optional. Pitch rotation (default `0`).
+
+**Returns:**
+
+* ([Entity](/common/datatypes/entity.md)) The private entity.
+
+**Example Usage:**
+
+```lua
+local server = require("server")
+local world = server.getLevel()
+
+local player = server.getPlayer("Neki_play")
+local ghost = world.spawnEntityFor(player, "minecraft:armor_stand", 0, 70, 0)
+ghost.customName = "Boo!"
+world.updateEntityFor(player, ghost)
+```
+
+## `updateEntityFor(player, entity)` / `world.updatePrivateEntity(...)`
+
+Synchronizes a private entity with the target player's client: position/rotation, head rotation, metadata (custom name, invisibility, ...), equipment and active effects. Call it after changing entity fields — private entities are not ticked by the server, so nothing is synced automatically.
+
+**Parameters:**
+
+* `player` ([Entity](/common/datatypes/entity.md), number or string) - Target player.
+* `entity` ([Entity](/common/datatypes/entity.md)) - Private entity returned by [spawnEntityFor](#spawnentityforplayer-type-x-y-z--yaw-pitch).
+
+**Returns:**
+
+* (boolean) `true` on success.
+
+**Example Usage:**
+
+```lua
+local server = require("server")
+local world = server.getLevel()
+local player = server.getPlayer("Neki_play")
+
+local ghost = world.spawnEntityFor(player, "minecraft:zombie", 10, 70, 10)
+ghost.health = 5
+ghost.add_effect("minecraft:speed")
+world.updateEntityFor(player, ghost)
+```
+
+## `removeEntityFor(player, entity|entityId)` / `world.removePrivateEntity(...)`
+
+Hides a private entity from the given player (removal packet).
+
+**Parameters:**
+
+* `player` ([Entity](/common/datatypes/entity.md), number or string) - Target player.
+* `entity` ([Entity](/common/datatypes/entity.md) or number) - Private entity or its id.
+
+**Returns:**
+
+* (boolean) `true` if the packet was sent.
+
+**Example Usage:**
+
+```lua
+world.removeEntityFor(player, ghost)
+```
+
+## `setBlockFor(player, x, y, z, blockState)` / `world.setPrivateBlock(...)`
+
+Shows a **fake block** only to the given player. The real block in the world is not changed. Accepts `(x, y, z, blockState)` or `(blockPos, blockState)` argument combinations.
+
+**Parameters:**
+
+* `player` ([Entity](/common/datatypes/entity.md), number or string) - Target player.
+* `x`, `y`, `z` (number) - Coordinates (or a [blockpos](/common/datatypes/blockPos.md)).
+* `blockState` ([Block data](/common/datatypes/block.md))
+
+**Returns:**
+
+* (boolean)
+
+**Example Usage:**
+
+```lua
+local server = require("server")
+local creator = require("creator")
+local blocks = require("blocks")
+local world = server.getLevel()
+local player = server.getPlayer("Neki_play")
+
+local diamondBlock = blocks.getBlock("minecraft:diamond_block")
+world.setBlockFor(player, 0, 65, 0, diamondBlock)
+```
+
+## `resetBlockFor(player, x, y, z)` / `world.resetPrivateBlock(...)`
+
+Restores the real block state for the given player after `setBlockFor`. Accepts `(x, y, z)` or `(blockPos)`.
+
+**Parameters:**
+
+* `player` ([Entity](/common/datatypes/entity.md), number or string) - Target player.
+* `x`, `y`, `z` (number) - Coordinates (or a [blockpos](/common/datatypes/blockPos.md)).
+
+**Returns:**
+
+* (boolean)
+
+**Example Usage:**
+
+```lua
+world.resetBlockFor(player, 0, 65, 0)
+```
+
 ## `raycast(obj)`
 
 Return raycast result.

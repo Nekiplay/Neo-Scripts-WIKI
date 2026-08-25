@@ -96,19 +96,15 @@ icon: user-alien
 
 **passengers** (_table list of [Entities](entity.md)_) - riding entities (writable, see below)
 
-**skin** (_string_) - player skin texture (only for Player entities)
+### LivingEntity only
 
-**gamemode** (_string_) - player gamemode (only for Player entities)
-
-**is\_blocking** (_boolean_) - entity blocking with shield (LivingEntity only)
+**is\_blocking** (_boolean_) - entity blocking with shield
 
 **health** (_number_)
 
 **max\_health** (_number_)
 
 **is\_alive** (_boolean_)
-
-**is\_child** / **is\_baby** (_boolean_)
 
 **main\_hand** ([_ItemData_](item.md))
 
@@ -122,18 +118,29 @@ icon: user-alien
 
 **feet** ([_ItemData_](item.md))
 
-**item** ([_ItemData_](item.md)) (has only for Item entity and ItemFrame entity)
-
 **active\_effects** (_table list_) - active potion effects with fields: type, duration, amplifier
 
-**inventory** ([Inventory](inventory.md)) - player inventory (only for Player entities)
+### AgeableMob only
+
+**is\_child** / **is\_baby** (_boolean_)
+
+### Player only
+
+**skin** (_string_) - player skin texture
+
+**gamemode** (_string_) - player gamemode (`survival`, `creative`, ...)
+
+**inventory** ([Inventory](inventory.md)) - player inventory
+
+### ItemFrame and ItemEntity only
+
+**item** ([_ItemData_](item.md)) - contained item stack
 
 **is\_invisible** / **invisible** (_boolean_) - whether the entity is invisible
 
 **nbt** (_string_) - entity NBT data
 
 ### ArmorStand only
-
 **small** (_boolean_)
 
 **marker** (_boolean_) - marker armor stand (no hitbox, no interaction)
@@ -192,6 +199,8 @@ icon: user-alien
 **shadow\_radius** (_number_)
 
 **shadow\_strength** (_number_, `0`-`1`)
+
+**brightness\_override** (_number_) - packed light value overriding client-side lighting, `-1` if not overridden
 
 ## Functions
 
