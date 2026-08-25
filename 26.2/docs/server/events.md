@@ -125,6 +125,56 @@ registerUnloadCallback(function()
 end)
 ```
 
+### `registerServerStartedCallback(function)`
+
+Registers a callback that fires once after the server has **fully started** - all worlds are loaded and autoload scripts have been executed. Also unregistered with `unregisterServerStartedCallback`.
+
+**Parameters:**
+* `function` (function).
+
+**Example Usage:**
+```lua
+registerServerStartedCallback(function()
+    print("Server is fully loaded!")
+end)
+```
+
+### `registerWorldLoadedCallback(function(world))`
+
+Registers a callback that fires when a world (level) is fully loaded. Called once for every dimension right after the server has fully started.
+
+Also unregistered with `unregisterWorldLoadedCallback`.
+
+**Parameters:**
+* `function` (function ([World](/server/world.md))).
+
+**Example Usage:**
+```lua
+registerWorldLoadedCallback(function(world)
+    print("World loaded: " .. world.getDimension())
+end)
+```
+
+### `registerSluaInvokeCallback(function(info))`
+
+Registers a callback that fires when this script is started through the `/slua load` or `/slua toggle` command.
+
+Also unregistered with `unregisterSluaInvokeCallback`.
+
+**Parameters:**
+* `function` (function (info)).
+  * `info` (table).
+    * `command` (string) - `"load"` or `"toggle"`.
+    * `was_loaded` (boolean) - for `load`: whether the script was restarted (was already loaded).
+    * `executor` (string) - name of the source that ran the command.
+
+**Example Usage:**
+```lua
+registerSluaInvokeCallback(function(info)
+    print("Invoked via /slua " .. info.command .. " by " .. info.executor)
+end)
+```
+
 ---
 
 ## Interaction Callbacks

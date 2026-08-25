@@ -132,6 +132,8 @@ icon: user-alien
 
 **inventory** ([Inventory](inventory.md)) - player inventory
 
+**scoreboard** ([Scoreboard](scoreboard.md)) - level scoreboard of the player
+
 ### ItemFrame and ItemEntity only
 
 **item** ([_ItemData_](item.md)) - contained item stack
@@ -201,6 +203,27 @@ icon: user-alien
 **shadow\_strength** (_number_, `0`-`1`)
 
 **brightness\_override** (_number_) - packed light value overriding client-side lighting, `-1` if not overridden
+
+**transformation** / **transform** ([Transform](transform.md)) - current transformation. Reading returns a snapshot with `translation`, `scale`, `rotation` (XYZ euler, degrees) and, for display entities, the full 4x4 `matrix` (row-major, 16 numbers). Editing the snapshot does not change the entity - assign it back (or a new transform / matrix table) to apply, see [Settable Properties](#settable-properties).
+
+**Example Usage:**
+
+```lua
+local t = entity.transformation
+if t then
+    print(t.translation.x, t.translation.y, t.translation.z)
+    print(t.rotation.x, t.rotation.y, t.rotation.z)
+
+    -- exact matrix (when available)
+    if t.matrix then
+        print(t.matrix[1], t.matrix[2], t.matrix[3], t.matrix[4])
+    end
+
+    -- modify and assign back to apply
+    t.translation.y = t.translation.y + 0.5
+    entity.transformation = t
+end
+```
 
 ## Functions
 
@@ -400,7 +423,7 @@ For the local player a movement packet is sent to the server, for other entities
 * **shadow\_radius** (_number_, min `0`)
 * **shadow\_strength** (_number_, `0`-`1`)
 * **brightness\_override** (_number_) - packed light value, `-1` disables the override
-* **transformation** / **transform** ([Transform](../datatypes/transform.md)) - translation, scale and rotation of the displayed content
+* **transformation** / **transform** ([Transform](../datatypes/transform.md) or table) - translation, scale and rotation of the displayed content. Also accepts `{ matrix = {16 numbers} }` - a row-major 4x4 matrix applied exactly, without euler conversion (preferred for composed/animated transforms)
 
 **Example Usage:**
 

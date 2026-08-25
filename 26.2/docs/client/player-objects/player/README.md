@@ -276,6 +276,26 @@ for index, line in ipairs(scoreboard) do
 end
 ```
 
+### `getScoreboard()`
+
+Returns the [Scoreboard](/common/datatypes/scoreboard.md) object of the current level. Changes are local and visible only to this player.
+
+**Returns:**
+
+* ([Scoreboard](/common/datatypes/scoreboard.md)) - scoreboard object.
+
+**Example Usage:**
+
+```lua
+local player = require("player")
+local sb = player.getScoreboard()
+
+local sidebar = sb:get_display("sidebar")
+if sidebar then
+    print(sidebar.name, sb:get_score(sidebar.name, player.getName()))
+end
+```
+
 ### `getTab()`
 
 **Returns:**
