@@ -979,6 +979,393 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "Events",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registration Functions",
+        "slug": "registration-functions",
+        "link": "#registration-functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerUnloadCallback(function)",
+            "slug": "registerunloadcallback-function",
+            "link": "#registerunloadcallback-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTick(function)",
+            "slug": "registerclienttick-function",
+            "link": "#registerclienttick-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPre(function)",
+            "slug": "registerclienttickpre-function",
+            "link": "#registerclienttickpre-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPost(function)",
+            "slug": "registerclienttickpost-function",
+            "link": "#registerclienttickpost-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerWorldRenderer(function(context))",
+            "slug": "registerworldrenderer-function-context",
+            "link": "#registerworldrenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "register2DRenderer(function(context))",
+            "slug": "register2drenderer-function-context",
+            "link": "#register2drenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiInitEvent(function)",
+            "slug": "registerimguiinitevent-function",
+            "link": "#registerimguiinitevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiRenderEvent(function)",
+            "slug": "registerimguirenderevent-function",
+            "link": "#registerimguirenderevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerLocationChangeEvent(function(location))",
+            "slug": "registerlocationchangeevent-function-location",
+            "link": "#registerlocationchangeevent-function-location",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerMessageEvent(function(text, overlay, json))",
+            "slug": "registermessageevent-function-text-overlay-json",
+            "link": "#registermessageevent-function-text-overlay-json",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendMessageEvent(function(text))",
+            "slug": "registersendmessageevent-function-text",
+            "link": "#registersendmessageevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendCommandEvent(function(text))",
+            "slug": "registersendcommandevent-function-text",
+            "link": "#registersendcommandevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerKeyEvent(function(key, action))",
+            "slug": "registerkeyevent-function-key-action",
+            "link": "#registerkeyevent-function-key-action",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBlockUpdate(function(update))",
+            "slug": "registerblockupdate-function-update",
+            "link": "#registerblockupdate-function-update",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseBlock(function(table))",
+            "slug": "registeruseblock-function-table",
+            "link": "#registeruseblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAttackBlock(function(table))",
+            "slug": "registerattackblock-function-table",
+            "link": "#registerattackblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSlotClick(function(table))",
+            "slug": "registerslotclick-function-table",
+            "link": "#registerslotclick-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerTitleEvent(function(text, isSubTitle))",
+            "slug": "registertitleevent-function-text-issubtitle",
+            "link": "#registertitleevent-function-text-issubtitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerActionBarEvent(function(text))",
+            "slug": "registeractionbarevent-function-text",
+            "link": "#registeractionbarevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
+            "slug": "registerserversiderotationevent-function-yaw-pitch",
+            "link": "#registerserversiderotationevent-function-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTeleportEvent(function(x, y, z))",
+            "slug": "registerserverteleportevent-function-x-y-z",
+            "link": "#registerserverteleportevent-function-x-y-z",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
+            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPlayerSendMovementEvent(function(table))",
+            "slug": "registerplayersendmovementevent-function-table",
+            "link": "#registerplayersendmovementevent-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerInventoryItemChange(function(slot, item))",
+            "slug": "registerinventoryitemchange-function-slot-item",
+            "link": "#registerinventoryitemchange-function-slot-item",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSpawnParticle(function(data))",
+            "slug": "registerspawnparticle-function-data",
+            "link": "#registerspawnparticle-function-data",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSoundPlay(function(data))",
+            "slug": "registersoundplay-function-data",
+            "link": "#registersoundplay-function-data",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Unregistration Functions",
+        "slug": "unregistration-functions",
+        "link": "#unregistration-functions",
+        "children": []
+      }
+    ],
+    "path": "/general/events.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "General",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "currentScriptName (string)",
+            "slug": "currentscriptname-string",
+            "link": "#currentscriptname-string",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
+            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
+            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "unregisterCommand(commandName)",
+            "slug": "unregistercommand-commandname",
+            "link": "#unregistercommand-commandname",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Modules API",
+        "slug": "modules-api",
+        "link": "#modules-api",
+        "children": [
+          {
+            "level": 3,
+            "title": "modules.getLoadedScripts()",
+            "slug": "modules-getloadedscripts",
+            "link": "#modules-getloadedscripts",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.getScriptRequirements(scriptName)",
+            "slug": "modules-getscriptrequirements-scriptname",
+            "link": "#modules-getscriptrequirements-scriptname",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.loadScript(path)",
+            "slug": "modules-loadscript-path",
+            "link": "#modules-loadscript-path",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.unloadScript(name)",
+            "slug": "modules-unloadscript-name",
+            "link": "#modules-unloadscript-name",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/general/general.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Window",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isMinimized (boolean)",
+            "slug": "isminimized-boolean",
+            "link": "#isminimized-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isFullscreen (boolean)",
+            "slug": "isfullscreen-boolean",
+            "link": "#isfullscreen-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "refreshRate (number)",
+            "slug": "refreshrate-number",
+            "link": "#refreshrate-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "x (number)",
+            "slug": "x-number",
+            "link": "#x-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "y (number)",
+            "slug": "y-number",
+            "link": "#y-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "width (number)",
+            "slug": "width-number",
+            "link": "#width-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "height (number)",
+            "slug": "height-number",
+            "link": "#height-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenWidth (number)",
+            "slug": "screenwidth-number",
+            "link": "#screenwidth-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenHeight (number)",
+            "slug": "screenheight-number",
+            "link": "#screenheight-number",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "setTitle(title)",
+            "slug": "settitle-title",
+            "link": "#settitle-title",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Example",
+        "slug": "complete-example",
+        "link": "#complete-example",
+        "children": []
+      }
+    ],
+    "path": "/general/window.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Archive",
     "headers": [
       {
@@ -2088,393 +2475,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/rendering-objects/world-renderer.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Events",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registration Functions",
-        "slug": "registration-functions",
-        "link": "#registration-functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerUnloadCallback(function)",
-            "slug": "registerunloadcallback-function",
-            "link": "#registerunloadcallback-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTick(function)",
-            "slug": "registerclienttick-function",
-            "link": "#registerclienttick-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPre(function)",
-            "slug": "registerclienttickpre-function",
-            "link": "#registerclienttickpre-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPost(function)",
-            "slug": "registerclienttickpost-function",
-            "link": "#registerclienttickpost-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerWorldRenderer(function(context))",
-            "slug": "registerworldrenderer-function-context",
-            "link": "#registerworldrenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "register2DRenderer(function(context))",
-            "slug": "register2drenderer-function-context",
-            "link": "#register2drenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiInitEvent(function)",
-            "slug": "registerimguiinitevent-function",
-            "link": "#registerimguiinitevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiRenderEvent(function)",
-            "slug": "registerimguirenderevent-function",
-            "link": "#registerimguirenderevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerLocationChangeEvent(function(location))",
-            "slug": "registerlocationchangeevent-function-location",
-            "link": "#registerlocationchangeevent-function-location",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerMessageEvent(function(text, overlay, json))",
-            "slug": "registermessageevent-function-text-overlay-json",
-            "link": "#registermessageevent-function-text-overlay-json",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendMessageEvent(function(text))",
-            "slug": "registersendmessageevent-function-text",
-            "link": "#registersendmessageevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendCommandEvent(function(text))",
-            "slug": "registersendcommandevent-function-text",
-            "link": "#registersendcommandevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerKeyEvent(function(key, action))",
-            "slug": "registerkeyevent-function-key-action",
-            "link": "#registerkeyevent-function-key-action",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerBlockUpdate(function(update))",
-            "slug": "registerblockupdate-function-update",
-            "link": "#registerblockupdate-function-update",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerUseBlock(function(table))",
-            "slug": "registeruseblock-function-table",
-            "link": "#registeruseblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerAttackBlock(function(table))",
-            "slug": "registerattackblock-function-table",
-            "link": "#registerattackblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSlotClick(function(table))",
-            "slug": "registerslotclick-function-table",
-            "link": "#registerslotclick-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerTitleEvent(function(text, isSubTitle))",
-            "slug": "registertitleevent-function-text-issubtitle",
-            "link": "#registertitleevent-function-text-issubtitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerActionBarEvent(function(text))",
-            "slug": "registeractionbarevent-function-text",
-            "link": "#registeractionbarevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
-            "slug": "registerserversiderotationevent-function-yaw-pitch",
-            "link": "#registerserversiderotationevent-function-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerTeleportEvent(function(x, y, z))",
-            "slug": "registerserverteleportevent-function-x-y-z",
-            "link": "#registerserverteleportevent-function-x-y-z",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
-            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerPlayerSendMovementEvent(function(table))",
-            "slug": "registerplayersendmovementevent-function-table",
-            "link": "#registerplayersendmovementevent-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerInventoryItemChange(function(slot, item))",
-            "slug": "registerinventoryitemchange-function-slot-item",
-            "link": "#registerinventoryitemchange-function-slot-item",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSpawnParticle(function(data))",
-            "slug": "registerspawnparticle-function-data",
-            "link": "#registerspawnparticle-function-data",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSoundPlay(function(data))",
-            "slug": "registersoundplay-function-data",
-            "link": "#registersoundplay-function-data",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Unregistration Functions",
-        "slug": "unregistration-functions",
-        "link": "#unregistration-functions",
-        "children": []
-      }
-    ],
-    "path": "/general/events.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "General",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "currentScriptName (string)",
-            "slug": "currentscriptname-string",
-            "link": "#currentscriptname-string",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
-            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
-            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "unregisterCommand(commandName)",
-            "slug": "unregistercommand-commandname",
-            "link": "#unregistercommand-commandname",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Modules API",
-        "slug": "modules-api",
-        "link": "#modules-api",
-        "children": [
-          {
-            "level": 3,
-            "title": "modules.getLoadedScripts()",
-            "slug": "modules-getloadedscripts",
-            "link": "#modules-getloadedscripts",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.getScriptRequirements(scriptName)",
-            "slug": "modules-getscriptrequirements-scriptname",
-            "link": "#modules-getscriptrequirements-scriptname",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.loadScript(path)",
-            "slug": "modules-loadscript-path",
-            "link": "#modules-loadscript-path",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.unloadScript(name)",
-            "slug": "modules-unloadscript-name",
-            "link": "#modules-unloadscript-name",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/general/general.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Window",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "isMinimized (boolean)",
-            "slug": "isminimized-boolean",
-            "link": "#isminimized-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isFullscreen (boolean)",
-            "slug": "isfullscreen-boolean",
-            "link": "#isfullscreen-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "refreshRate (number)",
-            "slug": "refreshrate-number",
-            "link": "#refreshrate-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "x (number)",
-            "slug": "x-number",
-            "link": "#x-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "y (number)",
-            "slug": "y-number",
-            "link": "#y-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "width (number)",
-            "slug": "width-number",
-            "link": "#width-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "height (number)",
-            "slug": "height-number",
-            "link": "#height-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenWidth (number)",
-            "slug": "screenwidth-number",
-            "link": "#screenwidth-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenHeight (number)",
-            "slug": "screenheight-number",
-            "link": "#screenheight-number",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "setTitle(title)",
-            "slug": "settitle-title",
-            "link": "#settitle-title",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Complete Example",
-        "slug": "complete-example",
-        "link": "#complete-example",
-        "children": []
-      }
-    ],
-    "path": "/general/window.html",
     "pathLocale": "/",
     "extraFields": []
   },

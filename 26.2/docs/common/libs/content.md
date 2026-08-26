@@ -8,7 +8,7 @@ icon: cube
 Dynamic content registration library. Available via `require("content")` on both client and server. Lets you create items and blocks from Lua like a Fabric mod, without JSON/datapacks.
 
 ::: warning Requires autostart
-All `register*` functions must be called **before registries freeze** — i.e. from scripts in `neoscripts/autostart/*.lua`. That folder is executed from `ServerMain.onInitialize` on both sides (before the first resource load). Calls from `/lua` or `WindowMixin` autoload (`config/neoscripts/scripts/autoload.lua`) work via freeze-fallback but textures may require `F3+T`.
+All `register*` functions must be called **before registries freeze** — i.e. from scripts in `neoscripts/autostart/*.lua`. That folder is executed from `ServerMain.onInitialize` on both sides (before the first resource load).
 :::
 
 The library creates a runtime resource pack (`neoscripts_dynamic_content`, `required`+`fixed`, `BOTTOM` priority) with generated assets so other packs/mods can override the models.
@@ -271,7 +271,79 @@ if tex then print(tex) end
 
 * vanilla/any mod Identifier `minecraft:block/cube_all`, `minecraft:block/cross`, `minecraft:item/handheld`, `minecraft:block/diamond_block`, `tinker_construct:block/cast_iron`
 * short id `minecraft:diamond_block` → expands to `minecraft:block/diamond_block` for blocks, `minecraft:item/...` for items
-* file path `config/neoscripts/models/my_model.json` or absolute path — bytes are read and served directly as `models/block/<path>.json` or `models/item/<path>.json`
+* file path `config/neoscripts/models/my_model.json` or absolute path — bytes are read and served directly as `models/block/<path>.json` or `models/item/<path>.json`. The JSON can be a full Blockbench/MC model with multiple textures:
+```json
+{
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "aj:blueprint/banking_terminal/banking_terminal",
+    "2": "aj:blueprint/banking_terminal/banking_terminal_power_off",
+    "3": "aj:blueprint/banking_terminal/banking_terminal_screen_blank",
+    "particle": "aj:blueprint/banking_terminal/banking_terminal"
+  },
+  "elements": [
+    {
+      "from": [8, 2.5, 8.07526],
+      "to": [13, 3, 8.57526],
+      "faces": {
+        "north": {"uv": [0.75, 11, 2, 11.25], "texture": "#0"},
+        "east": {"uv": [12.5, 11, 12.75, 11.25], "texture": "#0"},
+        "south": {"uv": [11, 1.25, 12.25, 1.5], "texture": "#0"},
+        "west": {"uv": [11.25, 12.5, 11.5, 12.75], "texture": "#0"},
+        "up": {"uv": [12.25, 1.75, 11, 1.5], "texture": "#0"},
+        "down": {"uv": [12.25, 1.75, 11, 2], "texture": "#0"}
+      }
+    }
+  ]
+}
+```
+Texture keys (`"0"`, `"2"`, `"particle"`) are referenced in faces via `"texture": "#0"`. The runtime pack serves the JSON verbatim; place the texture PNGs in your resource pack or the same namespace under `assets/<ns>/textures/...`.
+
+### Multi‑texture support for custom models
+
+When using a custom JSON model (Blockbench export) that references multiple textures via `#0`, `#1`, `particle`, etc., you can supply the texture files from Lua using the `textures` table in settings. Keys must match the texture keys in the model JSON.
+
+**Example model JSON (`config/neoscripts/models/terminal.json`):**
+```json
+{
+  "format_version": "1.21.6",
+  "textures": {
+    "0": "neoscripts:block/terminal_0",
+    "2": "neoscripts:block/terminal_2",
+    "3": "neoscripts:block/terminal_3",
+    "particle": "neoscripts:block/terminal_particle"
+  },
+  "elements": [ ... ]
+}
+```
+
+**Lua registration:**
+```lua
+local content = require("content")
+content.registerBlock("neoscripts:terminal", {
+    model = "config/neoscripts/models/terminal.json",
+    textures = {
+        ["0"] = "config/neoscripts/textures/terminal_base.png",
+        ["2"] = "config/neoscripts/textures/terminal_power_off.png",
+        ["3"] = "config/neoscripts/textures/terminal_screen_blank.png",
+        ["particle"] = "config/neoscripts/textures/terminal_base.png",
+    },
+    hardness = 3,
+    sound = "metal"
+})
+```
+
+The runtime pack writes textures to:
+- `assets/neoscripts/textures/block/terminal_0.png`
+- `assets/neoscripts/textures/block/terminal_2.png`
+- `assets/neoscripts/textures/block/terminal_3.png`
+- `assets/neoscripts/textures/block/terminal_particle.png`
+
+**Rules:**
+- Keys in `textures` table (`"0"`, `"2"`, `"particle"`, etc.) must exactly match the keys in the model's `"textures"` object.
+- Values are file paths (relative to game dir or absolute) to PNG files.
+- The pack serves the model JSON unchanged; only texture files are injected.
 
 Runtime pack generates:
 - `assets/<ns>/items/<path>.json` — item definition (26.x)
@@ -341,6 +413,7 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `name` | string\|Component | `nil` | Display name. Accepts plain string or `text-builder` component (`toComponent().string`). Overrides `Item#getName` / `Block#getName`. |
 | `texture` | string | `nil` | File path to PNG on disk, e.g. `"neoscripts/autostart/icon.png"`. Read at registration. Relative to game dir if not absolute. |
 | `model` / `parent` / `modelFile` | string | `nil` | Parent model Identifier or file path to JSON. See [Model system](#model-system). Short `minecraft:diamond_block` expands. |
+| `textures` / `textureMap` | table | `nil` | Table of texture key → file path for custom models with multiple textures (Blockbench). Keys must match the model JSON's `textures` object (e.g. `["0"] = "path/tex.png", ["particle"] = "path/particle.png"`). See [Multi‑texture support](#multi-texture-support-for-custom-models). |
 | `maxStackSize` | integer | `64` | `Item.Properties.stacksTo` (1..99). |
 | `fireResistant` / `fire_resistant` | boolean | `false` | `fireResistant()`. |
 | `rarity` | string | `nil` | `"common"`, `"uncommon"`, `"rare"`, `"epic"` → `Rarity`. |
@@ -392,4 +465,73 @@ content.registerSlab("test:ruby_slab", base)
 content.registerStairs("test:ruby_stairs", "test:ruby_block", base)
 content.registerDoor("test:ruby_door", base, "oak")
 content.registerFence("test:ruby_fence", base)
+```
+
+## World functions (server side)
+
+Available via `require("world")` or the `world` global in server scripts.
+
+### `world.spawnParticle(id, x, y, z, count?, dx?, dy?, dz?, speed?, force?, options?)`
+
+Spawn particles at a position for all nearby players.
+
+**Parameters:**
+
+* `id` (string) — particle identifier, e.g. `"minecraft:flame"`, `"minecraft:dust"`, `"minecraft:happy_villager"`.
+* `x, y, z` (number) — position.
+* `count` (integer, default `1`) — number of particles.
+* `dx, dy, dz` (number, default `0`) — spread delta (random offset per particle).
+* `speed` (number, default `0`) — particle speed.
+* `force` (boolean, default `false`) — force render distance.
+* `options` (table, optional) — for `dust` particles: `{ r=1, g=0, b=0, scale=1 }` or `{ color={1,0,0}, scale=1 }`. Values `0..1` or `0..255`.
+
+**Alternative table form:**
+
+```lua
+world.spawnParticle({
+    id = "minecraft:dust",
+    pos = { x=100, y=64, z=200 }, -- or Vec3
+    count = 20,
+    delta = { x=0.5, y=0.5, z=0.5 },
+    speed = 0.1,
+    force = true,
+    color = { r=1, g=0.5, b=0 }, -- or {1,0.5,0}
+    scale = 1.5
+})
+```
+
+**Examples:**
+
+```lua
+local world = require("world")
+-- simple flame
+world.spawnParticle("minecraft:flame", 100, 64, 200, 10, 0.2, 0.2, 0.2, 0.1)
+
+-- red dust cloud
+world.spawnParticle("minecraft:dust", 100, 64, 200, 30, 1, 1, 1, 0.2, false, { r=1, g=0, b=0, scale=2 })
+
+-- table form
+world.spawnParticle({
+    id = "minecraft:happy_villager",
+    pos = { x=0, y=70, z=0 },
+    count = 5,
+    delta = { 0.5, 0.5, 0.5 },
+    speed = 0.05
+})
+```
+
+### `world.spawnParticleForPlayer(player, id, x, y, z, ...)`
+
+Same as `spawnParticle` but sends only to a specific player. `player` can be a player entity, player name, or UUID.
+
+```lua
+world.spawnParticleForPlayer("PlayerName", "minecraft:note", 100, 64, 200, 5, 0,0,0, 1)
+```
+
+### `world.playSound(x, y, z, soundId, volume?, pitch?)`
+
+Play a sound at a position for all nearby players.
+
+```lua
+world.playSound(100, 64, 200, "minecraft:block.note_block.harp", 1.0, 1.0)
 ```
