@@ -2599,21 +2599,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Catboost",
-    "headers": [
-      {
-        "level": 2,
-        "title": "loadModel(path)",
-        "slug": "loadmodel-path",
-        "link": "#loadmodel-path",
-        "children": []
-      }
-    ],
-    "path": "/libs/catboost/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "Examples",
     "headers": [
       {
@@ -2625,6 +2610,21 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/libs/deep-java-learining-djl4/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Catboost",
+    "headers": [
+      {
+        "level": 2,
+        "title": "loadModel(path)",
+        "slug": "loadmodel-path",
+        "link": "#loadmodel-path",
+        "children": []
+      }
+    ],
+    "path": "/libs/catboost/",
     "pathLocale": "/",
     "extraFields": []
   },

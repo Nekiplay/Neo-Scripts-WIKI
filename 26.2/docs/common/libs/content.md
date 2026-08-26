@@ -362,6 +362,9 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `noCollision` / `no_collision` / `collision=false` | boolean | `false` | `noCollision()`. |
 | `noOcclusion` / `transparent` | boolean | `false` | `noOcclusion()`. |
 | `shape` / `collisionShape` / `boxes` / `hitbox` | table | `nil` | Custom VoxelShape: list of boxes `{from={x,y,z},to={x2,y2,z2}}` or flat `{x1,y1,z1,x2,y2,z2}`. Units `0..32` (16 = 1 block). Example `{{from={0,0,0},to={16,32,16}}}` for 2 blocks high. |
+| `mineableTool` | string | `nil` | Identifier of the tool type required to drop this block (e.g. `"pickaxe"`). Generates `data/minecraft/tags/block/mineable/<tool>.json`. |
+| `tier` | string | `nil` | Tool tier name (e.g. `"iron"`). Generates `data/minecraft/tags/block/needs_<tier>_tool.json`. |
+| `requiresTool` / `requiresCorrectTool` | boolean | `false` | `requiresCorrectToolForDrops()`. |
 
 All keys accept both `camelCase` and `snake_case` (`maxStackSize` / `max_stack_size`, `noCollision` / `no_collision`).
 

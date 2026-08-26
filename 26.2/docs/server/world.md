@@ -168,6 +168,51 @@ local light = world.getLightSky(0, 64, 0)
 print("Sky light: " .. light)
 ```
 
+## `spawnParticle(identifier, x, y, z, count, dx, dy, dz, speed, force?, dustOpt?)`
+
+Spawn particle in world.
+
+**Parameters:**
+
+* `identifier` (string) - example "minecraft:flame".
+* `x` (number) - X coordinate.
+* `y` (number) - Y coordinate.
+* `z` (number) - Z coordinate.
+* `count` (number).
+* `dx` (number).
+* `dy` (number).
+* `dz` (number).
+* `speed` (number).
+* `force` (number).
+* `dustOpt` (table). example {r=1,g=0,b=0,scale=1} or {1,0,0}, only for minecraft:dust
+
+**Returns:**
+
+* (boolean) Always TRUE
+
+## `spawnParticleFor(player, identifier, x, y, z, count, dx, dy, dz, speed, force?, dustOpt?)`
+
+Spawn particle for player.
+
+**Parameters:**
+
+* `player` [Entitiy](/common/datatypes/entity.md)
+* `identifier` (string) - example "minecraft:flame".
+* `x` (number) - X coordinate.
+* `y` (number) - Y coordinate.
+* `z` (number) - Z coordinate.
+* `count` (number).
+* `dx` (number).
+* `dy` (number).
+* `dz` (number).
+* `speed` (number).
+* `force` (number).
+* `dustOpt` (table). example {r=1,g=0,b=0,scale=1} or {1,0,0}, only for minecraft:dust
+
+**Returns:**
+
+* (boolean) Always TRUE
+
 ## `getEntities()`
 
 Returns a list of all entities in the world.

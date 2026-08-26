@@ -979,393 +979,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Events",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registration Functions",
-        "slug": "registration-functions",
-        "link": "#registration-functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerUnloadCallback(function)",
-            "slug": "registerunloadcallback-function",
-            "link": "#registerunloadcallback-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTick(function)",
-            "slug": "registerclienttick-function",
-            "link": "#registerclienttick-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPre(function)",
-            "slug": "registerclienttickpre-function",
-            "link": "#registerclienttickpre-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerClientTickPost(function)",
-            "slug": "registerclienttickpost-function",
-            "link": "#registerclienttickpost-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerWorldRenderer(function(context))",
-            "slug": "registerworldrenderer-function-context",
-            "link": "#registerworldrenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "register2DRenderer(function(context))",
-            "slug": "register2drenderer-function-context",
-            "link": "#register2drenderer-function-context",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiInitEvent(function)",
-            "slug": "registerimguiinitevent-function",
-            "link": "#registerimguiinitevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerImGuiRenderEvent(function)",
-            "slug": "registerimguirenderevent-function",
-            "link": "#registerimguirenderevent-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerLocationChangeEvent(function(location))",
-            "slug": "registerlocationchangeevent-function-location",
-            "link": "#registerlocationchangeevent-function-location",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerMessageEvent(function(text, overlay, json))",
-            "slug": "registermessageevent-function-text-overlay-json",
-            "link": "#registermessageevent-function-text-overlay-json",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendMessageEvent(function(text))",
-            "slug": "registersendmessageevent-function-text",
-            "link": "#registersendmessageevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSendCommandEvent(function(text))",
-            "slug": "registersendcommandevent-function-text",
-            "link": "#registersendcommandevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerKeyEvent(function(key, action))",
-            "slug": "registerkeyevent-function-key-action",
-            "link": "#registerkeyevent-function-key-action",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerBlockUpdate(function(update))",
-            "slug": "registerblockupdate-function-update",
-            "link": "#registerblockupdate-function-update",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerUseBlock(function(table))",
-            "slug": "registeruseblock-function-table",
-            "link": "#registeruseblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerAttackBlock(function(table))",
-            "slug": "registerattackblock-function-table",
-            "link": "#registerattackblock-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSlotClick(function(table))",
-            "slug": "registerslotclick-function-table",
-            "link": "#registerslotclick-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerTitleEvent(function(text, isSubTitle))",
-            "slug": "registertitleevent-function-text-issubtitle",
-            "link": "#registertitleevent-function-text-issubtitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerActionBarEvent(function(text))",
-            "slug": "registeractionbarevent-function-text",
-            "link": "#registeractionbarevent-function-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
-            "slug": "registerserversiderotationevent-function-yaw-pitch",
-            "link": "#registerserversiderotationevent-function-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerTeleportEvent(function(x, y, z))",
-            "slug": "registerserverteleportevent-function-x-y-z",
-            "link": "#registerserverteleportevent-function-x-y-z",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
-            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerPlayerSendMovementEvent(function(table))",
-            "slug": "registerplayersendmovementevent-function-table",
-            "link": "#registerplayersendmovementevent-function-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerInventoryItemChange(function(slot, item))",
-            "slug": "registerinventoryitemchange-function-slot-item",
-            "link": "#registerinventoryitemchange-function-slot-item",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSpawnParticle(function(data))",
-            "slug": "registerspawnparticle-function-data",
-            "link": "#registerspawnparticle-function-data",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "registerSoundPlay(function(data))",
-            "slug": "registersoundplay-function-data",
-            "link": "#registersoundplay-function-data",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Unregistration Functions",
-        "slug": "unregistration-functions",
-        "link": "#unregistration-functions",
-        "children": []
-      }
-    ],
-    "path": "/general/events.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "General",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "currentScriptName (string)",
-            "slug": "currentscriptname-string",
-            "link": "#currentscriptname-string",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
-            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
-            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "unregisterCommand(commandName)",
-            "slug": "unregistercommand-commandname",
-            "link": "#unregistercommand-commandname",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Modules API",
-        "slug": "modules-api",
-        "link": "#modules-api",
-        "children": [
-          {
-            "level": 3,
-            "title": "modules.getLoadedScripts()",
-            "slug": "modules-getloadedscripts",
-            "link": "#modules-getloadedscripts",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.getScriptRequirements(scriptName)",
-            "slug": "modules-getscriptrequirements-scriptname",
-            "link": "#modules-getscriptrequirements-scriptname",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.loadScript(path)",
-            "slug": "modules-loadscript-path",
-            "link": "#modules-loadscript-path",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "modules.unloadScript(name)",
-            "slug": "modules-unloadscript-name",
-            "link": "#modules-unloadscript-name",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/general/general.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Window",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "isMinimized (boolean)",
-            "slug": "isminimized-boolean",
-            "link": "#isminimized-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isFullscreen (boolean)",
-            "slug": "isfullscreen-boolean",
-            "link": "#isfullscreen-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "refreshRate (number)",
-            "slug": "refreshrate-number",
-            "link": "#refreshrate-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "x (number)",
-            "slug": "x-number",
-            "link": "#x-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "y (number)",
-            "slug": "y-number",
-            "link": "#y-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "width (number)",
-            "slug": "width-number",
-            "link": "#width-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "height (number)",
-            "slug": "height-number",
-            "link": "#height-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenWidth (number)",
-            "slug": "screenwidth-number",
-            "link": "#screenwidth-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "screenHeight (number)",
-            "slug": "screenheight-number",
-            "link": "#screenheight-number",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "setTitle(title)",
-            "slug": "settitle-title",
-            "link": "#settitle-title",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Complete Example",
-        "slug": "complete-example",
-        "link": "#complete-example",
-        "children": []
-      }
-    ],
-    "path": "/general/window.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "Archive",
     "headers": [
       {
@@ -2479,6 +2092,393 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "Events",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registration Functions",
+        "slug": "registration-functions",
+        "link": "#registration-functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerUnloadCallback(function)",
+            "slug": "registerunloadcallback-function",
+            "link": "#registerunloadcallback-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTick(function)",
+            "slug": "registerclienttick-function",
+            "link": "#registerclienttick-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPre(function)",
+            "slug": "registerclienttickpre-function",
+            "link": "#registerclienttickpre-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerClientTickPost(function)",
+            "slug": "registerclienttickpost-function",
+            "link": "#registerclienttickpost-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerWorldRenderer(function(context))",
+            "slug": "registerworldrenderer-function-context",
+            "link": "#registerworldrenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "register2DRenderer(function(context))",
+            "slug": "register2drenderer-function-context",
+            "link": "#register2drenderer-function-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiInitEvent(function)",
+            "slug": "registerimguiinitevent-function",
+            "link": "#registerimguiinitevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerImGuiRenderEvent(function)",
+            "slug": "registerimguirenderevent-function",
+            "link": "#registerimguirenderevent-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerLocationChangeEvent(function(location))",
+            "slug": "registerlocationchangeevent-function-location",
+            "link": "#registerlocationchangeevent-function-location",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerMessageEvent(function(text, overlay, json))",
+            "slug": "registermessageevent-function-text-overlay-json",
+            "link": "#registermessageevent-function-text-overlay-json",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendMessageEvent(function(text))",
+            "slug": "registersendmessageevent-function-text",
+            "link": "#registersendmessageevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSendCommandEvent(function(text))",
+            "slug": "registersendcommandevent-function-text",
+            "link": "#registersendcommandevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerKeyEvent(function(key, action))",
+            "slug": "registerkeyevent-function-key-action",
+            "link": "#registerkeyevent-function-key-action",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerBlockUpdate(function(update))",
+            "slug": "registerblockupdate-function-update",
+            "link": "#registerblockupdate-function-update",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerUseBlock(function(table))",
+            "slug": "registeruseblock-function-table",
+            "link": "#registeruseblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAttackBlock(function(table))",
+            "slug": "registerattackblock-function-table",
+            "link": "#registerattackblock-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSlotClick(function(table))",
+            "slug": "registerslotclick-function-table",
+            "link": "#registerslotclick-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerTitleEvent(function(text, isSubTitle))",
+            "slug": "registertitleevent-function-text-issubtitle",
+            "link": "#registertitleevent-function-text-issubtitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerActionBarEvent(function(text))",
+            "slug": "registeractionbarevent-function-text",
+            "link": "#registeractionbarevent-function-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSideRotationEvent(function(yaw, pitch))",
+            "slug": "registerserversiderotationevent-function-yaw-pitch",
+            "link": "#registerserversiderotationevent-function-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerTeleportEvent(function(x, y, z))",
+            "slug": "registerserverteleportevent-function-x-y-z",
+            "link": "#registerserverteleportevent-function-x-y-z",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerSetTimeEvent(function(dayTime, gameTime, tickDayTime))",
+            "slug": "registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "link": "#registerserversettimeevent-function-daytime-gametime-tickdaytime",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPlayerSendMovementEvent(function(table))",
+            "slug": "registerplayersendmovementevent-function-table",
+            "link": "#registerplayersendmovementevent-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerInventoryItemChange(function(slot, item))",
+            "slug": "registerinventoryitemchange-function-slot-item",
+            "link": "#registerinventoryitemchange-function-slot-item",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSpawnParticle(function(data))",
+            "slug": "registerspawnparticle-function-data",
+            "link": "#registerspawnparticle-function-data",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSoundPlay(function(data))",
+            "slug": "registersoundplay-function-data",
+            "link": "#registersoundplay-function-data",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Unregistration Functions",
+        "slug": "unregistration-functions",
+        "link": "#unregistration-functions",
+        "children": []
+      }
+    ],
+    "path": "/general/events.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "General",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "currentScriptName (string)",
+            "slug": "currentscriptname-string",
+            "link": "#currentscriptname-string",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
+            "slug": "registercommand-command-function-commandname-args-player-function-autocomplete",
+            "link": "#registercommand-command-function-commandname-args-player-function-autocomplete",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "unregisterCommand(commandName)",
+            "slug": "unregistercommand-commandname",
+            "link": "#unregistercommand-commandname",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Modules API",
+        "slug": "modules-api",
+        "link": "#modules-api",
+        "children": [
+          {
+            "level": 3,
+            "title": "modules.getLoadedScripts()",
+            "slug": "modules-getloadedscripts",
+            "link": "#modules-getloadedscripts",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.getScriptRequirements(scriptName)",
+            "slug": "modules-getscriptrequirements-scriptname",
+            "link": "#modules-getscriptrequirements-scriptname",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.loadScript(path)",
+            "slug": "modules-loadscript-path",
+            "link": "#modules-loadscript-path",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "modules.unloadScript(name)",
+            "slug": "modules-unloadscript-name",
+            "link": "#modules-unloadscript-name",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/general/general.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Window",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isMinimized (boolean)",
+            "slug": "isminimized-boolean",
+            "link": "#isminimized-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isFullscreen (boolean)",
+            "slug": "isfullscreen-boolean",
+            "link": "#isfullscreen-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "refreshRate (number)",
+            "slug": "refreshrate-number",
+            "link": "#refreshrate-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "x (number)",
+            "slug": "x-number",
+            "link": "#x-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "y (number)",
+            "slug": "y-number",
+            "link": "#y-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "width (number)",
+            "slug": "width-number",
+            "link": "#width-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "height (number)",
+            "slug": "height-number",
+            "link": "#height-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenWidth (number)",
+            "slug": "screenwidth-number",
+            "link": "#screenwidth-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "screenHeight (number)",
+            "slug": "screenheight-number",
+            "link": "#screenheight-number",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "setTitle(title)",
+            "slug": "settitle-title",
+            "link": "#settitle-title",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Example",
+        "slug": "complete-example",
+        "link": "#complete-example",
+        "children": []
+      }
+    ],
+    "path": "/general/window.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Block Scanner",
     "headers": [
       {
@@ -2646,6 +2646,36 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/world-objects/world.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Catboost",
+    "headers": [
+      {
+        "level": 2,
+        "title": "loadModel(path)",
+        "slug": "loadmodel-path",
+        "link": "#loadmodel-path",
+        "children": []
+      }
+    ],
+    "path": "/libs/catboost/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Regression (Math prediction)",
+        "slug": "regression-math-prediction",
+        "link": "#regression-math-prediction",
+        "children": []
+      }
+    ],
+    "path": "/libs/deep-java-learining-djl4/examples.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -2839,840 +2869,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/libs/ffi/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Regression (Math prediction)",
-        "slug": "regression-math-prediction",
-        "link": "#regression-math-prediction",
-        "children": []
-      }
-    ],
-    "path": "/libs/deep-java-learining-djl4/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Input",
-    "headers": [
-      {
-        "level": 2,
-        "title": "attackEntity()",
-        "slug": "attackentity",
-        "link": "#attackentity",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "attackBlock()",
-        "slug": "attackblock",
-        "link": "#attackblock",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "mineBlock()",
-        "slug": "mineblock",
-        "link": "#mineblock",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setSelectedSlot(slot)",
-        "slug": "setselectedslot-slot",
-        "link": "#setselectedslot-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getSelectedSlot()",
-        "slug": "getselectedslot",
-        "link": "#getselectedslot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "silentUse(slot)",
-        "slug": "silentuse-slot",
-        "link": "#silentuse-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "leftClick()",
-        "slug": "leftclick",
-        "link": "#leftclick",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rightClick()",
-        "slug": "rightclick",
-        "link": "#rightclick",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedSprinting(enable)",
-        "slug": "setpressedsprinting-enable",
-        "link": "#setpressedsprinting-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedJump(enable)",
-        "slug": "setpressedjump-enable",
-        "link": "#setpressedjump-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedSneak(enable)",
-        "slug": "setpressedsneak-enable",
-        "link": "#setpressedsneak-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedForward(enable)",
-        "slug": "setpressedforward-enable",
-        "link": "#setpressedforward-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedBack(enable)",
-        "slug": "setpressedback-enable",
-        "link": "#setpressedback-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedLeft(enable)",
-        "slug": "setpressedleft-enable",
-        "link": "#setpressedleft-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedRight(enable)",
-        "slug": "setpressedright-enable",
-        "link": "#setpressedright-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedAttack(enable)",
-        "slug": "setpressedattack-enable",
-        "link": "#setpressedattack-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedUse(enable)",
-        "slug": "setpresseduse-enable",
-        "link": "#setpresseduse-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedSprinting()",
-        "slug": "ispressedsprinting",
-        "link": "#ispressedsprinting",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedJump()",
-        "slug": "ispressedjump",
-        "link": "#ispressedjump",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedSneak()",
-        "slug": "ispressedsneak",
-        "link": "#ispressedsneak",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedForward()",
-        "slug": "ispressedforward",
-        "link": "#ispressedforward",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedBack()",
-        "slug": "ispressedback",
-        "link": "#ispressedback",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedLeft()",
-        "slug": "ispressedleft",
-        "link": "#ispressedleft",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedRight()",
-        "slug": "ispressedright",
-        "link": "#ispressedright",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedAttack()",
-        "slug": "ispressedattack",
-        "link": "#ispressedattack",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedUse()",
-        "slug": "ispresseduse",
-        "link": "#ispresseduse",
-        "children": []
-      }
-    ],
-    "path": "/player-objects/player/input.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Inventory",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "carriedItem",
-            "slug": "carrieditem",
-            "link": "#carrieditem",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isAnyScreenOpened()",
-        "slug": "isanyscreenopened",
-        "link": "#isanyscreenopened",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isSignOpened()",
-        "slug": "issignopened",
-        "link": "#issignopened",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getSignText(line)",
-        "slug": "getsigntext-line",
-        "link": "#getsigntext-line",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setSignText(line, text)",
-        "slug": "setsigntext-line-text",
-        "link": "#setsigntext-line-text",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "doneSign()",
-        "slug": "donesign",
-        "link": "#donesign",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getChestTitle()",
-        "slug": "getchesttitle",
-        "link": "#getchesttitle",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getStack(slot)",
-        "slug": "getstack-slot",
-        "link": "#getstack-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getStackFromContainer(slot)",
-        "slug": "getstackfromcontainer-slot",
-        "link": "#getstackfromcontainer-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getContainerSlots()",
-        "slug": "getcontainerslots",
-        "link": "#getcontainerslots",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getContainerTitle()",
-        "slug": "getcontainertitle",
-        "link": "#getcontainertitle",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setStack(slot, item)",
-        "slug": "setstack-slot-item",
-        "link": "#setstack-slot-item",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setItemInContainer(slot, item)",
-        "slug": "setitemincontainer-slot-item",
-        "link": "#setitemincontainer-slot-item",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "leftClick(slot)",
-        "slug": "leftclick-slot",
-        "link": "#leftclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "middleClick(slot)",
-        "slug": "middleclick-slot",
-        "link": "#middleclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "shiftLeftClick(slot)",
-        "slug": "shiftleftclick-slot",
-        "link": "#shiftleftclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "shiftRightClick(slot)",
-        "slug": "shiftrightclick-slot",
-        "link": "#shiftrightclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rightClick(slot)",
-        "slug": "rightclick-slot",
-        "link": "#rightclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "drop(slot)",
-        "slug": "drop-slot",
-        "link": "#drop-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "dropAll(slot)",
-        "slug": "dropall-slot",
-        "link": "#dropall-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "closeScreen()",
-        "slug": "closescreen",
-        "link": "#closescreen",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "openInventory()",
-        "slug": "openinventory",
-        "link": "#openinventory",
-        "children": []
-      }
-    ],
-    "path": "/player-objects/player/inventory.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Network",
-    "headers": [
-      {
-        "level": 3,
-        "title": "getPlayersList()",
-        "slug": "getplayerslist",
-        "link": "#getplayerslist",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "connectToServer(host, port)",
-        "slug": "connecttoserver-host-port",
-        "link": "#connecttoserver-host-port",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "disconnectFromServer(reason)",
-        "slug": "disconnectfromserver-reason",
-        "link": "#disconnectfromserver-reason",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStartDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendstartdestroyblockpacket-x-y-z-direction",
-        "link": "#sendstartdestroyblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStopDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendstopdestroyblockpacket-x-y-z-direction",
-        "link": "#sendstopdestroyblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStopAbortBlockPacket(x, y, z, direction)",
-        "slug": "sendstopabortblockpacket-x-y-z-direction",
-        "link": "#sendstopabortblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendAbortDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendabortdestroyblockpacket-x-y-z-direction",
-        "link": "#sendabortdestroyblockpacket-x-y-z-direction",
-        "children": []
-      }
-    ],
-    "path": "/player-objects/player/network.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Player",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "input",
-            "slug": "input",
-            "link": "#input",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "inventory",
-            "slug": "inventory",
-            "link": "#inventory",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "entity",
-            "slug": "entity",
-            "link": "#entity",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "fishHook",
-            "slug": "fishhook",
-            "link": "#fishhook",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "addMessage(text)",
-            "slug": "addmessage-text",
-            "link": "#addmessage-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sendMessage(text)",
-            "slug": "sendmessage-text",
-            "link": "#sendmessage-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sendCommand(text)",
-            "slug": "sendcommand-text",
-            "link": "#sendcommand-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getProfile()",
-            "slug": "getprofile",
-            "link": "#getprofile",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getProfileId()",
-            "slug": "getprofileid",
-            "link": "#getprofileid",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getName()",
-            "slug": "getname",
-            "link": "#getname",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getRank()",
-            "slug": "getrank",
-            "link": "#getrank",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getRotation()",
-            "slug": "getrotation",
-            "link": "#getrotation",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "setRotation(yaw, pitch)",
-            "slug": "setrotation-yaw-pitch",
-            "link": "#setrotation-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getPosition()",
-            "slug": "getposition",
-            "link": "#getposition",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getLocation()",
-            "slug": "getlocation",
-            "link": "#getlocation",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getRawLocation()",
-            "slug": "getrawlocation",
-            "link": "#getrawlocation",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getArea()",
-            "slug": "getarea",
-            "link": "#getarea",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getPurse()",
-            "slug": "getpurse",
-            "link": "#getpurse",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getBits()",
-            "slug": "getbits",
-            "link": "#getbits",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getHealth()",
-            "slug": "gethealth",
-            "link": "#gethealth",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getMaxHealth()",
-            "slug": "getmaxhealth",
-            "link": "#getmaxhealth",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getMana()",
-            "slug": "getmana",
-            "link": "#getmana",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getMaxMana()",
-            "slug": "getmaxmana",
-            "link": "#getmaxmana",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getDefence()",
-            "slug": "getdefence",
-            "link": "#getdefence",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getSpeed()",
-            "slug": "getspeed",
-            "link": "#getspeed",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getTitle()",
-            "slug": "gettitle",
-            "link": "#gettitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getSubTitle()",
-            "slug": "getsubtitle",
-            "link": "#getsubtitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getActionBar()",
-            "slug": "getactionbar",
-            "link": "#getactionbar",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getAir()",
-            "slug": "getair",
-            "link": "#getair",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getMaxAir()",
-            "slug": "getmaxair",
-            "link": "#getmaxair",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getCold()",
-            "slug": "getcold",
-            "link": "#getcold",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isSneaking()",
-            "slug": "issneaking",
-            "link": "#issneaking",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isSprinting()",
-            "slug": "issprinting",
-            "link": "#issprinting",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isOnGround()",
-            "slug": "isonground",
-            "link": "#isonground",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isOnSkyBlock()",
-            "slug": "isonskyblock",
-            "link": "#isonskyblock",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getPet()",
-            "slug": "getpet",
-            "link": "#getpet",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getScoreBoardLines()",
-            "slug": "getscoreboardlines",
-            "link": "#getscoreboardlines",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getTab()",
-            "slug": "gettab",
-            "link": "#gettab",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getEyePosition()",
-            "slug": "geteyeposition",
-            "link": "#geteyeposition",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "addToast(title, description, time)",
-            "slug": "addtoast-title-description-time",
-            "link": "#addtoast-title-description-time",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getLookEndPos(number)",
-            "slug": "getlookendpos-number",
-            "link": "#getlookendpos-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getLookEndPos(table)",
-            "slug": "getlookendpos-table",
-            "link": "#getlookendpos-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycast(number)",
-            "slug": "raycast-number",
-            "link": "#raycast-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "swingHand(offHand)",
-            "slug": "swinghand-offhand",
-            "link": "#swinghand-offhand",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isHasLineOfSight(entity)",
-            "slug": "ishaslineofsight-entity",
-            "link": "#ishaslineofsight-entity",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromId(distance, blocks)",
-            "slug": "raycasttoblocksfromid-distance-blocks",
-            "link": "#raycasttoblocksfromid-distance-blocks",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromId(distance, blockIds)",
-            "slug": "raycasttoblocksfromid-distance-blockids",
-            "link": "#raycasttoblocksfromid-distance-blockids",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromIdentifier(distance, identifiers)",
-            "slug": "raycasttoblocksfromidentifier-distance-identifiers",
-            "link": "#raycasttoblocksfromidentifier-distance-identifiers",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToEntity(distance)",
-            "slug": "raycasttoentity-distance",
-            "link": "#raycasttoentity-distance",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getBossBar()",
-            "slug": "getbossbar",
-            "link": "#getbossbar",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getDirectionFromYawPitch(yaw, pitch)",
-            "slug": "getdirectionfromyawpitch-yaw-pitch",
-            "link": "#getdirectionfromyawpitch-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "setServerRotation(yaw, pitch, movementCorrection, silentMovementCorrection)",
-            "slug": "setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
-            "link": "#setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getServerRotation()",
-            "slug": "getserverrotation",
-            "link": "#getserverrotation",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/player-objects/player/",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5506,17 +4702,821 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Catboost",
+    "title": "Input",
     "headers": [
       {
         "level": 2,
-        "title": "loadModel(path)",
-        "slug": "loadmodel-path",
-        "link": "#loadmodel-path",
+        "title": "attackEntity()",
+        "slug": "attackentity",
+        "link": "#attackentity",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "attackBlock()",
+        "slug": "attackblock",
+        "link": "#attackblock",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "mineBlock()",
+        "slug": "mineblock",
+        "link": "#mineblock",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setSelectedSlot(slot)",
+        "slug": "setselectedslot-slot",
+        "link": "#setselectedslot-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getSelectedSlot()",
+        "slug": "getselectedslot",
+        "link": "#getselectedslot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "silentUse(slot)",
+        "slug": "silentuse-slot",
+        "link": "#silentuse-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "leftClick()",
+        "slug": "leftclick",
+        "link": "#leftclick",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rightClick()",
+        "slug": "rightclick",
+        "link": "#rightclick",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedSprinting(enable)",
+        "slug": "setpressedsprinting-enable",
+        "link": "#setpressedsprinting-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedJump(enable)",
+        "slug": "setpressedjump-enable",
+        "link": "#setpressedjump-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedSneak(enable)",
+        "slug": "setpressedsneak-enable",
+        "link": "#setpressedsneak-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedForward(enable)",
+        "slug": "setpressedforward-enable",
+        "link": "#setpressedforward-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedBack(enable)",
+        "slug": "setpressedback-enable",
+        "link": "#setpressedback-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedLeft(enable)",
+        "slug": "setpressedleft-enable",
+        "link": "#setpressedleft-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedRight(enable)",
+        "slug": "setpressedright-enable",
+        "link": "#setpressedright-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedAttack(enable)",
+        "slug": "setpressedattack-enable",
+        "link": "#setpressedattack-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedUse(enable)",
+        "slug": "setpresseduse-enable",
+        "link": "#setpresseduse-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedSprinting()",
+        "slug": "ispressedsprinting",
+        "link": "#ispressedsprinting",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedJump()",
+        "slug": "ispressedjump",
+        "link": "#ispressedjump",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedSneak()",
+        "slug": "ispressedsneak",
+        "link": "#ispressedsneak",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedForward()",
+        "slug": "ispressedforward",
+        "link": "#ispressedforward",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedBack()",
+        "slug": "ispressedback",
+        "link": "#ispressedback",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedLeft()",
+        "slug": "ispressedleft",
+        "link": "#ispressedleft",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedRight()",
+        "slug": "ispressedright",
+        "link": "#ispressedright",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedAttack()",
+        "slug": "ispressedattack",
+        "link": "#ispressedattack",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedUse()",
+        "slug": "ispresseduse",
+        "link": "#ispresseduse",
         "children": []
       }
     ],
-    "path": "/libs/catboost/",
+    "path": "/player-objects/player/input.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Inventory",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "carriedItem",
+            "slug": "carrieditem",
+            "link": "#carrieditem",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isAnyScreenOpened()",
+        "slug": "isanyscreenopened",
+        "link": "#isanyscreenopened",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isSignOpened()",
+        "slug": "issignopened",
+        "link": "#issignopened",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getSignText(line)",
+        "slug": "getsigntext-line",
+        "link": "#getsigntext-line",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setSignText(line, text)",
+        "slug": "setsigntext-line-text",
+        "link": "#setsigntext-line-text",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "doneSign()",
+        "slug": "donesign",
+        "link": "#donesign",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getChestTitle()",
+        "slug": "getchesttitle",
+        "link": "#getchesttitle",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getStack(slot)",
+        "slug": "getstack-slot",
+        "link": "#getstack-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getStackFromContainer(slot)",
+        "slug": "getstackfromcontainer-slot",
+        "link": "#getstackfromcontainer-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getContainerSlots()",
+        "slug": "getcontainerslots",
+        "link": "#getcontainerslots",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getContainerTitle()",
+        "slug": "getcontainertitle",
+        "link": "#getcontainertitle",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setStack(slot, item)",
+        "slug": "setstack-slot-item",
+        "link": "#setstack-slot-item",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setItemInContainer(slot, item)",
+        "slug": "setitemincontainer-slot-item",
+        "link": "#setitemincontainer-slot-item",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "leftClick(slot)",
+        "slug": "leftclick-slot",
+        "link": "#leftclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "middleClick(slot)",
+        "slug": "middleclick-slot",
+        "link": "#middleclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "shiftLeftClick(slot)",
+        "slug": "shiftleftclick-slot",
+        "link": "#shiftleftclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "shiftRightClick(slot)",
+        "slug": "shiftrightclick-slot",
+        "link": "#shiftrightclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rightClick(slot)",
+        "slug": "rightclick-slot",
+        "link": "#rightclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "drop(slot)",
+        "slug": "drop-slot",
+        "link": "#drop-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dropAll(slot)",
+        "slug": "dropall-slot",
+        "link": "#dropall-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "closeScreen()",
+        "slug": "closescreen",
+        "link": "#closescreen",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "openInventory()",
+        "slug": "openinventory",
+        "link": "#openinventory",
+        "children": []
+      }
+    ],
+    "path": "/player-objects/player/inventory.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Network",
+    "headers": [
+      {
+        "level": 3,
+        "title": "getPlayersList()",
+        "slug": "getplayerslist",
+        "link": "#getplayerslist",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "connectToServer(host, port)",
+        "slug": "connecttoserver-host-port",
+        "link": "#connecttoserver-host-port",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "disconnectFromServer(reason)",
+        "slug": "disconnectfromserver-reason",
+        "link": "#disconnectfromserver-reason",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStartDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendstartdestroyblockpacket-x-y-z-direction",
+        "link": "#sendstartdestroyblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStopDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendstopdestroyblockpacket-x-y-z-direction",
+        "link": "#sendstopdestroyblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStopAbortBlockPacket(x, y, z, direction)",
+        "slug": "sendstopabortblockpacket-x-y-z-direction",
+        "link": "#sendstopabortblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendAbortDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendabortdestroyblockpacket-x-y-z-direction",
+        "link": "#sendabortdestroyblockpacket-x-y-z-direction",
+        "children": []
+      }
+    ],
+    "path": "/player-objects/player/network.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Player",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "input",
+            "slug": "input",
+            "link": "#input",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory",
+            "slug": "inventory",
+            "link": "#inventory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "entity",
+            "slug": "entity",
+            "link": "#entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "fishHook",
+            "slug": "fishhook",
+            "link": "#fishhook",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "addMessage(text)",
+            "slug": "addmessage-text",
+            "link": "#addmessage-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sendMessage(text)",
+            "slug": "sendmessage-text",
+            "link": "#sendmessage-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sendCommand(text)",
+            "slug": "sendcommand-text",
+            "link": "#sendcommand-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getProfile()",
+            "slug": "getprofile",
+            "link": "#getprofile",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getProfileId()",
+            "slug": "getprofileid",
+            "link": "#getprofileid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getName()",
+            "slug": "getname",
+            "link": "#getname",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getRank()",
+            "slug": "getrank",
+            "link": "#getrank",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getRotation()",
+            "slug": "getrotation",
+            "link": "#getrotation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "setRotation(yaw, pitch)",
+            "slug": "setrotation-yaw-pitch",
+            "link": "#setrotation-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getPosition()",
+            "slug": "getposition",
+            "link": "#getposition",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLocation()",
+            "slug": "getlocation",
+            "link": "#getlocation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getRawLocation()",
+            "slug": "getrawlocation",
+            "link": "#getrawlocation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getArea()",
+            "slug": "getarea",
+            "link": "#getarea",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getPurse()",
+            "slug": "getpurse",
+            "link": "#getpurse",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getBits()",
+            "slug": "getbits",
+            "link": "#getbits",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getHealth()",
+            "slug": "gethealth",
+            "link": "#gethealth",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getMaxHealth()",
+            "slug": "getmaxhealth",
+            "link": "#getmaxhealth",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getMana()",
+            "slug": "getmana",
+            "link": "#getmana",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getMaxMana()",
+            "slug": "getmaxmana",
+            "link": "#getmaxmana",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getDefence()",
+            "slug": "getdefence",
+            "link": "#getdefence",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getSpeed()",
+            "slug": "getspeed",
+            "link": "#getspeed",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getTitle()",
+            "slug": "gettitle",
+            "link": "#gettitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getSubTitle()",
+            "slug": "getsubtitle",
+            "link": "#getsubtitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getActionBar()",
+            "slug": "getactionbar",
+            "link": "#getactionbar",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getAir()",
+            "slug": "getair",
+            "link": "#getair",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getMaxAir()",
+            "slug": "getmaxair",
+            "link": "#getmaxair",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getCold()",
+            "slug": "getcold",
+            "link": "#getcold",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isSneaking()",
+            "slug": "issneaking",
+            "link": "#issneaking",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isSprinting()",
+            "slug": "issprinting",
+            "link": "#issprinting",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isOnGround()",
+            "slug": "isonground",
+            "link": "#isonground",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isOnSkyBlock()",
+            "slug": "isonskyblock",
+            "link": "#isonskyblock",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getPet()",
+            "slug": "getpet",
+            "link": "#getpet",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getScoreBoardLines()",
+            "slug": "getscoreboardlines",
+            "link": "#getscoreboardlines",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getTab()",
+            "slug": "gettab",
+            "link": "#gettab",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getEyePosition()",
+            "slug": "geteyeposition",
+            "link": "#geteyeposition",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "addToast(title, description, time)",
+            "slug": "addtoast-title-description-time",
+            "link": "#addtoast-title-description-time",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLookEndPos(number)",
+            "slug": "getlookendpos-number",
+            "link": "#getlookendpos-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLookEndPos(table)",
+            "slug": "getlookendpos-table",
+            "link": "#getlookendpos-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycast(number)",
+            "slug": "raycast-number",
+            "link": "#raycast-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "swingHand(offHand)",
+            "slug": "swinghand-offhand",
+            "link": "#swinghand-offhand",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isHasLineOfSight(entity)",
+            "slug": "ishaslineofsight-entity",
+            "link": "#ishaslineofsight-entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromId(distance, blocks)",
+            "slug": "raycasttoblocksfromid-distance-blocks",
+            "link": "#raycasttoblocksfromid-distance-blocks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromId(distance, blockIds)",
+            "slug": "raycasttoblocksfromid-distance-blockids",
+            "link": "#raycasttoblocksfromid-distance-blockids",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromIdentifier(distance, identifiers)",
+            "slug": "raycasttoblocksfromidentifier-distance-identifiers",
+            "link": "#raycasttoblocksfromidentifier-distance-identifiers",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToEntity(distance)",
+            "slug": "raycasttoentity-distance",
+            "link": "#raycasttoentity-distance",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getBossBar()",
+            "slug": "getbossbar",
+            "link": "#getbossbar",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getDirectionFromYawPitch(yaw, pitch)",
+            "slug": "getdirectionfromyawpitch-yaw-pitch",
+            "link": "#getdirectionfromyawpitch-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "setServerRotation(yaw, pitch, movementCorrection, silentMovementCorrection)",
+            "slug": "setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
+            "link": "#setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getServerRotation()",
+            "slug": "getserverrotation",
+            "link": "#getserverrotation",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/player-objects/player/",
     "pathLocale": "/",
     "extraFields": []
   },
