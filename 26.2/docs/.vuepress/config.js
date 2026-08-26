@@ -130,6 +130,7 @@ export default defineUserConfig({
           { text: "🌐 TCP", link: "/common/libs/tcp.html" },
           { text: "🌐 Http", link: "/common/libs/http.html" },
           { text: "➕ Creator", link: "/common/libs/creator.html" },
+          { text: "🧊 Content", link: "/common/libs/content.html" },
           { text: "✏️ Text Builder", link: "/common/libs/text-builder.html" },
           { text: "📄 Encoding", link: "/common/libs/encoding.html" },
           {

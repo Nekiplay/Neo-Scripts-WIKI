@@ -5,7 +5,11 @@ Lua version: 5.3
 
 Currently wiki only for default branch
 
-Directory for scripts `config\neoscripts\scripts\`
+Directory for client-side scripts `<game dir>\config\neoscripts\scripts\`
+
+Directory for common-side scripts `<game/server dir>\neoscripts\autoload\` -- use for addeding custom items from `require("content")`
+
+Directory for server-side scripts `<world dir>\neoscripts\scripts\`
 
 Names of scripts that are automatically loaded when the game starts: **autoload.lua**, **init.lua**
 

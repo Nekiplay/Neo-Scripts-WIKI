@@ -63,6 +63,27 @@ export const SEARCH_INDEX = [
             "slug": "registerserverstoppingcallback-function-world",
             "link": "#registerserverstoppingcallback-function-world",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerServerStartedCallback(function)",
+            "slug": "registerserverstartedcallback-function",
+            "link": "#registerserverstartedcallback-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerWorldLoadedCallback(function(world))",
+            "slug": "registerworldloadedcallback-function-world",
+            "link": "#registerworldloadedcallback-function-world",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerSluaInvokeCallback(function(info))",
+            "slug": "registersluainvokecallback-function-info",
+            "link": "#registersluainvokecallback-function-info",
+            "children": []
           }
         ]
       },
@@ -196,6 +217,13 @@ export const SEARCH_INDEX = [
       },
       {
         "level": 2,
+        "title": "modVersion",
+        "slug": "modversion",
+        "link": "#modversion",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "require(module)",
         "slug": "require-module",
         "link": "#require-module",
@@ -218,9 +246,16 @@ export const SEARCH_INDEX = [
     "headers": [
       {
         "level": 2,
-        "title": "getLevel(identifier)",
-        "slug": "getlevel-identifier",
-        "link": "#getlevel-identifier",
+        "title": "getLevel(identifier) / getWorld(identifier)",
+        "slug": "getlevel-identifier-getworld-identifier",
+        "link": "#getlevel-identifier-getworld-identifier",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getLevels() / getWorlds()",
+        "slug": "getlevels-getworlds",
+        "link": "#getlevels-getworlds",
         "children": []
       },
       {
@@ -228,6 +263,83 @@ export const SEARCH_INDEX = [
         "title": "getOnlinePlayers()",
         "slug": "getonlineplayers",
         "link": "#getonlineplayers",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getPlayer(nameOrUuid)",
+        "slug": "getplayer-nameoruuid",
+        "link": "#getplayer-nameoruuid",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "broadcast(message)",
+        "slug": "broadcast-message",
+        "link": "#broadcast-message",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "executeCommand(command [, x, y, z]) / server.runCommand(...)",
+        "slug": "executecommand-command-x-y-z-server-runcommand",
+        "link": "#executecommand-command-x-y-z-server-runcommand",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "schedule(ticks, callback)",
+        "slug": "schedule-ticks-callback",
+        "link": "#schedule-ticks-callback",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "runTask(callback)",
+        "slug": "runtask-callback",
+        "link": "#runtask-callback",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getTps()",
+        "slug": "gettps",
+        "link": "#gettps",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getMspt()",
+        "slug": "getmspt",
+        "link": "#getmspt",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "gameRule(name [, value])",
+        "slug": "gamerule-name-value",
+        "link": "#gamerule-name-value",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "difficulty([value])",
+        "slug": "difficulty-value",
+        "link": "#difficulty-value",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "saveAll()",
+        "slug": "saveall",
+        "link": "#saveall",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "stop()",
+        "slug": "stop",
+        "link": "#stop",
         "children": []
       }
     ],
@@ -376,6 +488,48 @@ export const SEARCH_INDEX = [
         "title": "playSound(x, y, z, soundIdentifier [, volume, pitch])",
         "slug": "playsound-x-y-z-soundidentifier-volume-pitch",
         "link": "#playsound-x-y-z-soundidentifier-volume-pitch",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "executeCommand(command [, x, y, z]) / world.runCommand(...)",
+        "slug": "executecommand-command-x-y-z-world-runcommand",
+        "link": "#executecommand-command-x-y-z-world-runcommand",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "spawnEntityFor(player, type, x, y, z [, yaw, pitch]) / world.spawnPrivateEntity(...)",
+        "slug": "spawnentityfor-player-type-x-y-z-yaw-pitch-world-spawnprivateentity",
+        "link": "#spawnentityfor-player-type-x-y-z-yaw-pitch-world-spawnprivateentity",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "updateEntityFor(player, entity) / world.updatePrivateEntity(...)",
+        "slug": "updateentityfor-player-entity-world-updateprivateentity",
+        "link": "#updateentityfor-player-entity-world-updateprivateentity",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "removeEntityFor(player, entity|entityId) / world.removePrivateEntity(...)",
+        "slug": "removeentityfor-player-entity-entityid-world-removeprivateentity",
+        "link": "#removeentityfor-player-entity-entityid-world-removeprivateentity",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setBlockFor(player, x, y, z, blockState) / world.setPrivateBlock(...)",
+        "slug": "setblockfor-player-x-y-z-blockstate-world-setprivateblock",
+        "link": "#setblockfor-player-x-y-z-blockstate-world-setprivateblock",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "resetBlockFor(player, x, y, z) / world.resetPrivateBlock(...)",
+        "slug": "resetblockfor-player-x-y-z-world-resetprivateblock",
+        "link": "#resetblockfor-player-x-y-z-world-resetprivateblock",
         "children": []
       },
       {
@@ -631,6 +785,13 @@ export const SEARCH_INDEX = [
             "slug": "currentscriptname-string",
             "link": "#currentscriptname-string",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "modVersion (string)",
+            "slug": "modversion-string",
+            "link": "#modversion-string",
+            "children": []
           }
         ]
       },
@@ -640,6 +801,13 @@ export const SEARCH_INDEX = [
         "slug": "functions",
         "link": "#functions",
         "children": [
+          {
+            "level": 3,
+            "title": "require(module [, cache])",
+            "slug": "require-module-cache",
+            "link": "#require-module-cache",
+            "children": []
+          },
           {
             "level": 3,
             "title": "registerCommand(command, function(commandName, args, player), function(autocomplete))",
@@ -1280,7 +1448,85 @@ export const SEARCH_INDEX = [
         "title": "Variables",
         "slug": "variables",
         "link": "#variables",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "Crops only (wheat, carrots, ...)",
+            "slug": "crops-only-wheat-carrots",
+            "link": "#crops-only-wheat-carrots",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Repeater only",
+            "slug": "repeater-only",
+            "link": "#repeater-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Snow Layer only",
+            "slug": "snow-layer-only",
+            "link": "#snow-layer-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Piston only",
+            "slug": "piston-only",
+            "link": "#piston-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Directional blocks only (doors, pistons, ...)",
+            "slug": "directional-blocks-only-doors-pistons",
+            "link": "#directional-blocks-only-doors-pistons",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Attached blocks only (levers, torches, ...)",
+            "slug": "attached-blocks-only-levers-torches",
+            "link": "#attached-blocks-only-levers-torches",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Redstone Torch only",
+            "slug": "redstone-torch-only",
+            "link": "#redstone-torch-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Comparator only",
+            "slug": "comparator-only",
+            "link": "#comparator-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Redstone Wire only",
+            "slug": "redstone-wire-only",
+            "link": "#redstone-wire-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Water and waterlogged blocks only",
+            "slug": "water-and-waterlogged-blocks-only",
+            "link": "#water-and-waterlogged-blocks-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Any block",
+            "slug": "any-block",
+            "link": "#any-block",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -1810,6 +2056,34 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
+            "title": "LivingEntity only",
+            "slug": "livingentity-only",
+            "link": "#livingentity-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "AgeableMob only",
+            "slug": "ageablemob-only",
+            "link": "#ageablemob-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Player only",
+            "slug": "player-only",
+            "link": "#player-only",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ItemFrame and ItemEntity only",
+            "slug": "itemframe-and-itementity-only",
+            "link": "#itemframe-and-itementity-only",
+            "children": []
+          },
+          {
+            "level": 3,
             "title": "ArmorStand only",
             "slug": "armorstand-only",
             "link": "#armorstand-only",
@@ -1860,21 +2134,35 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
-            "title": "entity:add_effect(id[, duration][, amplifier])",
+            "title": "entity.add_effect(id[, duration][, amplifier])",
             "slug": "entity-add-effect-id-duration-amplifier",
             "link": "#entity-add-effect-id-duration-amplifier",
             "children": []
           },
           {
             "level": 3,
-            "title": "entity:remove_effect([id])",
+            "title": "entity.remove_effect([id])",
             "slug": "entity-remove-effect-id",
             "link": "#entity-remove-effect-id",
             "children": []
           },
           {
             "level": 3,
-            "title": "entity:teleport(x, y, z, onGround)",
+            "title": "entity.add_passenger(entity)",
+            "slug": "entity-add-passenger-entity",
+            "link": "#entity-add-passenger-entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "entity.remove_passenger(entity)",
+            "slug": "entity-remove-passenger-entity",
+            "link": "#entity-remove-passenger-entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "entity.teleport(x, y, z, onGround)",
             "slug": "entity-teleport-x-y-z-onground",
             "link": "#entity-teleport-x-y-z-onground",
             "children": []
@@ -1911,15 +2199,22 @@ export const SEARCH_INDEX = [
           {
             "level": 3,
             "title": "LivingEntity only",
-            "slug": "livingentity-only",
-            "link": "#livingentity-only",
+            "slug": "livingentity-only-1",
+            "link": "#livingentity-only-1",
             "children": []
           },
           {
             "level": 3,
             "title": "AgeableMob only",
-            "slug": "ageablemob-only",
-            "link": "#ageablemob-only",
+            "slug": "ageablemob-only-1",
+            "link": "#ageablemob-only-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Passengers",
+            "slug": "passengers",
+            "link": "#passengers",
             "children": []
           },
           {
@@ -2003,28 +2298,28 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
-            "title": "inventory:get_items()",
+            "title": "inventory.get_items()",
             "slug": "inventory-get-items",
             "link": "#inventory-get-items",
             "children": []
           },
           {
             "level": 3,
-            "title": "inventory:give_item(item[, count])",
+            "title": "inventory.give_item(item[, count])",
             "slug": "inventory-give-item-item-count",
             "link": "#inventory-give-item-item-count",
             "children": []
           },
           {
             "level": 3,
-            "title": "inventory:take_item(slotOrItem[, count])",
+            "title": "inventory.take_item(slotOrItem[, count])",
             "slug": "inventory-take-item-slotoritem-count",
             "link": "#inventory-take-item-slotoritem-count",
             "children": []
           },
           {
             "level": 3,
-            "title": "inventory:set_item(slot, item)",
+            "title": "inventory.set_item(slot, item)",
             "slug": "inventory-set-item-slot-item",
             "link": "#inventory-set-item-slot-item",
             "children": []
@@ -2044,7 +2339,15 @@ export const SEARCH_INDEX = [
         "title": "Variables",
         "slug": "variables",
         "link": "#variables",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "Custom variables",
+            "slug": "custom-variables",
+            "link": "#custom-variables",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -2054,9 +2357,9 @@ export const SEARCH_INDEX = [
         "children": [
           {
             "level": 3,
-            "title": "isCorrectToolForDrops(block)",
-            "slug": "iscorrecttoolfordrops-block",
-            "link": "#iscorrecttoolfordrops-block",
+            "title": "item[\"is_correct_tool\"](block)",
+            "slug": "item-is-correct-tool-block",
+            "link": "#item-is-correct-tool-block",
             "children": []
           }
         ]
@@ -2268,6 +2571,163 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "Scoreboard",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "scoreboard.get_objective(name)",
+            "slug": "scoreboard-get-objective-name",
+            "link": "#scoreboard-get-objective-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.create_objective(name[, criteria][, displayName][, renderType])",
+            "slug": "scoreboard-create-objective-name-criteria-displayname-rendertype",
+            "link": "#scoreboard-create-objective-name-criteria-displayname-rendertype",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.remove_objective(name)",
+            "slug": "scoreboard-remove-objective-name",
+            "link": "#scoreboard-remove-objective-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.get_score(objective, holder)",
+            "slug": "scoreboard-get-score-objective-holder",
+            "link": "#scoreboard-get-score-objective-holder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.set_score(objective, holder, value)",
+            "slug": "scoreboard-set-score-objective-holder-value",
+            "link": "#scoreboard-set-score-objective-holder-value",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.add_score(objective, holder, delta)",
+            "slug": "scoreboard-add-score-objective-holder-delta",
+            "link": "#scoreboard-add-score-objective-holder-delta",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.reset_score(objective, holder)",
+            "slug": "scoreboard-reset-score-objective-holder",
+            "link": "#scoreboard-reset-score-objective-holder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.list_scores(objective)",
+            "slug": "scoreboard-list-scores-objective",
+            "link": "#scoreboard-list-scores-objective",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.get_display(slot)",
+            "slug": "scoreboard-get-display-slot",
+            "link": "#scoreboard-get-display-slot",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scoreboard.set_display(slot, objective)",
+            "slug": "scoreboard-set-display-slot-objective",
+            "link": "#scoreboard-set-display-slot-objective",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables-1",
+        "link": "#variables-1",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Writing Variables",
+        "slug": "writing-variables",
+        "link": "#writing-variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions-1",
+        "link": "#functions-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "objective.get_score(holder)",
+            "slug": "objective-get-score-holder",
+            "link": "#objective-get-score-holder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "objective.set_score(holder, value)",
+            "slug": "objective-set-score-holder-value",
+            "link": "#objective-set-score-holder-value",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "objective.add_score(holder, delta)",
+            "slug": "objective-add-score-holder-delta",
+            "link": "#objective-add-score-holder-delta",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "objective.increment_score(holder)",
+            "slug": "objective-increment-score-holder",
+            "link": "#objective-increment-score-holder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "objective.reset_score(holder)",
+            "slug": "objective-reset-score-holder",
+            "link": "#objective-reset-score-holder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "objective.list_scores()",
+            "slug": "objective-list-scores",
+            "link": "#objective-list-scores",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/common/datatypes/scoreboard.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Transform",
     "headers": [
       {
@@ -2275,6 +2735,13 @@ export const SEARCH_INDEX = [
         "title": "Variables",
         "slug": "variables",
         "link": "#variables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Raw matrix assignment",
+        "slug": "raw-matrix-assignment",
+        "link": "#raw-matrix-assignment",
         "children": []
       },
       {
@@ -3692,6 +4159,699 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/client/libs/baritone/settings.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Input",
+    "headers": [
+      {
+        "level": 2,
+        "title": "attackEntity()",
+        "slug": "attackentity",
+        "link": "#attackentity",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "attackBlock()",
+        "slug": "attackblock",
+        "link": "#attackblock",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "mineBlock()",
+        "slug": "mineblock",
+        "link": "#mineblock",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setSelectedSlot(slot)",
+        "slug": "setselectedslot-slot",
+        "link": "#setselectedslot-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getSelectedSlot()",
+        "slug": "getselectedslot",
+        "link": "#getselectedslot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "silentUse(slot)",
+        "slug": "silentuse-slot",
+        "link": "#silentuse-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "leftClick()",
+        "slug": "leftclick",
+        "link": "#leftclick",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rightClick()",
+        "slug": "rightclick",
+        "link": "#rightclick",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedSprinting(enable)",
+        "slug": "setpressedsprinting-enable",
+        "link": "#setpressedsprinting-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedJump(enable)",
+        "slug": "setpressedjump-enable",
+        "link": "#setpressedjump-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedSneak(enable)",
+        "slug": "setpressedsneak-enable",
+        "link": "#setpressedsneak-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedForward(enable)",
+        "slug": "setpressedforward-enable",
+        "link": "#setpressedforward-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedBack(enable)",
+        "slug": "setpressedback-enable",
+        "link": "#setpressedback-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedLeft(enable)",
+        "slug": "setpressedleft-enable",
+        "link": "#setpressedleft-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedRight(enable)",
+        "slug": "setpressedright-enable",
+        "link": "#setpressedright-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedAttack(enable)",
+        "slug": "setpressedattack-enable",
+        "link": "#setpressedattack-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setPressedUse(enable)",
+        "slug": "setpresseduse-enable",
+        "link": "#setpresseduse-enable",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedSprinting()",
+        "slug": "ispressedsprinting",
+        "link": "#ispressedsprinting",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedJump()",
+        "slug": "ispressedjump",
+        "link": "#ispressedjump",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedSneak()",
+        "slug": "ispressedsneak",
+        "link": "#ispressedsneak",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedForward()",
+        "slug": "ispressedforward",
+        "link": "#ispressedforward",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedBack()",
+        "slug": "ispressedback",
+        "link": "#ispressedback",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedLeft()",
+        "slug": "ispressedleft",
+        "link": "#ispressedleft",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedRight()",
+        "slug": "ispressedright",
+        "link": "#ispressedright",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedAttack()",
+        "slug": "ispressedattack",
+        "link": "#ispressedattack",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isPressedUse()",
+        "slug": "ispresseduse",
+        "link": "#ispresseduse",
+        "children": []
+      }
+    ],
+    "path": "/client/player-objects/player/input.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Inventory",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "carriedItem",
+            "slug": "carrieditem",
+            "link": "#carrieditem",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isAnyScreenOpened()",
+        "slug": "isanyscreenopened",
+        "link": "#isanyscreenopened",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "isSignOpened()",
+        "slug": "issignopened",
+        "link": "#issignopened",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getSignText(line)",
+        "slug": "getsigntext-line",
+        "link": "#getsigntext-line",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setSignText(line, text)",
+        "slug": "setsigntext-line-text",
+        "link": "#setsigntext-line-text",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "doneSign()",
+        "slug": "donesign",
+        "link": "#donesign",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getChestTitle()",
+        "slug": "getchesttitle",
+        "link": "#getchesttitle",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getStack(slot)",
+        "slug": "getstack-slot",
+        "link": "#getstack-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getStackFromContainer(slot)",
+        "slug": "getstackfromcontainer-slot",
+        "link": "#getstackfromcontainer-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getContainerSlots()",
+        "slug": "getcontainerslots",
+        "link": "#getcontainerslots",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "getContainerTitle()",
+        "slug": "getcontainertitle",
+        "link": "#getcontainertitle",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setStack(slot, item)",
+        "slug": "setstack-slot-item",
+        "link": "#setstack-slot-item",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setItemInContainer(slot, item)",
+        "slug": "setitemincontainer-slot-item",
+        "link": "#setitemincontainer-slot-item",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "leftClick(slot)",
+        "slug": "leftclick-slot",
+        "link": "#leftclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "middleClick(slot)",
+        "slug": "middleclick-slot",
+        "link": "#middleclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "shiftLeftClick(slot)",
+        "slug": "shiftleftclick-slot",
+        "link": "#shiftleftclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "shiftRightClick(slot)",
+        "slug": "shiftrightclick-slot",
+        "link": "#shiftrightclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rightClick(slot)",
+        "slug": "rightclick-slot",
+        "link": "#rightclick-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "drop(slot)",
+        "slug": "drop-slot",
+        "link": "#drop-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dropAll(slot)",
+        "slug": "dropall-slot",
+        "link": "#dropall-slot",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "closeScreen()",
+        "slug": "closescreen",
+        "link": "#closescreen",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "openInventory()",
+        "slug": "openinventory",
+        "link": "#openinventory",
+        "children": []
+      }
+    ],
+    "path": "/client/player-objects/player/inventory.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Network",
+    "headers": [
+      {
+        "level": 3,
+        "title": "getPlayersList()",
+        "slug": "getplayerslist",
+        "link": "#getplayerslist",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "connectToServer(host, port)",
+        "slug": "connecttoserver-host-port",
+        "link": "#connecttoserver-host-port",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "disconnectFromServer(reason)",
+        "slug": "disconnectfromserver-reason",
+        "link": "#disconnectfromserver-reason",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStartDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendstartdestroyblockpacket-x-y-z-direction",
+        "link": "#sendstartdestroyblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStopDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendstopdestroyblockpacket-x-y-z-direction",
+        "link": "#sendstopdestroyblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendStopAbortBlockPacket(x, y, z, direction)",
+        "slug": "sendstopabortblockpacket-x-y-z-direction",
+        "link": "#sendstopabortblockpacket-x-y-z-direction",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "sendAbortDestroyBlockPacket(x, y, z, direction)",
+        "slug": "sendabortdestroyblockpacket-x-y-z-direction",
+        "link": "#sendabortdestroyblockpacket-x-y-z-direction",
+        "children": []
+      }
+    ],
+    "path": "/client/player-objects/player/network.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Player",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "input",
+            "slug": "input",
+            "link": "#input",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inventory",
+            "slug": "inventory",
+            "link": "#inventory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "entity",
+            "slug": "entity",
+            "link": "#entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "fishHook",
+            "slug": "fishhook",
+            "link": "#fishhook",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "addMessage(text)",
+            "slug": "addmessage-text",
+            "link": "#addmessage-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sendMessage(text)",
+            "slug": "sendmessage-text",
+            "link": "#sendmessage-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sendCommand(text)",
+            "slug": "sendcommand-text",
+            "link": "#sendcommand-text",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getName()",
+            "slug": "getname",
+            "link": "#getname",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getRotation()",
+            "slug": "getrotation",
+            "link": "#getrotation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "setRotation(yaw, pitch)",
+            "slug": "setrotation-yaw-pitch",
+            "link": "#setrotation-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getPosition()",
+            "slug": "getposition",
+            "link": "#getposition",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getTitle()",
+            "slug": "gettitle",
+            "link": "#gettitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getSubTitle()",
+            "slug": "getsubtitle",
+            "link": "#getsubtitle",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getActionBar()",
+            "slug": "getactionbar",
+            "link": "#getactionbar",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isSneaking()",
+            "slug": "issneaking",
+            "link": "#issneaking",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isSprinting()",
+            "slug": "issprinting",
+            "link": "#issprinting",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isOnGround()",
+            "slug": "isonground",
+            "link": "#isonground",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getScoreBoardLines()",
+            "slug": "getscoreboardlines",
+            "link": "#getscoreboardlines",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getScoreboard()",
+            "slug": "getscoreboard",
+            "link": "#getscoreboard",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getTab()",
+            "slug": "gettab",
+            "link": "#gettab",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getEyePosition()",
+            "slug": "geteyeposition",
+            "link": "#geteyeposition",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "addToast(title, description, time)",
+            "slug": "addtoast-title-description-time",
+            "link": "#addtoast-title-description-time",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLookEndPos(number)",
+            "slug": "getlookendpos-number",
+            "link": "#getlookendpos-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getLookEndPos(table)",
+            "slug": "getlookendpos-table",
+            "link": "#getlookendpos-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycast(number)",
+            "slug": "raycast-number",
+            "link": "#raycast-number",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "swingHand(offHand)",
+            "slug": "swinghand-offhand",
+            "link": "#swinghand-offhand",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isHasLineOfSight(entity)",
+            "slug": "ishaslineofsight-entity",
+            "link": "#ishaslineofsight-entity",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromId(distance, blocks)",
+            "slug": "raycasttoblocksfromid-distance-blocks",
+            "link": "#raycasttoblocksfromid-distance-blocks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromId(distance, blockIds)",
+            "slug": "raycasttoblocksfromid-distance-blockids",
+            "link": "#raycasttoblocksfromid-distance-blockids",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToBlocksFromIdentifier(distance, identifiers)",
+            "slug": "raycasttoblocksfromidentifier-distance-identifiers",
+            "link": "#raycasttoblocksfromidentifier-distance-identifiers",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "raycastToEntity(distance)",
+            "slug": "raycasttoentity-distance",
+            "link": "#raycasttoentity-distance",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getBossBar()",
+            "slug": "getbossbar",
+            "link": "#getbossbar",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getDirectionFromYawPitch(yaw, pitch)",
+            "slug": "getdirectionfromyawpitch-yaw-pitch",
+            "link": "#getdirectionfromyawpitch-yaw-pitch",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "setServerRotation(yaw, pitch, movementCorrection, silentMovementCorrection)",
+            "slug": "setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
+            "link": "#setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getServerRotation()",
+            "slug": "getserverrotation",
+            "link": "#getserverrotation",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/player-objects/player/",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5521,692 +6681,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/client/libs/imgui/window.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Input",
-    "headers": [
-      {
-        "level": 2,
-        "title": "attackEntity()",
-        "slug": "attackentity",
-        "link": "#attackentity",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "attackBlock()",
-        "slug": "attackblock",
-        "link": "#attackblock",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "mineBlock()",
-        "slug": "mineblock",
-        "link": "#mineblock",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setSelectedSlot(slot)",
-        "slug": "setselectedslot-slot",
-        "link": "#setselectedslot-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getSelectedSlot()",
-        "slug": "getselectedslot",
-        "link": "#getselectedslot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "silentUse(slot)",
-        "slug": "silentuse-slot",
-        "link": "#silentuse-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "leftClick()",
-        "slug": "leftclick",
-        "link": "#leftclick",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rightClick()",
-        "slug": "rightclick",
-        "link": "#rightclick",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedSprinting(enable)",
-        "slug": "setpressedsprinting-enable",
-        "link": "#setpressedsprinting-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedJump(enable)",
-        "slug": "setpressedjump-enable",
-        "link": "#setpressedjump-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedSneak(enable)",
-        "slug": "setpressedsneak-enable",
-        "link": "#setpressedsneak-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedForward(enable)",
-        "slug": "setpressedforward-enable",
-        "link": "#setpressedforward-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedBack(enable)",
-        "slug": "setpressedback-enable",
-        "link": "#setpressedback-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedLeft(enable)",
-        "slug": "setpressedleft-enable",
-        "link": "#setpressedleft-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedRight(enable)",
-        "slug": "setpressedright-enable",
-        "link": "#setpressedright-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedAttack(enable)",
-        "slug": "setpressedattack-enable",
-        "link": "#setpressedattack-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setPressedUse(enable)",
-        "slug": "setpresseduse-enable",
-        "link": "#setpresseduse-enable",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedSprinting()",
-        "slug": "ispressedsprinting",
-        "link": "#ispressedsprinting",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedJump()",
-        "slug": "ispressedjump",
-        "link": "#ispressedjump",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedSneak()",
-        "slug": "ispressedsneak",
-        "link": "#ispressedsneak",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedForward()",
-        "slug": "ispressedforward",
-        "link": "#ispressedforward",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedBack()",
-        "slug": "ispressedback",
-        "link": "#ispressedback",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedLeft()",
-        "slug": "ispressedleft",
-        "link": "#ispressedleft",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedRight()",
-        "slug": "ispressedright",
-        "link": "#ispressedright",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedAttack()",
-        "slug": "ispressedattack",
-        "link": "#ispressedattack",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isPressedUse()",
-        "slug": "ispresseduse",
-        "link": "#ispresseduse",
-        "children": []
-      }
-    ],
-    "path": "/client/player-objects/player/input.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Inventory",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "carriedItem",
-            "slug": "carrieditem",
-            "link": "#carrieditem",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isAnyScreenOpened()",
-        "slug": "isanyscreenopened",
-        "link": "#isanyscreenopened",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "isSignOpened()",
-        "slug": "issignopened",
-        "link": "#issignopened",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getSignText(line)",
-        "slug": "getsigntext-line",
-        "link": "#getsigntext-line",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setSignText(line, text)",
-        "slug": "setsigntext-line-text",
-        "link": "#setsigntext-line-text",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "doneSign()",
-        "slug": "donesign",
-        "link": "#donesign",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getChestTitle()",
-        "slug": "getchesttitle",
-        "link": "#getchesttitle",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getStack(slot)",
-        "slug": "getstack-slot",
-        "link": "#getstack-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getStackFromContainer(slot)",
-        "slug": "getstackfromcontainer-slot",
-        "link": "#getstackfromcontainer-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getContainerSlots()",
-        "slug": "getcontainerslots",
-        "link": "#getcontainerslots",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getContainerTitle()",
-        "slug": "getcontainertitle",
-        "link": "#getcontainertitle",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setStack(slot, item)",
-        "slug": "setstack-slot-item",
-        "link": "#setstack-slot-item",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "setItemInContainer(slot, item)",
-        "slug": "setitemincontainer-slot-item",
-        "link": "#setitemincontainer-slot-item",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "leftClick(slot)",
-        "slug": "leftclick-slot",
-        "link": "#leftclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "middleClick(slot)",
-        "slug": "middleclick-slot",
-        "link": "#middleclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "shiftLeftClick(slot)",
-        "slug": "shiftleftclick-slot",
-        "link": "#shiftleftclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "shiftRightClick(slot)",
-        "slug": "shiftrightclick-slot",
-        "link": "#shiftrightclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rightClick(slot)",
-        "slug": "rightclick-slot",
-        "link": "#rightclick-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "drop(slot)",
-        "slug": "drop-slot",
-        "link": "#drop-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "dropAll(slot)",
-        "slug": "dropall-slot",
-        "link": "#dropall-slot",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "closeScreen()",
-        "slug": "closescreen",
-        "link": "#closescreen",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "openInventory()",
-        "slug": "openinventory",
-        "link": "#openinventory",
-        "children": []
-      }
-    ],
-    "path": "/client/player-objects/player/inventory.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Network",
-    "headers": [
-      {
-        "level": 3,
-        "title": "getPlayersList()",
-        "slug": "getplayerslist",
-        "link": "#getplayerslist",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "connectToServer(host, port)",
-        "slug": "connecttoserver-host-port",
-        "link": "#connecttoserver-host-port",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "disconnectFromServer(reason)",
-        "slug": "disconnectfromserver-reason",
-        "link": "#disconnectfromserver-reason",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStartDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendstartdestroyblockpacket-x-y-z-direction",
-        "link": "#sendstartdestroyblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStopDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendstopdestroyblockpacket-x-y-z-direction",
-        "link": "#sendstopdestroyblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendStopAbortBlockPacket(x, y, z, direction)",
-        "slug": "sendstopabortblockpacket-x-y-z-direction",
-        "link": "#sendstopabortblockpacket-x-y-z-direction",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "sendAbortDestroyBlockPacket(x, y, z, direction)",
-        "slug": "sendabortdestroyblockpacket-x-y-z-direction",
-        "link": "#sendabortdestroyblockpacket-x-y-z-direction",
-        "children": []
-      }
-    ],
-    "path": "/client/player-objects/player/network.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Player",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "input",
-            "slug": "input",
-            "link": "#input",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "inventory",
-            "slug": "inventory",
-            "link": "#inventory",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "entity",
-            "slug": "entity",
-            "link": "#entity",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "fishHook",
-            "slug": "fishhook",
-            "link": "#fishhook",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "addMessage(text)",
-            "slug": "addmessage-text",
-            "link": "#addmessage-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sendMessage(text)",
-            "slug": "sendmessage-text",
-            "link": "#sendmessage-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sendCommand(text)",
-            "slug": "sendcommand-text",
-            "link": "#sendcommand-text",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getName()",
-            "slug": "getname",
-            "link": "#getname",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getRotation()",
-            "slug": "getrotation",
-            "link": "#getrotation",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "setRotation(yaw, pitch)",
-            "slug": "setrotation-yaw-pitch",
-            "link": "#setrotation-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getPosition()",
-            "slug": "getposition",
-            "link": "#getposition",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getTitle()",
-            "slug": "gettitle",
-            "link": "#gettitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getSubTitle()",
-            "slug": "getsubtitle",
-            "link": "#getsubtitle",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getActionBar()",
-            "slug": "getactionbar",
-            "link": "#getactionbar",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isSneaking()",
-            "slug": "issneaking",
-            "link": "#issneaking",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isSprinting()",
-            "slug": "issprinting",
-            "link": "#issprinting",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isOnGround()",
-            "slug": "isonground",
-            "link": "#isonground",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getScoreBoardLines()",
-            "slug": "getscoreboardlines",
-            "link": "#getscoreboardlines",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getTab()",
-            "slug": "gettab",
-            "link": "#gettab",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getEyePosition()",
-            "slug": "geteyeposition",
-            "link": "#geteyeposition",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "addToast(title, description, time)",
-            "slug": "addtoast-title-description-time",
-            "link": "#addtoast-title-description-time",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getLookEndPos(number)",
-            "slug": "getlookendpos-number",
-            "link": "#getlookendpos-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getLookEndPos(table)",
-            "slug": "getlookendpos-table",
-            "link": "#getlookendpos-table",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycast(number)",
-            "slug": "raycast-number",
-            "link": "#raycast-number",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "swingHand(offHand)",
-            "slug": "swinghand-offhand",
-            "link": "#swinghand-offhand",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isHasLineOfSight(entity)",
-            "slug": "ishaslineofsight-entity",
-            "link": "#ishaslineofsight-entity",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromId(distance, blocks)",
-            "slug": "raycasttoblocksfromid-distance-blocks",
-            "link": "#raycasttoblocksfromid-distance-blocks",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromId(distance, blockIds)",
-            "slug": "raycasttoblocksfromid-distance-blockids",
-            "link": "#raycasttoblocksfromid-distance-blockids",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToBlocksFromIdentifier(distance, identifiers)",
-            "slug": "raycasttoblocksfromidentifier-distance-identifiers",
-            "link": "#raycasttoblocksfromidentifier-distance-identifiers",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "raycastToEntity(distance)",
-            "slug": "raycasttoentity-distance",
-            "link": "#raycasttoentity-distance",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getBossBar()",
-            "slug": "getbossbar",
-            "link": "#getbossbar",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getDirectionFromYawPitch(yaw, pitch)",
-            "slug": "getdirectionfromyawpitch-yaw-pitch",
-            "link": "#getdirectionfromyawpitch-yaw-pitch",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "setServerRotation(yaw, pitch, movementCorrection, silentMovementCorrection)",
-            "slug": "setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
-            "link": "#setserverrotation-yaw-pitch-movementcorrection-silentmovementcorrection",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "getServerRotation()",
-            "slug": "getserverrotation",
-            "link": "#getserverrotation",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/client/player-objects/player/",
     "pathLocale": "/",
     "extraFields": []
   },
