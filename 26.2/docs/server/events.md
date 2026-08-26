@@ -412,13 +412,207 @@ end)
 
 ---
 
+## Server Message Callbacks
+
+All server message callbacks receive a single table argument with event data.
+`LuaEntity` and `LuaComponent` objects are created once per event and shared across all callbacks - modifications in one callback are visible to subsequent callbacks.
+
+### `registerMessageDecoratorContentCallback(function(table))`
+
+Registers a callback for the **Content Phase** of chat message decorators. Use this when the decorator modifies the text content of the message.
+
+Return a `Component` to modify the message, or `nil` to pass through unchanged.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `sender` ([Entity](/common/datatypes/entity.md)?) - The message sender (may be nil for system messages). Use `sender.name` for player name.
+* `message` ([Component](/common/datatypes/component.md)) - Shared message component. Modifications affect all subsequent callbacks.
+* `message_raw` (Component) - The original vanilla component (read-only).
+
+**Example Usage:**
+```lua
+registerMessageDecoratorContentCallback(function(data)
+    if data.sender then
+        local name = data.sender.name
+        data.message:prepend("[" .. name .. "] ")
+    end
+    return data.message
+end)
+```
+
+### `registerMessageDecoratorStylingCallback(function(table))`
+
+Registers a callback for the **Styling Phase** of chat message decorators. Use this when the decorator only modifies styling (color, formatting) with the text content intact.
+
+Return a `Component` to modify the message, or `nil` to pass through unchanged.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `sender` ([Entity](/common/datatypes/entity.md)?) - The message sender.
+* `message` ([Component](/common/datatypes/component.md)) - Shared message component.
+* `message_raw` (Component) - The original vanilla component (read-only).
+
+**Example Usage:**
+```lua
+registerMessageDecoratorStylingCallback(function(data)
+    if data.sender and data.sender.custom_name and data.sender.custom_name:find("Admin") then
+        data.message:setColor("#FFD700") -- gold color for admins
+    end
+    return data.message
+end)
+```
+
+### `registerAllowChatMessageCallback(function(table))`
+
+Registers a callback to allow or block chat messages sent by players (from GUI or commands like `/msg`, `/say`, `/tellraw`).
+
+Return `false` to block the message (prevents broadcast and `CHAT_MESSAGE` event). Called only if `ALLOW_COMMAND_MESSAGE` didn't block it first.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `player` ([Entity](/common/datatypes/entity.md)) - The player who sent the message.
+* `message` ([Component](/common/datatypes/component.md)) - The decorated message content.
+* `chat_message` ([Component](/common/datatypes/component.md)) - Same as `message`.
+* `bound_chat_type` (string) - Chat type bound info.
+
+**Example Usage:**
+```lua
+registerAllowChatMessageCallback(function(data)
+    if data.player.name == "Spammer" then
+        return false -- block
+    end
+    return true -- allow
+end)
+```
+
+### `registerAllowGameMessageCallback(function(table))`
+
+Registers a callback to allow or block game messages (death messages, join/leave messages, advancement messages).
+
+Return `false` to block the message (prevents broadcast and `GAME_MESSAGE` event).
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `server` ([Server](/server/server.md)) - The server instance.
+* `message` ([Component](/common/datatypes/component.md)) - The game message.
+* `overlay` (boolean) - Whether the message is an overlay (action bar).
+
+**Example Usage:**
+```lua
+registerAllowGameMessageCallback(function(data)
+    if data.overlay then
+        return false -- hide action bar messages
+    end
+    return true
+end)
+```
+
+### `registerAllowCommandMessageCallback(function(table))`
+
+Registers a callback to allow or block command messages (from `/me`, `/say`, `/tellraw`, etc. - not `/msg`).
+
+Return `false` to block the message (prevents broadcast and `COMMAND_MESSAGE` event). If allowed, `ALLOW_CHAT_MESSAGE` and `CHAT_MESSAGE` events will also fire.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `source` ([Entity](/common/datatypes/entity.md)?) - Command source entity (may be nil for console/command block).
+* `message` ([Component](/common/datatypes/component.md)) - The decorated message content.
+* `chat_message` ([Component](/common/datatypes/component.md)) - Same as `message`.
+* `bound_chat_type` (string) - Chat type bound info.
+
+**Example Usage:**
+```lua
+registerAllowCommandMessageCallback(function(data)
+    if data.source and data.source.name == "Console" then
+        return false -- block console commands
+    end
+    return true
+end)
+```
+
+### `registerChatMessageCallback(function(table))`
+
+Registers a callback fired when a chat message is broadcast to all players. Not called if message was blocked by `ALLOW_CHAT_MESSAGE`.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `player` ([Entity](/common/datatypes/entity.md)) - The player who sent the message.
+* `message` ([Component](/common/datatypes/component.md)) - The decorated message content.
+* `chat_message` ([Component](/common/datatypes/component.md)) - Same as `message`.
+* `bound_chat_type` (string) - Chat type bound info.
+
+**Example Usage:**
+```lua
+registerChatMessageCallback(function(data)
+    print("Chat:", data.player.name, "->", data.message:getString())
+    -- Log to Discord, database, etc.
+end)
+```
+
+### `registerGameMessageCallback(function(table))`
+
+Registers a callback fired when a game message is broadcast to all players. Not called if message was blocked by `ALLOW_GAME_MESSAGE`.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `server` ([Server](/server/server.md)) - The server instance.
+* `message` ([Component](/common/datatypes/component.md)) - The game message.
+* `overlay` (boolean) - Whether the message is an overlay.
+
+**Example Usage:**
+```lua
+registerGameMessageCallback(function(data)
+    if data.overlay then
+        return -- ignore action bar
+    end
+    print("Game:", data.message:getString())
+end)
+```
+
+### `registerCommandMessageCallback(function(table))`
+
+Registers a callback fired when a command message is broadcast (from `/me`, `/say`, `/tellraw`). Fires before `ALLOW_CHAT_MESSAGE` and `CHAT_MESSAGE`.
+
+**Parameters:**
+* `function` (function (table)).
+
+Table fields:
+* `source` ([Entity](/common/datatypes/entity.md)?) - Command source entity.
+* `message` ([Component](/common/datatypes/component.md)) - The decorated message content.
+* `chat_message` ([Component](/common/datatypes/component.md)) - Same as `message`.
+* `bound_chat_type` (string) - Chat type bound info.
+
+**Example Usage:**
+```lua
+registerCommandMessageCallback(function(data)
+    local src = data.source and data.source.name or "Console"
+    print("Command msg from", src, ":", data.message:getString())
+end)
+```
+
+---
+
 ## Unregistration Functions
 
 Each registration function has a corresponding unregister function (`unregister...`) that removes a specific callback.
 
 The mod itself unregisters all hooks on unload.
 
-**List:** `unregisterUnloadCallback`, `unregisterServerTick`, `unregisterServerTickPre`, `unregisterServerTickPost`, `unregisterServerWorldTick`, `unregisterServerWorldTickPre`, `unregisterServerWorldTickPost`, `unregisterAttackBlockCallback`, `unregisterUseBlockCallback`, `unregisterUseItemOnBlockCallback`, `unregisterUseWithoutItemCallback`, `unregisterBreakBlockBeforeCallback`, `unregisterBreakBlockAfterCallback`, `unregisterBreakBlockCancelCallback`, `unregisterAttackEntityCallback`, `unregisterUseEntityCallback`, `unregisterUseItemCallback`, `unregisterUseItemOnCallback`, `unregisterPickItemFromBlockCallback`, `unregisterPickItemFromEntityCallback`.
+**List:** `unregisterUnloadCallback`, `unregisterServerTick`, `unregisterServerTickPre`, `unregisterServerTickPost`, `unregisterServerWorldTick`, `unregisterServerWorldTickPre`, `unregisterServerWorldTickPost`, `unregisterAttackBlockCallback`, `unregisterUseBlockCallback`, `unregisterUseItemOnBlockCallback`, `unregisterUseWithoutItemCallback`, `unregisterBreakBlockBeforeCallback`, `unregisterBreakBlockAfterCallback`, `unregisterBreakBlockCancelCallback`, `unregisterAttackEntityCallback`, `unregisterUseEntityCallback`, `unregisterUseItemCallback`, `unregisterUseItemOnCallback`, `unregisterPickItemFromBlockCallback`, `unregisterPickItemFromEntityCallback`, `unregisterMessageDecoratorContentCallback`, `unregisterMessageDecoratorStylingCallback`, `unregisterAllowChatMessageCallback`, `unregisterAllowGameMessageCallback`, `unregisterAllowCommandMessageCallback`, `unregisterChatMessageCallback`, `unregisterGameMessageCallback`, `unregisterCommandMessageCallback`.
 
 **Example Usage:**
 ```lua

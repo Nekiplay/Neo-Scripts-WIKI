@@ -188,6 +188,70 @@ export const SEARCH_INDEX = [
       },
       {
         "level": 2,
+        "title": "Server Message Callbacks",
+        "slug": "server-message-callbacks",
+        "link": "#server-message-callbacks",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerMessageDecoratorContentCallback(function(table))",
+            "slug": "registermessagedecoratorcontentcallback-function-table",
+            "link": "#registermessagedecoratorcontentcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerMessageDecoratorStylingCallback(function(table))",
+            "slug": "registermessagedecoratorstylingcallback-function-table",
+            "link": "#registermessagedecoratorstylingcallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAllowChatMessageCallback(function(table))",
+            "slug": "registerallowchatmessagecallback-function-table",
+            "link": "#registerallowchatmessagecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAllowGameMessageCallback(function(table))",
+            "slug": "registerallowgamemessagecallback-function-table",
+            "link": "#registerallowgamemessagecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerAllowCommandMessageCallback(function(table))",
+            "slug": "registerallowcommandmessagecallback-function-table",
+            "link": "#registerallowcommandmessagecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerChatMessageCallback(function(table))",
+            "slug": "registerchatmessagecallback-function-table",
+            "link": "#registerchatmessagecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerGameMessageCallback(function(table))",
+            "slug": "registergamemessagecallback-function-table",
+            "link": "#registergamemessagecallback-function-table",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerCommandMessageCallback(function(table))",
+            "slug": "registercommandmessagecallback-function-table",
+            "link": "#registercommandmessagecallback-function-table",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
         "title": "Unregistration Functions",
         "slug": "unregistration-functions",
         "link": "#unregistration-functions",
