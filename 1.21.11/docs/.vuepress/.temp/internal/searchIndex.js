@@ -2618,21 +2618,6 @@ export const SEARCH_INDEX = [
     "headers": [
       {
         "level": 2,
-        "title": "Regression (Math prediction)",
-        "slug": "regression-math-prediction",
-        "link": "#regression-math-prediction",
-        "children": []
-      }
-    ],
-    "path": "/libs/deep-java-learining-djl4/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
         "title": "Working with structures",
         "slug": "working-with-structures",
         "link": "#working-with-structures",
@@ -4647,6 +4632,21 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/libs/imgui/window.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Regression (Math prediction)",
+        "slug": "regression-math-prediction",
+        "link": "#regression-math-prediction",
+        "children": []
+      }
+    ],
+    "path": "/libs/deep-java-learining-djl4/examples.html",
     "pathLocale": "/",
     "extraFields": []
   },
