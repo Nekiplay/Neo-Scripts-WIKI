@@ -19,7 +19,7 @@ Create a `content_settings` object (see [LuaContentSettings](#luacontentsettings
 
 **Parameters:**
 
-* `table` (table, optional) — initial values `{ name, texture, model, maxStackSize, fireResistant, rarity, durability, craftRemainder, enchantable, useCooldown, hardness, resistance, luminance, friction, sound, mapColor, instabreak, requiresTool, offsetType, copyFrom, noCollision, noOcclusion, shape, drops, mineableTool, tier, textures }`
+* `table` (table, optional) — initial values `{ name, texture, model, maxStackSize, fireResistant, rarity, durability, craftRemainder, enchantable, useCooldown, hardness, resistance, luminance, friction, sound, mapColor, instabreak, requiresTool, offsetType, copyFrom, noCollision, noOcclusion, shape, drops, ore, tags, blockTags, mineableTool, tier, textures }`
 
 **Returns:**
 
@@ -355,6 +355,238 @@ local drops = content.getDrops("neoscripts:ruby_block")
 for i,d in ipairs(drops) do print(d.id, d.weight, d.conditions and d.conditions[1]) end
 ```
 
+## Ore generation
+
+Worldgen for custom ores via runtime data pack (see [Fabric: Generating Custom Ores](https://wiki.fabricmc.net/tutorial:ores), 1.19.3+ JSON approach). For each block the pack generates:
+
+* `data/<ns>/worldgen/configured_feature/<path>.json` — `{"type":"minecraft:ore","config":{"discard_chance_on_air_exposure":..,"size":..,"targets":[...]}}`
+* `data/<ns>/worldgen/placed_feature/<path>.json` — `{"feature":"<ns>:<path>","placement":[{"type":"minecraft:count","count":..},{"type":"minecraft:in_square"},{"type":"minecraft:height_range","height":{"type":"minecraft:trapezoid|uniform","min_inclusive":{"absolute":..},"max_inclusive":{"absolute":..}}},{"type":"minecraft:biome"}]}`
+
+and calls `BiomeModifications.addFeature(selector, GenerationStep.Feature.UNDERGROUND_ORES, placedKey)` in `onInitialize` (so a new world / new chunks are required to see ores; existing chunks need re-generation).
+
+Enable via `ore` field in `createSettings` / `registerBlock(..., {ore={...}})` (auto `storeOre` for `registerBlock/Slab/Stairs/Door/Trapdoor/Fence`). `content.getWorldGeneration` only reads back the stored config (alias `getOre` kept).
+
+**`ore` table fields:**
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `size` / `veinSize` | integer | `9` | Vein size (`config.size`). |
+| `count` / `veinsPerChunk` | integer | `10` | Veins per chunk (`placement count`). |
+| `minY` / `min_y` / `min` | integer | `-64` | `height min_inclusive absolute`. |
+| `maxY` / `max_y` / `max` | integer | `64` | `height max_inclusive absolute`. Clamped `-64..320`, auto-swapped if `min>max`. |
+| `height` / `heightType` | string | `"trapezoid"` | `"trapezoid"` or `"uniform"` → `height.type`. |
+| `replace` / `target` | string | `nil` → auto by `biomes` | What to replace. Single or comma-separated list. Overworld default = `stone_ore_replaceables + deepslate_ore_replaceables` (two `tag_match` targets). `netherrack` / `end_stone` / `minecraft:stone_ore_replaceables` / `#minecraft:stone_ore_replaceables` / any `ns:block` or tag. |
+| `biomes` / `dimension` | string | `"overworld"` | Biome selector: `"overworld"` → `foundInOverworld()`, `"nether"` → `foundInNether()`, `"end"` → `foundInTheEnd()`, `"#ns:tag"` → `BiomeSelectors.tag`. |
+| `discardChance` | number | `0.0` | `discard_chance_on_air_exposure` 0..1. |
+| `featureId` / `feature` | string | `<blockId>` | Placed+configured feature id. If not namespaced defaults to block id. |
+
+**Examples (only via settings — `content.registerOre` is not exposed, use `ore` in block settings):**
+
+```lua
+local content = require("content")
+
+-- overworld ore via settings (tutorial: end_rod in stone/deepslate, 20 veins trapezoid -24..70, size 12)
+local oreBlock = content.registerBlock("tutorial:ruby_ore", {
+  hardness=3, requiresTool=true,
+  ore={ size=12, count=20, minY=-24, maxY=70, height="trapezoid", biomes="overworld" }
+  -- replace defaults to stone+deepslate tags
+})
+content.registerBlockItem("tutorial:ruby_ore", oreBlock)
+
+-- nether ore (like nether gold) uniform height, larger vein
+local netherOre = content.registerBlock("tutorial:nether_ruby_ore", {
+  hardness=3,
+  ore={ size=20, count=20, minY=10, maxY=80, height="uniform", replace="minecraft:netherrack", biomes="nether" }
+})
+content.registerBlockItem("tutorial:nether_ruby_ore", netherOre)
+
+-- end ore + custom replace list + tag selector
+local endOre = content.registerBlock("tutorial:end_ruby_ore", {
+  hardness=3,
+  ore={ size=9, count=10, minY=0, maxY=80, replace="minecraft:end_stone", biomes="end" }
+})
+local custom = content.registerBlock("tutorial:custom_vein", {
+  ore={ size=8, count=12, minY=0, maxY=40, replace="minecraft:stone_ore_replaceables, minecraft:deepslate_ore_replaceables", biomes="#minecraft:is_overworld" }
+})
+print(content.getWorldGeneration("tutorial:ruby_ore").count) -- -> 20
+```
+
+Generated examples (mirrors wiki):
+
+`data/tutorial/worldgen/configured_feature/ore_custom.json`:
+```json
+{"type":"minecraft:ore","config":{"discard_chance_on_air_exposure":0.0,"size":12,"targets":[
+  {"state":{"Name":"tutorial:ruby_ore"},"target":{"predicate_type":"minecraft:tag_match","tag":"minecraft:stone_ore_replaceables"}},
+  {"state":{"Name":"tutorial:ruby_ore"},"target":{"predicate_type":"minecraft:tag_match","tag":"minecraft:deepslate_ore_replaceables"}}
+]}}
+```
+`data/tutorial/worldgen/placed_feature/ore_custom.json`:
+```json
+{"feature":"tutorial:ruby_ore","placement":[
+  {"type":"minecraft:count","count":20},
+  {"type":"minecraft:in_square"},
+  {"type":"minecraft:height_range","height":{"type":"minecraft:trapezoid","min_inclusive":{"absolute":-24},"max_inclusive":{"absolute":70}}},
+  {"type":"minecraft:biome"}
+]}
+```
+
+Nether variant uses `block_match` + `uniform`:
+```json
+{"type":"minecraft:ore","config":{"discard_chance_on_air_exposure":0.0,"size":20,"targets":[{"state":{"Name":"tutorial:nether_ruby_ore"},"target":{"predicate_type":"minecraft:block_match","block":"minecraft:netherrack"}}]}}
+```
+
+Readback:
+
+```lua
+content.getWorldGeneration("tutorial:ruby_ore") -- -> {size=9,count=10,minY=-64,maxY=64,height="trapezoid",biomes="overworld", ...}
+```
+
+::: warning Requires autostart + new chunks
+Ore JSON and `BiomeModifications` must be registered in `neoscripts/autostart/*.lua` before world creation. After adding, create a new world or explore new chunks; `/reload` does not retro-generate already generated chunks.
+:::
+
+## Tags
+
+Item/block tags for recipes and other data pack lookups (see [Fabric: Data Generation — Tag Generation](https://docs.fabricmc.net/develop/data-generation/tags)). The runtime pack generates `data/<tagNs>/tags/item/<path>.json` and `data/<tagNs>/tags/block/<path>.json` with `{"replace":false,"values":["<ns>:<id>", ...]}`.
+
+Set via `settings.tags` (item tags, also fallback for block tags) or `settings.blockTags`. Works for `registerItem/Food/Drink/Tool` → item tags, and `registerBlock/Slab/Stairs/Door/Trapdoor/Fence` → block tags (and item tags for convenience). `registerBlockItem` also respects `tags`.
+
+```lua
+local content = require("content")
+
+-- item as tin ingot (so any recipe with #c:tin_ingots accepts it)
+content.registerItem("mymod:tin_ingot", {
+  tags="c:tin_ingots" -- or {"c:tin_ingots","c:ingots/tin","fabric:tin_ingots"}
+})
+
+-- multiple tags at once
+content.registerItem("mymod:tin_nugget", {
+  tags={"c:tin_nuggets","c:nuggets/tin", tag="c:nuggets"}
+})
+
+-- olovo as alias for tin (another mod's tag)
+content.registerItem("mymod:olovo_ingot", { tags="c:tin_ingots" })
+
+-- block + its item in tag (so crafting with #c:tin_blocks works)
+local tinBlock = content.registerBlock("mymod:tin_block", {
+  hardness=3,
+  tags="c:tin_blocks", -- -> both item and block tags
+  blockTags="c:storage_blocks/tin" -- explicit block tag (overrides fallback if set)
+})
+content.registerBlockItem("mymod:tin_block", tinBlock, { tags="c:tin_blocks" })
+
+-- shared base via settings
+local base = content.createSettings({ tags="c:tin_ingots" })
+base.tags = {"c:tin_ingots","c:ingots/tin"}
+content.registerItem("mymod:tin_dust", base)
+```
+
+Generated:
+
+`data/c/tags/item/tin_ingots.json`:
+```json
+{"replace":false,"values":["mymod:tin_ingot","mymod:olovo_ingot","mymod:tin_dust"]}
+```
+`data/c/tags/block/tin_blocks.json`:
+```json
+{"replace":false,"values":["mymod:tin_block"]}
+```
+
+Recipes can then use:
+
+```json
+{
+  "type":"minecraft:crafting_shaped",
+  "pattern":["###","###","###"],
+  "key":{"#":{"tag":"c:tin_ingots"}},
+  "result":{"id":"mymod:tin_block","count":1}
+}
+```
+
+Access via code: `settings.tags = {"c:tin_ingots"}` / `settings.blockTags = {"c:ores/tin"}` / `settings:get("tags")` etc.
+
+## Recipes
+
+Crafting/furnace recipes via runtime data pack (see [Fabric: Creating Custom Recipes](https://wiki.fabricmc.net/tutorial:recipes) and [Recipe wiki](https://minecraft.wiki/w/Recipe)). Pack generates `data/<ns>/recipe/<path>.json` (+ legacy `data/<ns>/recipes/<path>.json` for 1.20).
+
+Register via `content.registerRecipe(id, recipeTable)` — `recipeTable` is Lua table converted to JSON via `luaValueToJson` (nested tables → objects, `1..n` → arrays). `id` like `"mymod:tin_block"` determines file path.
+
+**Shaped (1.21+ uses `#tag` strings, 1.21.1 shows object, both work):**
+
+```lua
+local content = require("content")
+-- tin block from 9 tin ingots (tag #c:tin_ingots, so olovo also works)
+content.registerRecipe("mymod:tin_block", {
+  type="minecraft:crafting_shaped",
+  category="building",
+  pattern={"###","###","###"},
+  key={ ["#"]={tag="c:tin_ingots"} }, -- or {tag="c:tin_ingots"} == "#c:tin_ingots" string also valid
+  result={id="mymod:tin_block", count=1}
+})
+-- reverse: 9 ingots from block (shapeless)
+content.registerRecipe("mymod:tin_ingot_from_block", {
+  type="minecraft:crafting_shapeless",
+  category="misc",
+  ingredients={{tag="c:tin_blocks"}},
+  result={id="mymod:tin_ingot", count=9}
+})
+-- using raw #tag string (1.21.2+)
+content.registerRecipe("mymod:tin_ingot_alt", {
+  type="minecraft:crafting_shaped",
+  pattern={"WWW","WR ","WWW"},
+  key={ W="#minecraft:logs", R={item="minecraft:redstone"} },
+  result={id="mymod:tin_ingot", count=4}
+})
+```
+
+**Shapeless, furnace, etc.:**
+
+```lua
+-- shapeless: 1 tin dust from ingot
+content.registerRecipe("mymod:tin_dust", {
+  type="minecraft:crafting_shapeless",
+  ingredients={{item="mymod:tin_ingot"}},
+  result={id="mymod:tin_dust", count=1}
+})
+-- smelting: ore -> ingot (tag ingredient)
+content.registerRecipe("mymod:tin_smelting", {
+  type="minecraft:smelting",
+  category="misc",
+  ingredient={tag="c:tin_ores"},
+  result={id="mymod:tin_ingot"},
+  experience=0.7,
+  cookingtime=200
+})
+-- blasting / smoking / campfire / stonecutting similar
+content.registerRecipe("mymod:tin_blasting", {
+  type="minecraft:blasting",
+  ingredient={tag="c:tin_ores"},
+  result={id="mymod:tin_ingot"},
+  experience=0.7, cookingtime=100
+})
+```
+
+**With `id` inside table (single-arg form):**
+
+```lua
+content.registerRecipe({ id="mymod:custom", type="minecraft:crafting_shapeless",
+  ingredients={{tag="c:tin_ingots"}}, result={id="mymod:tin_nugget", count=9} })
+```
+
+**Manage:**
+
+```lua
+print(content.getRecipe("mymod:tin_block")) -- -> json string
+content.removeRecipe("mymod:tin_block") -- delete
+-- /reload after register to reload data pack on integrated server
+```
+
+Generated: `data/mymod/recipe/tin_block.json` = `{"type":"minecraft:crafting_shaped","pattern":["###","###","###"],"key":{"#":{"tag":"c:tin_ingots"}},"result":{"id":"mymod:tin_block","count":1}}` (and duplicate in `data/mymod/recipes/`).
+
+::: warning Requires autostart
+Call in `neoscripts/autostart/*.lua` before data pack load. After adding, `/reload` on integrated server or new world.
+:::
+
 ## Model system
 
 `settings.model` accepts:
@@ -526,6 +758,9 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `noOcclusion` / `transparent` | boolean | `false` | `noOcclusion()`. |
 | `shape` / `collisionShape` / `boxes` / `hitbox` | table | `nil` | Custom VoxelShape: list of boxes `{from={x,y,z},to={x2,y2,z2}}` or flat `{x1,y1,z1,x2,y2,z2}`. Units `0..32` (16 = 1 block). Example `{{from={0,0,0},to={16,32,16}}}` for 2 blocks high. |
 | `drops` / `drop` / `loot` / `lootTable` | string\|table\|boolean | `nil` | Loot table for block (see [Drops & loot tables](#drops--loot-tables)). `nil` = drop itself, `false`/`{}` = nothing, `"minecraft:diamond"` = one item, `{"minecraft:diamond","minecraft:stick"}` = each own pool (all drop), `{{id="minecraft:diamond", count=3}, {id="minecraft:emerald", min=1, max=3}, {id="minecraft:diamond", weight=10}}` with `count`/`min`/`max`/`weight`/`conditions`. Generates `data/<ns>/loot_table/blocks/<path>.json` (+ legacy `loot_tables`). |
+| `ore` / `oreGen` / `generation` / `worldgen` / `vein` | table\|boolean | `nil` | Ore generation (see [Ore generation](#ore-generation)). `true` = default vein, `{size=12,count=20,minY=-24,maxY=70,height="trapezoid",replace="stone_ore_replaceables",biomes="overworld",discardChance=0.0,featureId="ns:custom"}` → `worldgen/configured_feature` + `placed_feature` + `BiomeModifications`. |
+| `tags` / `tag` / `itemTags` | string\|table | `nil` | Item tags for recipes (see [Tags](#tags)). `"c:tin_ingots"` or `{"c:tin_ingots","c:ingots/tin"}` or `{{tag="c:tin_ingots"}}` → `data/<tagNs>/tags/item/<path>.json`. On blocks also adds to block tags for convenience. |
+| `blockTags` / `block_tags` | string\|table | `nil` | Block tags (`data/<tagNs>/tags/block/<path>.json`). If not set but `tags` is, block tags fallback to `tags`. |
 | `mineableTool` / `tool` / `harvestTool` | string | `nil` | Tool type required to drop (`"pickaxe"`,`"axe"`,`"shovel"`,`"hoe"`). Generates `data/minecraft/tags/block/mineable/<tool>.json`. Also `mineable/<tool>` via `blockMineableTool`. |
 | `tier` / `miningTier` / `level` | string | `nil` | Tool tier (`"wood"`,`"stone"`,`"iron"`,`"diamond"`,`"netherite"`,`"gold"`). Generates `data/minecraft/tags/block/needs_<tier>_tool.json`. Requires `requiresTool=true`. |
 | `requiresTool` / `requiresCorrectTool` | boolean\|string | `false` | `requiresCorrectToolForDrops()`. String value like `"iron"` also sets `tier`. |
