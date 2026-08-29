@@ -604,6 +604,45 @@ registerCommandMessageCallback(function(data)
 end)
 ```
 
+### `registerPacket(channel, function(player, data))`
+
+Custom packets from client → server (`neoscripts:lua_packet`). Dispatched via `packets` lib (`packets.sendToServer`). Use `"*"` to listen all channels.
+
+**Aliases:** `registerCustomPacket`, `onPacket`, `registerClientPacket`, `registerServerPacket`.
+
+**Parameters:**
+* `channel` (string) — packet name, e.g. `"balance"`
+* `function` (function (player, data)) — `player` is [Entity](../../common/datatypes/entity.md) (`ServerPlayer`), `data` is Lua value decoded from JSON. For wildcard `"*"`, signature is `function(player, channel, data)`.
+
+**Example Usage:**
+```lua
+local packets = require("packets")
+
+registerPacket("balance", function(player, data)
+    print("balance request from", player.name, data)
+    packets.sendToClient(player, "balance", {value = 12345})
+    -- broadcast: packets.sendToClient("balance", {value=1})
+end)
+
+registerPacket("*", function(player, channel, data)
+    print("any packet", channel, "from", player.name)
+end)
+
+-- unregister later
+-- unregisterPacket("balance", myCallback)
+-- aliases: unregisterCustomPacket, unregisterClientPacket, unregisterServerPacket
+```
+
+**Sending (server→client):**
+```lua
+packets.sendToClient(player, "balance", {value=10})
+packets.sendToClient("balance", data) -- broadcast
+packets.broadcast("balance", data)     -- alias
+packets.balance:sendToClient(player, 10)
+```
+
+See [Packets lib](../../common/libs/packets.md).
+
 ---
 
 ## Unregistration Functions
@@ -612,7 +651,7 @@ Each registration function has a corresponding unregister function (`unregister.
 
 The mod itself unregisters all hooks on unload.
 
-**List:** `unregisterUnloadCallback`, `unregisterServerTick`, `unregisterServerTickPre`, `unregisterServerTickPost`, `unregisterServerWorldTick`, `unregisterServerWorldTickPre`, `unregisterServerWorldTickPost`, `unregisterAttackBlockCallback`, `unregisterUseBlockCallback`, `unregisterUseItemOnBlockCallback`, `unregisterUseWithoutItemCallback`, `unregisterBreakBlockBeforeCallback`, `unregisterBreakBlockAfterCallback`, `unregisterBreakBlockCancelCallback`, `unregisterAttackEntityCallback`, `unregisterUseEntityCallback`, `unregisterUseItemCallback`, `unregisterUseItemOnCallback`, `unregisterPickItemFromBlockCallback`, `unregisterPickItemFromEntityCallback`, `unregisterMessageDecoratorContentCallback`, `unregisterMessageDecoratorStylingCallback`, `unregisterAllowChatMessageCallback`, `unregisterAllowGameMessageCallback`, `unregisterAllowCommandMessageCallback`, `unregisterChatMessageCallback`, `unregisterGameMessageCallback`, `unregisterCommandMessageCallback`.
+**List:** `unregisterUnloadCallback`, `unregisterServerTick`, `unregisterServerTickPre`, `unregisterServerTickPost`, `unregisterServerWorldTick`, `unregisterServerWorldTickPre`, `unregisterServerWorldTickPost`, `unregisterAttackBlockCallback`, `unregisterUseBlockCallback`, `unregisterUseItemOnBlockCallback`, `unregisterUseWithoutItemCallback`, `unregisterBreakBlockBeforeCallback`, `unregisterBreakBlockAfterCallback`, `unregisterBreakBlockCancelCallback`, `unregisterAttackEntityCallback`, `unregisterUseEntityCallback`, `unregisterUseItemCallback`, `unregisterUseItemOnCallback`, `unregisterPickItemFromBlockCallback`, `unregisterPickItemFromEntityCallback`, `unregisterMessageDecoratorContentCallback`, `unregisterMessageDecoratorStylingCallback`, `unregisterAllowChatMessageCallback`, `unregisterAllowGameMessageCallback`, `unregisterAllowCommandMessageCallback`, `unregisterChatMessageCallback`, `unregisterGameMessageCallback`, `unregisterCommandMessageCallback`, `unregisterPacket`, `unregisterCustomPacket`, `unregisterClientPacket`, `unregisterServerPacket`.
 
 **Example Usage:**
 ```lua

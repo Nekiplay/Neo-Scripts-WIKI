@@ -436,6 +436,42 @@ registerSoundPlay(function(info)
 end)
 ```
 
+### `registerPacket(channel, function(data))`
+
+Custom packets from server → client (`neoscripts:lua_packet`). Dispatched via `packets` lib (`packets.sendToClient`). Use `"*"` to listen all channels.
+
+**Aliases:** `registerCustomPacket`, `onPacket`, `registerClientPacket`, `registerServerPacket`.
+
+**Parameters:**
+* `channel` (string) — packet name, e.g. `"balance"`
+* `function` (function (data)) — `data` is Lua value decoded from JSON (number, string, boolean or table). For wildcard `"*"`, signature is `function(channel, data)`.
+
+**Example Usage:**
+```lua
+local packets = require("packets")
+
+registerPacket("balance", function(data)
+    print("balance:", data.value or data)
+end)
+
+registerPacket("*", function(channel, data)
+    print("any packet", channel, data)
+end)
+
+-- unregister later
+-- unregisterPacket("balance", myCallback)
+-- aliases: unregisterCustomPacket, unregisterClientPacket, unregisterServerPacket
+```
+
+**Sending (client→server):**
+```lua
+packets.sendToServer("balance", 10)
+packets.sendToServer("balance", {10})
+packets.balance:sendToServer(10)
+```
+
+See [Packets lib](../../common/libs/packets.md).
+
 ---
 
 ## Unregistration Functions

@@ -247,6 +247,13 @@ export const SEARCH_INDEX = [
             "slug": "registercommandmessagecallback-function-table",
             "link": "#registercommandmessagecallback-function-table",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPacket(channel, function(player, data))",
+            "slug": "registerpacket-channel-function-player-data",
+            "link": "#registerpacket-channel-function-player-data",
+            "children": []
           }
         ]
       },
@@ -832,6 +839,13 @@ export const SEARCH_INDEX = [
             "title": "registerSoundPlay(function(data))",
             "slug": "registersoundplay-function-data",
             "link": "#registersoundplay-function-data",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "registerPacket(channel, function(data))",
+            "slug": "registerpacket-channel-function-data",
+            "link": "#registerpacket-channel-function-data",
             "children": []
           }
         ]
@@ -3616,6 +3630,79 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/common/libs/json.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Packets",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Sending",
+        "slug": "sending",
+        "link": "#sending",
+        "children": [
+          {
+            "level": 3,
+            "title": "Client → Server",
+            "slug": "client-→-server",
+            "link": "#client-→-server",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Server → Client",
+            "slug": "server-→-client",
+            "link": "#server-→-client",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Receiving",
+        "slug": "receiving",
+        "link": "#receiving",
+        "children": [
+          {
+            "level": 3,
+            "title": "registerPacket(channel, callback) / aliases",
+            "slug": "registerpacket-channel-callback-aliases",
+            "link": "#registerpacket-channel-callback-aliases",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Serialization",
+        "slug": "serialization",
+        "link": "#serialization",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Complete Example",
+        "slug": "complete-example",
+        "link": "#complete-example",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Implementation Notes",
+        "slug": "implementation-notes",
+        "link": "#implementation-notes",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "See Also",
+        "slug": "see-also",
+        "link": "#see-also",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/packets.html",
     "pathLocale": "/",
     "extraFields": []
   },

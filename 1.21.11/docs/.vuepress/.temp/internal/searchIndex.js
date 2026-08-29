@@ -2599,6 +2599,21 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "Catboost",
+    "headers": [
+      {
+        "level": 2,
+        "title": "loadModel(path)",
+        "slug": "loadmodel-path",
+        "link": "#loadmodel-path",
+        "children": []
+      }
+    ],
+    "path": "/libs/catboost/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Examples",
     "headers": [
       {
@@ -2610,6 +2625,199 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/libs/deep-java-learining-djl4/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Working with structures",
+        "slug": "working-with-structures",
+        "link": "#working-with-structures",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callbacks",
+        "slug": "callbacks",
+        "link": "#callbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callback with structure",
+        "slug": "callback-with-structure",
+        "link": "#callback-with-structure",
+        "children": []
+      }
+    ],
+    "path": "/libs/ffi/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "FFI",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registered Types",
+        "slug": "registered-types",
+        "link": "#registered-types",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "ffi.cdef(def)",
+            "slug": "ffi-cdef-def",
+            "link": "#ffi-cdef-def",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.load(name)",
+            "slug": "ffi-load-name",
+            "link": "#ffi-load-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.new(type, count)",
+            "slug": "ffi-new-type-count",
+            "link": "#ffi-new-type-count",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.cast(type, ptr)",
+            "slug": "ffi-cast-type-ptr",
+            "link": "#ffi-cast-type-ptr",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.sizeof(type)",
+            "slug": "ffi-sizeof-type",
+            "link": "#ffi-sizeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.string(ptr, len)",
+            "slug": "ffi-string-ptr-len",
+            "link": "#ffi-string-ptr-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.copy(dest, src, len)",
+            "slug": "ffi-copy-dest-src-len",
+            "link": "#ffi-copy-dest-src-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.fill(dest, len, value)",
+            "slug": "ffi-fill-dest-len-value",
+            "link": "#ffi-fill-dest-len-value",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.callback(prototype, function)",
+            "slug": "ffi-callback-prototype-function",
+            "link": "#ffi-callback-prototype-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.gc(cdata, finalizer)",
+            "slug": "ffi-gc-cdata-finalizer",
+            "link": "#ffi-gc-cdata-finalizer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.typeof(type)",
+            "slug": "ffi-typeof-type",
+            "link": "#ffi-typeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.metatype(type, metatable)",
+            "slug": "ffi-metatype-type-metatable",
+            "link": "#ffi-metatype-type-metatable",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.os",
+            "slug": "ffi-os",
+            "link": "#ffi-os",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.C",
+            "slug": "ffi-c",
+            "link": "#ffi-c",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Examples",
+        "slug": "complete-examples",
+        "link": "#complete-examples",
+        "children": [
+          {
+            "level": 3,
+            "title": "Working with Structures",
+            "slug": "working-with-structures",
+            "link": "#working-with-structures",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Callbacks",
+            "slug": "working-with-callbacks",
+            "link": "#working-with-callbacks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Memory",
+            "slug": "working-with-memory",
+            "link": "#working-with-memory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Metatypes for Custom Behavior",
+            "slug": "metatypes-for-custom-behavior",
+            "link": "#metatypes-for-custom-behavior",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Known Limitations",
+        "slug": "known-limitations",
+        "link": "#known-limitations",
+        "children": []
+      }
+    ],
+    "path": "/libs/ffi/",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -5258,214 +5466,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/player-objects/player/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Catboost",
-    "headers": [
-      {
-        "level": 2,
-        "title": "loadModel(path)",
-        "slug": "loadmodel-path",
-        "link": "#loadmodel-path",
-        "children": []
-      }
-    ],
-    "path": "/libs/catboost/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Working with structures",
-        "slug": "working-with-structures",
-        "link": "#working-with-structures",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callbacks",
-        "slug": "callbacks",
-        "link": "#callbacks",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callback with structure",
-        "slug": "callback-with-structure",
-        "link": "#callback-with-structure",
-        "children": []
-      }
-    ],
-    "path": "/libs/ffi/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "FFI",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registered Types",
-        "slug": "registered-types",
-        "link": "#registered-types",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "ffi.cdef(def)",
-            "slug": "ffi-cdef-def",
-            "link": "#ffi-cdef-def",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.load(name)",
-            "slug": "ffi-load-name",
-            "link": "#ffi-load-name",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.new(type, count)",
-            "slug": "ffi-new-type-count",
-            "link": "#ffi-new-type-count",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.cast(type, ptr)",
-            "slug": "ffi-cast-type-ptr",
-            "link": "#ffi-cast-type-ptr",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.sizeof(type)",
-            "slug": "ffi-sizeof-type",
-            "link": "#ffi-sizeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.string(ptr, len)",
-            "slug": "ffi-string-ptr-len",
-            "link": "#ffi-string-ptr-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.copy(dest, src, len)",
-            "slug": "ffi-copy-dest-src-len",
-            "link": "#ffi-copy-dest-src-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.fill(dest, len, value)",
-            "slug": "ffi-fill-dest-len-value",
-            "link": "#ffi-fill-dest-len-value",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.callback(prototype, function)",
-            "slug": "ffi-callback-prototype-function",
-            "link": "#ffi-callback-prototype-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.gc(cdata, finalizer)",
-            "slug": "ffi-gc-cdata-finalizer",
-            "link": "#ffi-gc-cdata-finalizer",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.typeof(type)",
-            "slug": "ffi-typeof-type",
-            "link": "#ffi-typeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.metatype(type, metatable)",
-            "slug": "ffi-metatype-type-metatable",
-            "link": "#ffi-metatype-type-metatable",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.os",
-            "slug": "ffi-os",
-            "link": "#ffi-os",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.C",
-            "slug": "ffi-c",
-            "link": "#ffi-c",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Complete Examples",
-        "slug": "complete-examples",
-        "link": "#complete-examples",
-        "children": [
-          {
-            "level": 3,
-            "title": "Working with Structures",
-            "slug": "working-with-structures",
-            "link": "#working-with-structures",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Working with Callbacks",
-            "slug": "working-with-callbacks",
-            "link": "#working-with-callbacks",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Working with Memory",
-            "slug": "working-with-memory",
-            "link": "#working-with-memory",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Metatypes for Custom Behavior",
-            "slug": "metatypes-for-custom-behavior",
-            "link": "#metatypes-for-custom-behavior",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Known Limitations",
-        "slug": "known-limitations",
-        "link": "#known-limitations",
-        "children": []
-      }
-    ],
-    "path": "/libs/ffi/",
     "pathLocale": "/",
     "extraFields": []
   },

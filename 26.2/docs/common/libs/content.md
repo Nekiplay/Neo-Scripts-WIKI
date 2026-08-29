@@ -19,7 +19,7 @@ Create a `content_settings` object (see [LuaContentSettings](#luacontentsettings
 
 **Parameters:**
 
-* `table` (table, optional) — initial values `{ name, texture, model, maxStackSize, fireResistant, rarity, durability, craftRemainder, enchantable, useCooldown, hardness, resistance, luminance, friction, sound, mapColor, instabreak, requiresTool, offsetType, copyFrom, noCollision, noOcclusion, shape }`
+* `table` (table, optional) — initial values `{ name, texture, model, maxStackSize, fireResistant, rarity, durability, craftRemainder, enchantable, useCooldown, hardness, resistance, luminance, friction, sound, mapColor, instabreak, requiresTool, offsetType, copyFrom, noCollision, noOcclusion, shape, drops, mineableTool, tier, textures }`
 
 **Returns:**
 
@@ -265,6 +265,96 @@ local tex = content.getItemTexture("neoscripts:test")
 if tex then print(tex) end
 ```
 
+## Drops & loot tables
+
+Block loot is generated as data pack JSON via the runtime pack (see [Fabric first-block — Adding Block Drops](https://docs.fabricmc.net/develop/blocks/first-block#adding-block-drops) and [minecraft.wiki/w/Loot_table](https://minecraft.wiki/w/Loot_table)). No `condition` is added by default (always drops). For each registered block (`registerBlock/Slab/Stairs/Door/Trapdoor/Fence`) `DynamicContent.blockDrops` is filled and served as both `data/<ns>/loot_table/blocks/<path>.json` (26.2, singular) and legacy `data/<ns>/loot_tables/blocks/<path>.json`.
+
+**`settings.drops` values:**
+
+* `nil` (default) — drops itself (`[{id="<block_id>"}]`) — mirrors Fabric example that drops the block item.
+* `false` / `{}` / `"none"` / `"empty"` — nothing (`pools: []`).
+* `"minecraft:diamond"` — single item.
+* `{"minecraft:diamond","minecraft:stick"}` — each item its own `pool {rolls:1, entries:[{name}]}` → all drop together.
+* `{{id="minecraft:diamond", count=3}, {id="minecraft:emerald", min=1, max=3}}` — fixed `count` or uniform range via `minecraft:set_count` (`min`/`max` → `{"min":..,"max":..,"type":"minecraft:uniform"}`).
+* `{{id="minecraft:diamond", weight=10}, {id="minecraft:emerald", weight=1}}` — weighted random choice: when any `weight` is present all entries share one pool `{rolls:1, entries:[{name,weight},...]}` (see `Loot_table#weight`). `count`/`weight`/`conditions` can be combined.
+* `{{id="minecraft:diamond", conditions={{condition="minecraft:random_chance", chance=0.1}}}}` or `condition={condition="minecraft:survives_explosion"}` — per-entry `conditions` (see [minecraft.wiki/w/Predicate](https://minecraft.wiki/w/Predicate)). Accepts `conditions`/`condition`/`predicates`/`predicate`/`when` as single object or array. Lua tables are converted to JSON via `luaValueToJson` (nested tables → objects, `1..n` → arrays).
+
+**Generated JSON examples:**
+
+```json
+{"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"neoscripts:ruby_block"}]}]}
+{"type":"minecraft:block","pools":[]}
+{"type":"minecraft:block","pools":[
+  {"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:diamond","functions":[{"function":"minecraft:set_count","count":3}]}]},
+  {"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:emerald","functions":[{"function":"minecraft:set_count","count":{"min":1.0,"max":3.0,"type":"minecraft:uniform"}}]}]}
+]}
+{"type":"minecraft:block","pools":[{"rolls":1,"entries":[
+  {"type":"minecraft:item","name":"minecraft:diamond","weight":10},
+  {"type":"minecraft:item","name":"minecraft:emerald","weight":1,"conditions":[{"condition":"minecraft:random_chance","chance":0.5}]}
+]}]}
+```
+
+**Lua examples:**
+
+```lua
+local content = require("content")
+-- self drop (default, Fabric example)
+content.registerBlock("neoscripts:condensed_dirt", { hardness=2 })
+
+-- nothing
+content.registerBlock("neoscripts:ghost_block", { drops=false })
+
+-- multi drop, all
+content.registerBlock("neoscripts:treasure", { drops={"minecraft:diamond","minecraft:emerald"} })
+
+-- count / range
+content.registerBlock("neoscripts:rich_ore", { drops={
+  {id="minecraft:diamond", count=3},
+  {id="minecraft:emerald", min=1, max=3}
+}})
+
+-- weighted (one of)
+content.registerBlock("neoscripts:gamble", { drops={
+  {id="minecraft:diamond", weight=10},
+  {id="minecraft:stick", weight=1}
+}})
+
+-- predicates (chance, tool, explosion)
+content.registerBlock("neoscripts:rare", { drops={{
+  id="minecraft:diamond",
+  conditions={{condition="minecraft:random_chance", chance=0.1}}
+}}})
+content.registerBlock("neoscripts:silk_only", { drops={{
+  id="minecraft:diamond",
+  condition={condition="minecraft:survives_explosion"}
+}}})
+content.registerBlock("neoscripts:tool_gated", { drops={{
+  id="minecraft:diamond",
+  conditions={condition="minecraft:match_tool", predicate={items="minecraft:iron_pickaxe"}}
+}}})
+
+-- runtime change (needs /reload on integrated server to re-read data pack)
+content.setDrops("neoscripts:condensed_dirt", "minecraft:gold_ingot")
+print(content.getDrops("neoscripts:condensed_dirt")[1].id)
+```
+
+## `setDrops(id, drops)` / `getDrops(id)`
+
+Aliases: `setDrop`/`setLoot`/`setBlockDrops`/`setLootTable` and `getDrop`/`getLoot`/`getBlockDrops`/`getLootTable`.
+
+* `setDrops(id, drops)` — change loot of an already registered block at runtime. `drops`: same formats as `settings.drops`; `nil` resets to self-drop, `false`/`{}` clears. Returns `true` if block exists, `false` otherwise. The pack rebuilds `loot_table` on next `listResources`/`getResource`; run `/reload` to apply on integrated server.
+* `getDrops(id)` — returns `{{id=..,count=..,min=..,max=..,weight=..,conditions={json,...}}, ...}` or `nil` if block not found. `conditions` are returned as JSON strings (decode via `require("json").decode` if needed).
+
+```lua
+local content = require("content")
+content.setDrops("neoscripts:ruby_block", {
+  {id="minecraft:diamond", weight=3, conditions={{condition="minecraft:random_chance", chance=0.5}}},
+  {id="minecraft:emerald", weight=1}
+})
+local drops = content.getDrops("neoscripts:ruby_block")
+for i,d in ipairs(drops) do print(d.id, d.weight, d.conditions and d.conditions[1]) end
+```
+
 ## Model system
 
 `settings.model` accepts:
@@ -435,9 +525,10 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `noCollision` / `no_collision` / `collision=false` | boolean | `false` | `noCollision()`. |
 | `noOcclusion` / `transparent` | boolean | `false` | `noOcclusion()`. |
 | `shape` / `collisionShape` / `boxes` / `hitbox` | table | `nil` | Custom VoxelShape: list of boxes `{from={x,y,z},to={x2,y2,z2}}` or flat `{x1,y1,z1,x2,y2,z2}`. Units `0..32` (16 = 1 block). Example `{{from={0,0,0},to={16,32,16}}}` for 2 blocks high. |
-| `mineableTool` | string | `nil` | Identifier of the tool type required to drop this block (e.g. `"pickaxe"`). Generates `data/minecraft/tags/block/mineable/<tool>.json`. |
-| `tier` | string | `nil` | Tool tier name (e.g. `"iron"`). Generates `data/minecraft/tags/block/needs_<tier>_tool.json`. |
-| `requiresTool` / `requiresCorrectTool` | boolean | `false` | `requiresCorrectToolForDrops()`. |
+| `drops` / `drop` / `loot` / `lootTable` | string\|table\|boolean | `nil` | Loot table for block (see [Drops & loot tables](#drops--loot-tables)). `nil` = drop itself, `false`/`{}` = nothing, `"minecraft:diamond"` = one item, `{"minecraft:diamond","minecraft:stick"}` = each own pool (all drop), `{{id="minecraft:diamond", count=3}, {id="minecraft:emerald", min=1, max=3}, {id="minecraft:diamond", weight=10}}` with `count`/`min`/`max`/`weight`/`conditions`. Generates `data/<ns>/loot_table/blocks/<path>.json` (+ legacy `loot_tables`). |
+| `mineableTool` / `tool` / `harvestTool` | string | `nil` | Tool type required to drop (`"pickaxe"`,`"axe"`,`"shovel"`,`"hoe"`). Generates `data/minecraft/tags/block/mineable/<tool>.json`. Also `mineable/<tool>` via `blockMineableTool`. |
+| `tier` / `miningTier` / `level` | string | `nil` | Tool tier (`"wood"`,`"stone"`,`"iron"`,`"diamond"`,`"netherite"`,`"gold"`). Generates `data/minecraft/tags/block/needs_<tier>_tool.json`. Requires `requiresTool=true`. |
+| `requiresTool` / `requiresCorrectTool` | boolean\|string | `false` | `requiresCorrectToolForDrops()`. String value like `"iron"` also sets `tier`. |
 
 All keys accept both `camelCase` and `snake_case` (`maxStackSize` / `max_stack_size`, `noCollision` / `no_collision`).
 

@@ -43,6 +43,7 @@ export const routes = Object.fromEntries([
   ["/common/libs/http.html", { loader: () => import(/* webpackChunkName: "common_libs_http.html" */"C:/wiki/26.2/docs/common/libs/http.md"), meta: {"title":"Http"} }],
   ["/common/libs/items.html", { loader: () => import(/* webpackChunkName: "common_libs_items.html" */"C:/wiki/26.2/docs/common/libs/items.md"), meta: {"title":"Items"} }],
   ["/common/libs/json.html", { loader: () => import(/* webpackChunkName: "common_libs_json.html" */"C:/wiki/26.2/docs/common/libs/json.md"), meta: {"title":"Json"} }],
+  ["/common/libs/packets.html", { loader: () => import(/* webpackChunkName: "common_libs_packets.html" */"C:/wiki/26.2/docs/common/libs/packets.md"), meta: {"title":"Packets"} }],
   ["/common/libs/tcp.html", { loader: () => import(/* webpackChunkName: "common_libs_tcp.html" */"C:/wiki/26.2/docs/common/libs/tcp.md"), meta: {"title":"TCP"} }],
   ["/common/libs/text-builder.html", { loader: () => import(/* webpackChunkName: "common_libs_text-builder.html" */"C:/wiki/26.2/docs/common/libs/text-builder.md"), meta: {"title":"Text Builder"} }],
   ["/common/libs/threads.html", { loader: () => import(/* webpackChunkName: "common_libs_threads.html" */"C:/wiki/26.2/docs/common/libs/threads.md"), meta: {"title":"Threads"} }],

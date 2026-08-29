@@ -126,6 +126,7 @@ export default defineUserConfig({
           { text: "🧱 Blocks Registry", link: "/common/libs/blocks.html" },
           { text: "📦 Archive", link: "/common/libs/archive.html" },
           { text: "📄 Json", link: "/common/libs/json.html" },
+          { text: "📦 Packets", link: "/common/libs/packets.html" },
           { text: "🌐 UDP", link: "/common/libs/udp.html" },
           { text: "🌐 TCP", link: "/common/libs/tcp.html" },
           { text: "🌐 Http", link: "/common/libs/http.html" },
