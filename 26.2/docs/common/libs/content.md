@@ -253,6 +253,94 @@ local chest2 = content.registerContainerBlock("neoscripts:chest2", 27)
 local chest3 = content.registerChest("neoscripts:chest3", {containerSize=27})
 ```
 
+## `registerWorkstation(id [, settings])`
+
+Register a workstation block (crafting table / furnace-like) that opens a GUI with recipe handling. See [Fabric — Workstations](https://docs.fabricmc.net/develop/blocks/workstations). Does **not** use `BlockEntity` (inventory cleared on close, like `CraftingTable`), except `furnace` keeps `ResultContainer`.
+
+**Parameters:**
+
+* `id` (string) — e.g. `"example:workbench"`
+* `settings` (content_settings | table, optional) — `name`, `hardness`, `workstationType`, `workstationTexture`/`containerTexture`, `containerSlots` etc.
+
+**Settings fields for workstations:**
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `workstation` | boolean | `false` | Set `true` to force workstation mode (also set via `registerWorkstation` alias). |
+| `workstationType` | string | `"crafting"` | `"crafting"` (3×3), `"crafting_5x5"` / `"5x5"` / `"large"` (5×5 =25+1), `"furnace"` / `"smelting"` (1 input +1 fuel +1 result, `RecipeType.SMELTING` instant), `"smoker"`, `"blasting"` (future). |
+| `containerTexture` / `guiTexture` | string | `crafting_table.png` (crafting) / `furnace.png` (furnace) | GUI texture `Identifier`. Custom e.g. `"mymod:textures/gui/workbench.png"` |
+| `containerSlots` | table | `nil` → auto | Custom slot positions `{{x,y},...}`. For `crafting` 10 entries (9 craft +1 result), for `5x5` 26 entries (25+1), for `furnace` 3 entries (input,fuel,result). If `nil`, default layout: crafting 3×3 `30,17` + result `124,35`, 5×5 `8,18` + result `134,45`, furnace `56,17`/`56,53`/`116,35`. |
+
+**Recipe handling:**
+
+* `crafting` / `crafting_5x5` — `CraftingInput.of(width,height, items)` → `level.recipeAccess().getRecipeFor(RecipeType.CRAFTING, input, level)` (vanilla `crafting_shaped`/`shapeless`). `5x5` uses `5,5` input, so vanilla 3×3 recipes match anywhere in 5×5 (offset). For true 5×5 custom recipes use `content.registerRecipe("ns:recipe", {type="minecraft:crafting_shaped", pattern={"#####","#####",...}, key={...}, result={id="ns:item"}})` — vanilla `crafting_shaped` `pattern` max 3 will reject 5, so use `type:"neoscripts:workstation"` (custom, shapeless 25) — `DynamicWorkstationMenu` also checks `WorkstationRecipe.TYPE` (when available). Currently `5x5` reuses vanilla `CRAFTING` with 5×5 input.
+* `furnace` — `SingleRecipeInput(inputStack)` → `RecipeType.SMELTING` (also `BLASTING`/`SMOKING` if `workstationType` is that). Instant, no fuel consumption delay. Place fuel in fuel slot (optional) and input, result appears.
+* Recipes created via `content.registerRecipe(id, table)` — JSON stored in runtime data pack `data/<ns>/recipe/<path>.json` (+ `recipes/`). For workstation, define with `type:"minecraft:crafting_shaped"` etc., workstation will find them via `RecipeAccess`.
+
+**Returns:** `[Block]` `LuaBlockState`.
+
+**Examples:**
+
+```lua
+local content = require("content")
+
+-- 3x3 crafting table clone
+local bench = content.registerWorkstation("example:workbench", {
+  name="Workbench", hardness=2, sound="wood",
+  workstationType="crafting", -- default
+  -- containerTexture="minecraft:textures/gui/container/crafting_table.png" -- default
+})
+content.registerBlockItem("example:workbench", bench)
+
+-- 5x5 large workbench (25+1)
+local bigBench = content.registerWorkstation("example:big_bench", {
+  name="Big Workbench",
+  workstationType="crafting_5x5", -- alias "5x5", "large"
+  hardness=2,
+  containerTexture="minecraft:textures/gui/container/generic_54.png" -- or custom 256x256
+})
+content.registerBlockItem("example:big_bench", bigBench)
+-- recipes for 5x5: use vanilla 3x3 will work anywhere in 5x5, or define custom 5x5 via
+-- content.registerRecipe("example:big_pickaxe", {type="minecraft:crafting_shaped", pattern={"#####","#####","#####","#####","#####"}, key={["#"]={item="minecraft:diamond"}}, result={id="minecraft:netherite_block"}})
+-- Note: vanilla shaped max 3 will reject 5, so use custom type "neoscripts:workstation" with ingredients list (25) for true 5x5
+
+-- Furnace-like (instant smelting, no BlockEntity)
+local furnace = content.registerWorkstation("example:electric_furnace", {
+  name="Electric Furnace",
+  workstationType="furnace", -- or "smelting"
+  hardness=3, sound="stone",
+  containerTexture="minecraft:textures/gui/container/furnace.png"
+})
+content.registerBlockItem("example:electric_furnace", furnace)
+-- recipes: vanilla smelting already work
+-- content.registerRecipe("example:iron_from_dirt", {type="minecraft:smelting", ingredient={item="minecraft:dirt"}, result={id="minecraft:iron_ingot"}, experience=0.7, cookingtime=200, category="misc"})
+
+-- Custom form: 2 slots + result (upgrading) via containerSlots
+local upgrader = content.registerWorkstation("example:upgrader", {
+  name="Upgrader",
+  workstationType="crafting", -- still uses 3x3 logic but we override slots
+  containerSlots={
+    {x=27,y=47}, {x=76,y=47}, -- 2 inputs
+    {x=134,y=47}, -- result
+  },
+  containerTexture="minecraft:textures/gui/container/anvil.png"
+})
+content.registerBlockItem("example:upgrader", upgrader)
+-- For true custom logic (2 inputs -> 1 output via custom recipe type "example:upgrading"), override slotsChanged via Lua? Use packets + custom recipe type "example:upgrading" and workstation will need custom matching — currently workstation only checks CRAFTING/SMELTING, for custom use container + Lua packets.
+```
+
+**Notes:**
+
+* Must be in `neoscripts/autostart/*.lua` (both sides). `workstationType` selects `DynamicWorkstationMenu` (crafting) or `DynamicFurnaceMenu` (furnace). `MenuType` per `rawId`, `FeatureFlagSet.of()`, `ContainerLevelAccess.create(level,pos)` for `stillValid` distance check.
+* Crafting workstation `ResultContainer` + `TransientCraftingContainer` (calls `slotsChanged` on change). `slotsChanged` → `CraftingInput.of(width,height, items)` → `ServerLevel.recipeAccess().getRecipeFor(...)` → `setRecipeUsed` + `assemble` + `setRemoteSlot` + `ClientboundContainerSetSlotPacket`.
+* Furnace workstation `SimpleContainer(1)` input + fuel + `ResultContainer`, `SingleRecipeInput` → `RecipeType.SMELTING` (extend to `BLASTING`/`SMOKING` via `workstationType`).
+* For `5x5`, `gridSize=5`, `gridSlots=25`, `CraftingInput.of(5,5, ...)`, `quickMoveStack` indices `0=result, 1..25 craft, 26..62 inventory`.
+* For arbitrary forms via `containerSlots`, provide `gridSlots+1` positions (craft + result). Texture must match.
+* Recipes via `content.registerRecipe(id, table)` — table → JSON via `luaValueToJson`, stored in `DynamicContent.recipes`, generated as `data/<ns>/recipe/<path>.json` and `recipes/`. Use `type:"minecraft:crafting_shaped"` / `shapeless` / `smelting` etc., or `neoscripts:workstation` for 5x5 custom (when `WorkstationRecipe` serializer available).
+* Requires `registerBlockItem`.
+
+Aliases: `registerWorkbench`, `registerCraftingTable`, `registerWorkStation`.
+
 ## `registerBlockItem(id, blockState [, settings])`
 
 Register a `BlockItem` for a previously registered block.
@@ -854,6 +942,9 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `containerTitle` / `title` / `menuTitle` | string | `nil` | Menu title (`Component.literal`). Fallback to `name` or `id`. |
 | `containerSlots` / `slots` / `slotPositions` | table | `nil` | Custom slot GUI positions `{{x,y}, {x,y}, ...}` per slot 1..size. Each `{x,y}` or `{x=..,y=..}`. If `nil`, auto 9×N grid `8,18` gap `18`. See `registerContainer` examples. |
 | `containerTexture` / `guiTexture` / `menuTexture` | string | `nil` | GUI texture `Identifier` e.g. `"minecraft:textures/gui/container/generic_54.png"` or `"minecraft:textures/gui/container/dispenser.png"` or custom `"<ns>:textures/gui/container/my.png"` (also file path supported). Default `dispenser.png` for ≤3 rows else `generic_54.png`. |
+| `workstation` / `isWorkstation` | boolean | `false` | If `true`, block is workstation (crafting/furnace) — use `registerWorkstation` or set `workstation=true` in `registerContainer`. See [registerWorkstation](#registerworkstationid--settings). |
+| `workstationType` / `craftingType` | string | `nil` | Workstation type: `"crafting"` (3×3), `"crafting_5x5"`/`"5x5"`/`"large"` (5×5 =25+1), `"furnace"`/`"smelting"`/`"blasting"`/`"smoker"` (1 input+1 fuel+1 result, `RecipeType.SMELTING`). Default `crafting`. |
+| `fuel` / `fuelTime` / `burnTime` | integer\|boolean | `nil` | Burn time ticks for item as furnace fuel (`FuelValueEvents.BUILD`, autoload only, no reflection). `fuel=true` → 200, `fuel=300` → 300, `fuelTime=1600` → 8 items. For `registerItem`/`registerBlockItem`/`registerFood` etc. Example `content.registerItem("mymod:coal_dust", {fuel=1600})`. |
 
 All keys accept both `camelCase` and `snake_case` (`maxStackSize` / `max_stack_size`, `noCollision` / `no_collision`).
 
