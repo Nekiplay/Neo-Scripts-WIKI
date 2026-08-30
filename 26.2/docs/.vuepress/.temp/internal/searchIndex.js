@@ -1132,148 +1132,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "2D renderer",
-    "headers": [
-      {
-        "level": 2,
-        "title": "getWindowScale()",
-        "slug": "getwindowscale",
-        "link": "#getwindowscale",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "getTextWidth(str)",
-        "slug": "gettextwidth-str",
-        "link": "#gettextwidth-str",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderText(object)",
-        "slug": "rendertext-object",
-        "link": "#rendertext-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderImage(object)",
-        "slug": "renderimage-object",
-        "link": "#renderimage-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderRect(object)",
-        "slug": "renderrect-object",
-        "link": "#renderrect-object",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderItemStack(object)",
-        "slug": "renderitemstack-object",
-        "link": "#renderitemstack-object",
-        "children": []
-      }
-    ],
-    "path": "/client/rendering-objects/2d-renderer.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "World renderer",
-    "headers": [
-      {
-        "level": 2,
-        "title": "renderFilled(box, red, green, blue, alpha, throughWalls)",
-        "slug": "renderfilled-box-red-green-blue-alpha-throughwalls",
-        "link": "#renderfilled-box-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderOutline(box, red, green, blue, alpha, lineWidth, throughWalls)",
-        "slug": "renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
-        "link": "#renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderText(x, y, z, text, scale, throughWalls, red, green, blue, qx, qy, qz, qw)",
-        "slug": "rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
-        "link": "#rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderLinesFromPoints(points, red, green, blue, alpha, lineWidth, throughWalls)",
-        "slug": "renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
-        "link": "#renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderLineFromCursor(x, y, z, red, green, blue, alpha, lineWidth)",
-        "slug": "renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
-        "link": "#renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderImage(path, x, y, z, width, height, regionWidth, regionHeight, offsetX, offsetY, offsetZ,red, green, blue, alpha, throughWalls)",
-        "slug": "renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
-        "link": "#renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderBeaconBeam(x, y, z, red, green, blue)",
-        "slug": "renderbeaconbeam-x-y-z-red-green-blue",
-        "link": "#renderbeaconbeam-x-y-z-red-green-blue",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderOutlineCircle(x, y, z, radius, segments, thickness, red, green, blue, alpha, throughWalls)",
-        "slug": "renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
-        "link": "#renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderFilledCircle(x, y, z, radius, segments, red, green, blue, alpha, throughWalls)",
-        "slug": "renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
-        "link": "#renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderCylinder(x, y, z, radius, height, segments, red, green, blue, alpha, throughWalls)",
-        "slug": "rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
-        "link": "#rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderSphere(x, y, z, radius, segments, rings, red, green, blue, alpha, throughWalls)",
-        "slug": "rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
-        "link": "#rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "renderHologramBlock(x, y, z, id, alpha)",
-        "slug": "renderhologramblock-x-y-z-id-alpha",
-        "link": "#renderhologramblock-x-y-z-id-alpha",
-        "children": []
-      }
-    ],
-    "path": "/client/rendering-objects/world-renderer.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "Block Scanner",
     "headers": [
       {
@@ -3250,6 +3108,41 @@ export const SEARCH_INDEX = [
       },
       {
         "level": 2,
+        "title": "Drops & loot tables",
+        "slug": "drops-loot-tables",
+        "link": "#drops-loot-tables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "setDrops(id, drops) / getDrops(id)",
+        "slug": "setdrops-id-drops-getdrops-id",
+        "link": "#setdrops-id-drops-getdrops-id",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Ore generation",
+        "slug": "ore-generation",
+        "link": "#ore-generation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Tags",
+        "slug": "tags",
+        "link": "#tags",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Recipes",
+        "slug": "recipes",
+        "link": "#recipes",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "Model system",
         "slug": "model-system",
         "link": "#model-system",
@@ -4244,221 +4137,144 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Baritone Minining Behavior",
+    "title": "2D renderer",
     "headers": [
       {
         "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "isActive (boolean)",
-            "slug": "isactive-boolean",
-            "link": "#isactive-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "isTemporary (boolean)",
-            "slug": "istemporary-boolean",
-            "link": "#istemporary-boolean",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/client/libs/baritone/mining_behavior.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Baritone Pathing Behavior",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "isPathing (boolean)",
-            "slug": "ispathing-boolean",
-            "link": "#ispathing-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "inProgress (boolean)",
-            "slug": "inprogress-boolean",
-            "link": "#inprogress-boolean",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/client/libs/baritone/pathing_behavior.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Baritone API",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "settings (Baritone Settings)",
-            "slug": "settings-baritone-settings",
-            "link": "#settings-baritone-settings",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "pathing_behavior (Baritone Pathing Behavior)",
-            "slug": "pathing-behavior-baritone-pathing-behavior",
-            "link": "#pathing-behavior-baritone-pathing-behavior",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "mining_behavior (Baritone Mining Behavior)",
-            "slug": "mining-behavior-baritone-mining-behavior",
-            "link": "#mining-behavior-baritone-mining-behavior",
-            "children": []
-          }
-        ]
+        "title": "getWindowScale()",
+        "slug": "getwindowscale",
+        "link": "#getwindowscale",
+        "children": []
       },
       {
         "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "execute(command)",
-            "slug": "execute-command",
-            "link": "#execute-command",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/client/libs/baritone/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Baritone Settings",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Variables",
-        "slug": "variables",
-        "link": "#variables",
-        "children": [
-          {
-            "level": 3,
-            "title": "allowBreak (boolean)",
-            "slug": "allowbreak-boolean",
-            "link": "#allowbreak-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "allowPlace (boolean)",
-            "slug": "allowplace-boolean",
-            "link": "#allowplace-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "maxFallHeightNoWater (integer)",
-            "slug": "maxfallheightnowater-integer",
-            "link": "#maxfallheightnowater-integer",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "maxFallHeightBucket (integer)",
-            "slug": "maxfallheightbucket-integer",
-            "link": "#maxfallheightbucket-integer",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "allowWaterBucketFall (boolean)",
-            "slug": "allowwaterbucketfall-boolean",
-            "link": "#allowwaterbucketfall-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "pauseMiningForFallingBlocks (boolean)",
-            "slug": "pauseminingforfallingblocks-boolean",
-            "link": "#pauseminingforfallingblocks-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "autoTool (boolean)",
-            "slug": "autotool-boolean",
-            "link": "#autotool-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "assumeExternalAutoTool (boolean)",
-            "slug": "assumeexternalautotool-boolean",
-            "link": "#assumeexternalautotool-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "freeLook (boolean)",
-            "slug": "freelook-boolean",
-            "link": "#freelook-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "blockFreeLook (boolean)",
-            "slug": "blockfreelook-boolean",
-            "link": "#blockfreelook-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "allowParkour (boolean)",
-            "slug": "allowparkour-boolean",
-            "link": "#allowparkour-boolean",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "allowParkourPlace (boolean)",
-            "slug": "allowparkourplace-boolean",
-            "link": "#allowparkourplace-boolean",
-            "children": []
-          }
-        ]
+        "title": "getTextWidth(str)",
+        "slug": "gettextwidth-str",
+        "link": "#gettextwidth-str",
+        "children": []
       },
       {
         "level": 2,
-        "title": "Settable Properties",
-        "slug": "settable-properties",
-        "link": "#settable-properties",
+        "title": "renderText(object)",
+        "slug": "rendertext-object",
+        "link": "#rendertext-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderImage(object)",
+        "slug": "renderimage-object",
+        "link": "#renderimage-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderRect(object)",
+        "slug": "renderrect-object",
+        "link": "#renderrect-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderItemStack(object)",
+        "slug": "renderitemstack-object",
+        "link": "#renderitemstack-object",
         "children": []
       }
     ],
-    "path": "/client/libs/baritone/settings.html",
+    "path": "/client/rendering-objects/2d-renderer.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "World renderer",
+    "headers": [
+      {
+        "level": 2,
+        "title": "renderFilled(box, red, green, blue, alpha, throughWalls)",
+        "slug": "renderfilled-box-red-green-blue-alpha-throughwalls",
+        "link": "#renderfilled-box-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderOutline(box, red, green, blue, alpha, lineWidth, throughWalls)",
+        "slug": "renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
+        "link": "#renderoutline-box-red-green-blue-alpha-linewidth-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderText(x, y, z, text, scale, throughWalls, red, green, blue, qx, qy, qz, qw)",
+        "slug": "rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
+        "link": "#rendertext-x-y-z-text-scale-throughwalls-red-green-blue-qx-qy-qz-qw",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderLinesFromPoints(points, red, green, blue, alpha, lineWidth, throughWalls)",
+        "slug": "renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
+        "link": "#renderlinesfrompoints-points-red-green-blue-alpha-linewidth-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderLineFromCursor(x, y, z, red, green, blue, alpha, lineWidth)",
+        "slug": "renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
+        "link": "#renderlinefromcursor-x-y-z-red-green-blue-alpha-linewidth",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderImage(path, x, y, z, width, height, regionWidth, regionHeight, offsetX, offsetY, offsetZ,red, green, blue, alpha, throughWalls)",
+        "slug": "renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
+        "link": "#renderimage-path-x-y-z-width-height-regionwidth-regionheight-offsetx-offsety-offsetz-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderBeaconBeam(x, y, z, red, green, blue)",
+        "slug": "renderbeaconbeam-x-y-z-red-green-blue",
+        "link": "#renderbeaconbeam-x-y-z-red-green-blue",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderOutlineCircle(x, y, z, radius, segments, thickness, red, green, blue, alpha, throughWalls)",
+        "slug": "renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
+        "link": "#renderoutlinecircle-x-y-z-radius-segments-thickness-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderFilledCircle(x, y, z, radius, segments, red, green, blue, alpha, throughWalls)",
+        "slug": "renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
+        "link": "#renderfilledcircle-x-y-z-radius-segments-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderCylinder(x, y, z, radius, height, segments, red, green, blue, alpha, throughWalls)",
+        "slug": "rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
+        "link": "#rendercylinder-x-y-z-radius-height-segments-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderSphere(x, y, z, radius, segments, rings, red, green, blue, alpha, throughWalls)",
+        "slug": "rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
+        "link": "#rendersphere-x-y-z-radius-segments-rings-red-green-blue-alpha-throughwalls",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "renderHologramBlock(x, y, z, id, alpha)",
+        "slug": "renderhologramblock-x-y-z-id-alpha",
+        "link": "#renderhologramblock-x-y-z-id-alpha",
+        "children": []
+      }
+    ],
+    "path": "/client/rendering-objects/world-renderer.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -6292,6 +6108,448 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "Catboost",
+    "headers": [
+      {
+        "level": 2,
+        "title": "loadModel(path)",
+        "slug": "loadmodel-path",
+        "link": "#loadmodel-path",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/catboost/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone Minining Behavior",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isActive (boolean)",
+            "slug": "isactive-boolean",
+            "link": "#isactive-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "isTemporary (boolean)",
+            "slug": "istemporary-boolean",
+            "link": "#istemporary-boolean",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/libs/baritone/mining_behavior.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone Pathing Behavior",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "isPathing (boolean)",
+            "slug": "ispathing-boolean",
+            "link": "#ispathing-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inProgress (boolean)",
+            "slug": "inprogress-boolean",
+            "link": "#inprogress-boolean",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/libs/baritone/pathing_behavior.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone API",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "settings (Baritone Settings)",
+            "slug": "settings-baritone-settings",
+            "link": "#settings-baritone-settings",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "pathing_behavior (Baritone Pathing Behavior)",
+            "slug": "pathing-behavior-baritone-pathing-behavior",
+            "link": "#pathing-behavior-baritone-pathing-behavior",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "mining_behavior (Baritone Mining Behavior)",
+            "slug": "mining-behavior-baritone-mining-behavior",
+            "link": "#mining-behavior-baritone-mining-behavior",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "execute(command)",
+            "slug": "execute-command",
+            "link": "#execute-command",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/client/libs/baritone/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Baritone Settings",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Variables",
+        "slug": "variables",
+        "link": "#variables",
+        "children": [
+          {
+            "level": 3,
+            "title": "allowBreak (boolean)",
+            "slug": "allowbreak-boolean",
+            "link": "#allowbreak-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowPlace (boolean)",
+            "slug": "allowplace-boolean",
+            "link": "#allowplace-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "maxFallHeightNoWater (integer)",
+            "slug": "maxfallheightnowater-integer",
+            "link": "#maxfallheightnowater-integer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "maxFallHeightBucket (integer)",
+            "slug": "maxfallheightbucket-integer",
+            "link": "#maxfallheightbucket-integer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowWaterBucketFall (boolean)",
+            "slug": "allowwaterbucketfall-boolean",
+            "link": "#allowwaterbucketfall-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "pauseMiningForFallingBlocks (boolean)",
+            "slug": "pauseminingforfallingblocks-boolean",
+            "link": "#pauseminingforfallingblocks-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "autoTool (boolean)",
+            "slug": "autotool-boolean",
+            "link": "#autotool-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "assumeExternalAutoTool (boolean)",
+            "slug": "assumeexternalautotool-boolean",
+            "link": "#assumeexternalautotool-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "freeLook (boolean)",
+            "slug": "freelook-boolean",
+            "link": "#freelook-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "blockFreeLook (boolean)",
+            "slug": "blockfreelook-boolean",
+            "link": "#blockfreelook-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowParkour (boolean)",
+            "slug": "allowparkour-boolean",
+            "link": "#allowparkour-boolean",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "allowParkourPlace (boolean)",
+            "slug": "allowparkourplace-boolean",
+            "link": "#allowparkourplace-boolean",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Settable Properties",
+        "slug": "settable-properties",
+        "link": "#settable-properties",
+        "children": []
+      }
+    ],
+    "path": "/client/libs/baritone/settings.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Working with structures",
+        "slug": "working-with-structures",
+        "link": "#working-with-structures",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callbacks",
+        "slug": "callbacks",
+        "link": "#callbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Callback with structure",
+        "slug": "callback-with-structure",
+        "link": "#callback-with-structure",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/ffi/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "FFI",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Registered Types",
+        "slug": "registered-types",
+        "link": "#registered-types",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Functions",
+        "slug": "functions",
+        "link": "#functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "ffi.cdef(def)",
+            "slug": "ffi-cdef-def",
+            "link": "#ffi-cdef-def",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.load(name)",
+            "slug": "ffi-load-name",
+            "link": "#ffi-load-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.new(type, count)",
+            "slug": "ffi-new-type-count",
+            "link": "#ffi-new-type-count",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.cast(type, ptr)",
+            "slug": "ffi-cast-type-ptr",
+            "link": "#ffi-cast-type-ptr",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.sizeof(type)",
+            "slug": "ffi-sizeof-type",
+            "link": "#ffi-sizeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.string(ptr, len)",
+            "slug": "ffi-string-ptr-len",
+            "link": "#ffi-string-ptr-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.copy(dest, src, len)",
+            "slug": "ffi-copy-dest-src-len",
+            "link": "#ffi-copy-dest-src-len",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.fill(dest, len, value)",
+            "slug": "ffi-fill-dest-len-value",
+            "link": "#ffi-fill-dest-len-value",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.callback(prototype, function)",
+            "slug": "ffi-callback-prototype-function",
+            "link": "#ffi-callback-prototype-function",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.gc(cdata, finalizer)",
+            "slug": "ffi-gc-cdata-finalizer",
+            "link": "#ffi-gc-cdata-finalizer",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.typeof(type)",
+            "slug": "ffi-typeof-type",
+            "link": "#ffi-typeof-type",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.metatype(type, metatable)",
+            "slug": "ffi-metatype-type-metatable",
+            "link": "#ffi-metatype-type-metatable",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.os",
+            "slug": "ffi-os",
+            "link": "#ffi-os",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ffi.C",
+            "slug": "ffi-c",
+            "link": "#ffi-c",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Complete Examples",
+        "slug": "complete-examples",
+        "link": "#complete-examples",
+        "children": [
+          {
+            "level": 3,
+            "title": "Working with Structures",
+            "slug": "working-with-structures",
+            "link": "#working-with-structures",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Callbacks",
+            "slug": "working-with-callbacks",
+            "link": "#working-with-callbacks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Working with Memory",
+            "slug": "working-with-memory",
+            "link": "#working-with-memory",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Metatypes for Custom Behavior",
+            "slug": "metatypes-for-custom-behavior",
+            "link": "#metatypes-for-custom-behavior",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Known Limitations",
+        "slug": "known-limitations",
+        "link": "#known-limitations",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/ffi/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Examples",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Regression (Math prediction)",
+        "slug": "regression-math-prediction",
+        "link": "#regression-math-prediction",
+        "children": []
+      }
+    ],
+    "path": "/common/libs/deep-java-learining-djl4/examples.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Input",
     "headers": [
       {
@@ -6981,229 +7239,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/client/player-objects/player/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Catboost",
-    "headers": [
-      {
-        "level": 2,
-        "title": "loadModel(path)",
-        "slug": "loadmodel-path",
-        "link": "#loadmodel-path",
-        "children": []
-      }
-    ],
-    "path": "/common/libs/catboost/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Regression (Math prediction)",
-        "slug": "regression-math-prediction",
-        "link": "#regression-math-prediction",
-        "children": []
-      }
-    ],
-    "path": "/common/libs/deep-java-learining-djl4/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Examples",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Working with structures",
-        "slug": "working-with-structures",
-        "link": "#working-with-structures",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callbacks",
-        "slug": "callbacks",
-        "link": "#callbacks",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Callback with structure",
-        "slug": "callback-with-structure",
-        "link": "#callback-with-structure",
-        "children": []
-      }
-    ],
-    "path": "/common/libs/ffi/examples.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "FFI",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Registered Types",
-        "slug": "registered-types",
-        "link": "#registered-types",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Functions",
-        "slug": "functions",
-        "link": "#functions",
-        "children": [
-          {
-            "level": 3,
-            "title": "ffi.cdef(def)",
-            "slug": "ffi-cdef-def",
-            "link": "#ffi-cdef-def",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.load(name)",
-            "slug": "ffi-load-name",
-            "link": "#ffi-load-name",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.new(type, count)",
-            "slug": "ffi-new-type-count",
-            "link": "#ffi-new-type-count",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.cast(type, ptr)",
-            "slug": "ffi-cast-type-ptr",
-            "link": "#ffi-cast-type-ptr",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.sizeof(type)",
-            "slug": "ffi-sizeof-type",
-            "link": "#ffi-sizeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.string(ptr, len)",
-            "slug": "ffi-string-ptr-len",
-            "link": "#ffi-string-ptr-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.copy(dest, src, len)",
-            "slug": "ffi-copy-dest-src-len",
-            "link": "#ffi-copy-dest-src-len",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.fill(dest, len, value)",
-            "slug": "ffi-fill-dest-len-value",
-            "link": "#ffi-fill-dest-len-value",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.callback(prototype, function)",
-            "slug": "ffi-callback-prototype-function",
-            "link": "#ffi-callback-prototype-function",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.gc(cdata, finalizer)",
-            "slug": "ffi-gc-cdata-finalizer",
-            "link": "#ffi-gc-cdata-finalizer",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.typeof(type)",
-            "slug": "ffi-typeof-type",
-            "link": "#ffi-typeof-type",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.metatype(type, metatable)",
-            "slug": "ffi-metatype-type-metatable",
-            "link": "#ffi-metatype-type-metatable",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.os",
-            "slug": "ffi-os",
-            "link": "#ffi-os",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ffi.C",
-            "slug": "ffi-c",
-            "link": "#ffi-c",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Complete Examples",
-        "slug": "complete-examples",
-        "link": "#complete-examples",
-        "children": [
-          {
-            "level": 3,
-            "title": "Working with Structures",
-            "slug": "working-with-structures",
-            "link": "#working-with-structures",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Working with Callbacks",
-            "slug": "working-with-callbacks",
-            "link": "#working-with-callbacks",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Working with Memory",
-            "slug": "working-with-memory",
-            "link": "#working-with-memory",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Metatypes for Custom Behavior",
-            "slug": "metatypes-for-custom-behavior",
-            "link": "#metatypes-for-custom-behavior",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Known Limitations",
-        "slug": "known-limitations",
-        "link": "#known-limitations",
-        "children": []
-      }
-    ],
-    "path": "/common/libs/ffi/",
     "pathLocale": "/",
     "extraFields": []
   },

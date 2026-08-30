@@ -167,6 +167,92 @@ Register a `FenceBlock` (multipart).
 content.registerFence("neoscripts:ruby_fence", { hardness=2 })
 ```
 
+## `registerContainer(id [, sizeOrSettings [, settings]])`
+
+Register a block with inventory (`BlockContainer` + `Container Menu`) — chest-like block that opens a GUI on right-click. Implements `Container` + `MenuProvider` + `BlockEntity` with `NonNullList<ItemStack>`, syncs via `AbstractContainerMenu`. See [Fabric — Block Containers](https://docs.fabricmc.net/develop/blocks/block-containers) and [Container Menus](https://docs.fabricmc.net/develop/blocks/container-menus).
+
+**Logger:** Container registration uses `ServerMain.LOGGER` (server side), not `ClientMain.LOGGER` — logs appear in `logs/latest.log` on integrated/dedicated server.
+
+**Parameters:**
+
+* `id` (string) — e.g. `"neoscripts:chest"`
+* `sizeOrSettings` (integer | content_settings | table, optional) — size `1..54` (default `27`) or settings table containing `containerSize`, `containerTitle`, `containerSlots`, `containerTexture`
+* `settings` (content_settings | table, optional) — block properties + container fields
+
+**Settings fields for containers (in `createSettings` table):**
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `containerSize` / `size` / `slotCount` | integer | `27` | Inventory slots 1..54. `9`=1 row, `27`=chest, `54`=double chest. |
+| `containerTitle` / `title` / `menuTitle` | string | `id` | Title shown in GUI (`Component.literal`). Falls back to `name`. |
+| `containerSlots` / `slots` / `slotPositions` | table | `nil` → auto 9×N grid | Custom slot positions per slot `{{x,y}, {x,y}, ...}`. Each `{x,y}` in GUI coords (0..256). If `nil`, auto grid `start 8,18` gap `18`. Example for 3×3 dispenser: 9 entries. |
+| `containerTexture` / `guiTexture` / `menuTexture` | string | `nil` → `dispenser.png` (≤27) / `generic_54.png` (>27) | Texture `Identifier` e.g. `"minecraft:textures/gui/container/generic_54.png"` or custom `"<ns>:textures/gui/container/my.png"` or file path. |
+
+All `createSettings` block fields (`hardness`, `sound`, `shape`, `drops`, `tags`, etc.) also apply.
+
+**Returns:**
+
+* ([Block](../datatypes/block.md)) `LuaBlockState` on success, `nil` on failure. Still needs `registerBlockItem`.
+
+**Examples:**
+
+```lua
+local content = require("content")
+
+-- 27 chest (default)
+local chest = content.registerContainer("neoscripts:chest", { name="My Chest", hardness=2, containerSize=27 })
+content.registerBlockItem("neoscripts:chest", chest)
+
+-- 9 slots dispenser-style, custom title, short form size as 2nd arg
+local small = content.registerContainer("neoscripts:small_chest", 9, { name="Small", containerTitle="Small Chest" })
+content.registerBlockItem("neoscripts:small_chest", small)
+
+-- Custom slots positions + custom GUI texture (3×3 grid centered like dispenser)
+local custom = content.registerContainer("neoscripts:custom_chest", {
+    name="Custom Chest",
+    containerSize=9,
+    containerSlots={
+        {x=62,y=17},{x=80,y=17},{x=98,y=17},
+        {x=62,y=35},{x=80,y=35},{x=98,y=35},
+        {x=62,y=53},{x=80,y=53},{x=98,y=53},
+    },
+    containerTexture="minecraft:textures/gui/container/dispenser.png",
+    hardness=2, sound="wood"
+})
+content.registerBlockItem("neoscripts:custom_chest", custom)
+
+-- Full custom: 54 double chest with own texture
+local big = content.createSettings({
+    name="Big Chest",
+    containerSize=54,
+    containerTexture="neoscripts:textures/gui/big_chest.png",
+    hardness=2
+})
+local bigState = content.registerContainer("neoscripts:big_chest", big)
+content.registerBlockItem("neoscripts:big_chest", bigState)
+
+-- Access inventory from server Lua (e.g. in tick)
+local server = require("server")
+local world = server.getLevel("minecraft:overworld")
+-- block entity is Container: size, inventory, is_container
+-- world.getBlockEntity(pos) -> LuaBlockEntity { inventory, size, is_container }
+```
+
+**Notes:**
+
+* Must be called from `neoscripts/autostart/*.lua` (executed before registries freeze on both sides). A file in `saves/<world>/neoscripts/scripts/` only runs on server → client won't know `MenuType`/`Screen` and GUI won't open.
+* Right-click on block in survival opens menu (`BaseEntityBlock#useWithoutItem → player.openMenu(BlockEntity as MenuProvider)`). `BlockEntity` implements `ImplementedContainer` + `MenuProvider` + `stillValid` check.
+* Contents persist via `ContainerHelper.saveAllItems/loadAllItems` (`ValueInput`/`ValueOutput`). On break `Containers.dropContents` is called via `BlockEntity#preRemoveSideEffects`.
+* Menu: `DynamicContainerMenu` (extends `AbstractContainerMenu`) with `MenuType` per `rawId` (`FeatureFlagSet.of()`). Client factory creates `SimpleContainer(size)`.
+* Screen: `DynamicContainerScreen` (`AbstractContainerScreen`) — texture `dispenser.png` for ≤3 rows else `generic_54.png`, or custom `containerTexture`. Slots rendered at positions from `containerSlots` if provided.
+* Requires `registerBlockItem` for the block item.
+
+```lua
+-- Alternative aliases: registerContainerBlock, registerChest, registerBlockWithContainer, registerBlockEntity
+local chest2 = content.registerContainerBlock("neoscripts:chest2", 27)
+local chest3 = content.registerChest("neoscripts:chest3", {containerSize=27})
+```
+
 ## `registerBlockItem(id, blockState [, settings])`
 
 Register a `BlockItem` for a previously registered block.
@@ -764,6 +850,10 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `mineableTool` / `tool` / `harvestTool` | string | `nil` | Tool type required to drop (`"pickaxe"`,`"axe"`,`"shovel"`,`"hoe"`). Generates `data/minecraft/tags/block/mineable/<tool>.json`. Also `mineable/<tool>` via `blockMineableTool`. |
 | `tier` / `miningTier` / `level` | string | `nil` | Tool tier (`"wood"`,`"stone"`,`"iron"`,`"diamond"`,`"netherite"`,`"gold"`). Generates `data/minecraft/tags/block/needs_<tier>_tool.json`. Requires `requiresTool=true`. |
 | `requiresTool` / `requiresCorrectTool` | boolean\|string | `false` | `requiresCorrectToolForDrops()`. String value like `"iron"` also sets `tier`. |
+| `containerSize` / `size` / `slotCount` | integer | `nil` | For `registerContainer`: slots 1..54 (default 27 if via `registerContainer`). `9`=1 row, `27`=chest, `54`=double. See [registerContainer](#registercontainerid--sizeorsettings--settings). |
+| `containerTitle` / `title` / `menuTitle` | string | `nil` | Menu title (`Component.literal`). Fallback to `name` or `id`. |
+| `containerSlots` / `slots` / `slotPositions` | table | `nil` | Custom slot GUI positions `{{x,y}, {x,y}, ...}` per slot 1..size. Each `{x,y}` or `{x=..,y=..}`. If `nil`, auto 9×N grid `8,18` gap `18`. See `registerContainer` examples. |
+| `containerTexture` / `guiTexture` / `menuTexture` | string | `nil` | GUI texture `Identifier` e.g. `"minecraft:textures/gui/container/generic_54.png"` or `"minecraft:textures/gui/container/dispenser.png"` or custom `"<ns>:textures/gui/container/my.png"` (also file path supported). Default `dispenser.png` for ≤3 rows else `generic_54.png`. |
 
 All keys accept both `camelCase` and `snake_case` (`maxStackSize` / `max_stack_size`, `noCollision` / `no_collision`).
 
