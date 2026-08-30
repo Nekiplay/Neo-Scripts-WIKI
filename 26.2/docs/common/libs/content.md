@@ -945,6 +945,7 @@ Mutable userdata `content_settings` (`typename() == "content_settings"`). Fields
 | `workstation` / `isWorkstation` | boolean | `false` | If `true`, block is workstation (crafting/furnace) — use `registerWorkstation` or set `workstation=true` in `registerContainer`. See [registerWorkstation](#registerworkstationid--settings). |
 | `workstationType` / `craftingType` | string | `nil` | Workstation type: `"crafting"` (3×3), `"crafting_5x5"`/`"5x5"`/`"large"` (5×5 =25+1), `"furnace"`/`"smelting"`/`"blasting"`/`"smoker"` (1 input+1 fuel+1 result, `RecipeType.SMELTING`). Default `crafting`. |
 | `fuel` / `fuelTime` / `burnTime` | integer\|boolean | `nil` | Burn time ticks for item as furnace fuel (`FuelValueEvents.BUILD`, autoload only, no reflection). `fuel=true` → 200, `fuel=300` → 300, `fuelTime=1600` → 8 items. For `registerItem`/`registerBlockItem`/`registerFood` etc. Example `content.registerItem("mymod:coal_dust", {fuel=1600})`. |
+| `compostChance` / `compost_chance` / `compost` | number\|boolean | `nil` | Composting chance for item in a composter (`CompostableRegistry`, autoload only). `compostChance=0.3` → 30% chance per use. `true` → 0.3. For `registerItem`/`registerBlockItem`/`registerFood` etc. Example `content.registerItem("mymod:apple", {compostChance=0.3})`. |
 
 All keys accept both `camelCase` and `snake_case` (`maxStackSize` / `max_stack_size`, `noCollision` / `no_collision`).
 
